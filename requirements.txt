@@ -1,0 +1,11 @@
+aiohttp
+certifi
+chardet
+cryptography
+dateparser
+pyOpenSSL
+requests
+service-identity
+websockets
+protobuf
+ecdsa
