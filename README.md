@@ -45,7 +45,7 @@ For API documentation check out [Help Center](https://support.xena.exchange/supp
 
 Register an account with [Xena](https://trading.xena.exchange/registration). Generate an API Key and assign relevant permissions.
 	
-```
+```python
 	import asyncio
 	import time
 
@@ -105,4 +105,4 @@ Register an account with [Xena](https://trading.xena.exchange/registration). Gen
 		loop.run_until_complete(example_of_market_order())
 ```
 
-For more examples check out "exmaples" folder
+For more examples check out "examples" folder
