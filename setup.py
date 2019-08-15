@@ -19,7 +19,7 @@ with codecs.open(
 setup(
     name='python-xena',
     version=version,
-    packages=['xena'],
+    packages=['xena', 'xena.proto'],
     description='XenaExchange API python implementation',
     license='MIT',
     author_email='',
