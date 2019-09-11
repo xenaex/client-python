@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\rbalance.proto\x12\x03\x61pi\">\n\x1a\x41\x63\x63ountStatusReportRequest\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04\"p\n\x08Position\x12\x10\n\x08\x43urrency\x18\x0f \x01(\t\x12\r\n\x05\x41vgPx\x18\x06 \x01(\t\x12\x13\n\nPositionID\x18\xd2\x0c \x01(\x04\x12\x19\n\x10PositionOpenTime\x18\x8d\x0e \x01(\x03\x12\x13\n\nRealizedPL\x18\x8e\x0e \x01(\t\"\xc1\x01\n\x07\x42\x61lance\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04\x12\x10\n\x08\x43urrency\x18\x0f \x01(\t\x12\x17\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03\x12\x12\n\tAvailable\x18\x89\x0e \x01(\t\x12\x0f\n\x06OnHold\x18\x8a\x0e \x01(\t\x12\x10\n\x07Settled\x18\x8b\x0e \x01(\t\x12\x0f\n\x06\x45quity\x18\xff\r \x01(\t\x12\x0f\n\x05\x42onus\x18\xd9\x98\x03 \x01(\t\x12!\n\tPositions\x18\x8c\x0e \x03(\x0b\x32\r.api.Position\"\x9c\x01\n\x19\x42\x61lanceIncrementalRefresh\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04\x12\x17\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03\x12\x1f\n\x08\x42\x61lances\x18\x88\x0e \x03(\x0b\x32\x0c.api.Balance\x12\x15\n\x0cRejectReason\x18\xfc\x02 \x01(\t\x12\x0c\n\x04Text\x18: \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\rbalance.proto\x12\x03\x61pi\"\x8a\x01\n\x1a\x41\x63\x63ountStatusReportRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\"\xab\x01\n\x08Position\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x1f\n\nPositionId\x18\xd2\x0c \x01(\x04R\npositionId\x12+\n\x10PositionOpenTime\x18\x8d\x0e \x01(\x03R\x10positionOpenTime\x12\x1f\n\nRealizedPL\x18\x8e\x0e \x01(\tR\nrealizedPL\"\x9a\x02\n\x07\x42\x61lance\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12\x1d\n\tAvailable\x18\x89\x0e \x01(\tR\tavailable\x12\x17\n\x06OnHold\x18\x8a\x0e \x01(\tR\x06onHold\x12\x19\n\x07Settled\x18\x8b\x0e \x01(\tR\x07settled\x12\x17\n\x06\x45quity\x18\xff\r \x01(\tR\x06\x65quity\x12\x16\n\x05\x42onus\x18\xd9\x98\x03 \x01(\tR\x05\x62onus\x12,\n\tPositions\x18\x8c\x0e \x03(\x0b\x32\r.api.PositionR\tpositions\"\x96\x02\n\x19\x42\x61lanceIncrementalRefresh\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12)\n\x08\x42\x61lances\x18\x88\x0e \x03(\x0b\x32\x0c.api.BalanceR\x08\x62\x61lances\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x93\x02\n\x16\x42\x61lanceSnapshotRefresh\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12)\n\x08\x42\x61lances\x18\x88\x0e \x03(\x0b\x32\x0c.api.BalanceR\x08\x62\x61lances\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04textb\x06proto3')
 )
 
 
@@ -38,14 +38,21 @@ _ACCOUNTSTATUSREPORTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Account', full_name='api.AccountStatusReportRequest.Account', index=1,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='AccountStatusRequestId', full_name='api.AccountStatusReportRequest.AccountStatusRequestId', index=2,
+      number=42513, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='accountStatusRequestId', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -58,8 +65,8 @@ _ACCOUNTSTATUSREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22,
-  serialized_end=84,
+  serialized_start=23,
+  serialized_end=161,
 )
 
 
@@ -76,35 +83,35 @@ _POSITION = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='currency', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='AvgPx', full_name='api.Position.AvgPx', index=1,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='avgPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PositionID', full_name='api.Position.PositionID', index=2,
+      name='PositionId', full_name='api.Position.PositionId', index=2,
       number=1618, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='positionId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PositionOpenTime', full_name='api.Position.PositionOpenTime', index=3,
       number=1805, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='positionOpenTime', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='RealizedPL', full_name='api.Position.RealizedPL', index=4,
       number=1806, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='realizedPL', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -117,8 +124,8 @@ _POSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=86,
-  serialized_end=198,
+  serialized_start=164,
+  serialized_end=335,
 )
 
 
@@ -135,63 +142,63 @@ _BALANCE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Currency', full_name='api.Balance.Currency', index=1,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='currency', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LastUpdateTime', full_name='api.Balance.LastUpdateTime', index=2,
       number=779, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='lastUpdateTime', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Available', full_name='api.Balance.Available', index=3,
       number=1801, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='available', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='OnHold', full_name='api.Balance.OnHold', index=4,
       number=1802, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='onHold', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Settled', full_name='api.Balance.Settled', index=5,
       number=1803, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='settled', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Equity', full_name='api.Balance.Equity', index=6,
       number=1791, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='equity', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Bonus', full_name='api.Balance.Bonus', index=7,
       number=52313, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='bonus', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Positions', full_name='api.Balance.Positions', index=8,
       number=1804, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='positions', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -204,8 +211,8 @@ _BALANCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=201,
-  serialized_end=394,
+  serialized_start=338,
+  serialized_end=620,
 )
 
 
@@ -222,42 +229,49 @@ _BALANCEINCREMENTALREFRESH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Account', full_name='api.BalanceIncrementalRefresh.Account', index=1,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='LastUpdateTime', full_name='api.BalanceIncrementalRefresh.LastUpdateTime', index=2,
+      name='AccountStatusRequestId', full_name='api.BalanceIncrementalRefresh.AccountStatusRequestId', index=2,
+      number=42513, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='accountStatusRequestId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='LastUpdateTime', full_name='api.BalanceIncrementalRefresh.LastUpdateTime', index=3,
       number=779, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='lastUpdateTime', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Balances', full_name='api.BalanceIncrementalRefresh.Balances', index=3,
+      name='Balances', full_name='api.BalanceIncrementalRefresh.Balances', index=4,
       number=1800, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='balances', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='RejectReason', full_name='api.BalanceIncrementalRefresh.RejectReason', index=4,
+      name='RejectReason', full_name='api.BalanceIncrementalRefresh.RejectReason', index=5,
       number=380, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='rejectReason', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Text', full_name='api.BalanceIncrementalRefresh.Text', index=5,
+      name='Text', full_name='api.BalanceIncrementalRefresh.Text', index=6,
       number=58, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='text', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -270,16 +284,91 @@ _BALANCEINCREMENTALREFRESH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=397,
-  serialized_end=553,
+  serialized_start=623,
+  serialized_end=901,
+)
+
+
+_BALANCESNAPSHOTREFRESH = _descriptor.Descriptor(
+  name='BalanceSnapshotRefresh',
+  full_name='api.BalanceSnapshotRefresh',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MsgType', full_name='api.BalanceSnapshotRefresh.MsgType', index=0,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.BalanceSnapshotRefresh.Account', index=1,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='AccountStatusRequestId', full_name='api.BalanceSnapshotRefresh.AccountStatusRequestId', index=2,
+      number=42513, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='accountStatusRequestId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='LastUpdateTime', full_name='api.BalanceSnapshotRefresh.LastUpdateTime', index=3,
+      number=779, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='lastUpdateTime', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Balances', full_name='api.BalanceSnapshotRefresh.Balances', index=4,
+      number=1800, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='balances', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RejectReason', full_name='api.BalanceSnapshotRefresh.RejectReason', index=5,
+      number=380, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='rejectReason', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Text', full_name='api.BalanceSnapshotRefresh.Text', index=6,
+      number=58, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='text', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=904,
+  serialized_end=1179,
 )
 
 _BALANCE.fields_by_name['Positions'].message_type = _POSITION
 _BALANCEINCREMENTALREFRESH.fields_by_name['Balances'].message_type = _BALANCE
+_BALANCESNAPSHOTREFRESH.fields_by_name['Balances'].message_type = _BALANCE
 DESCRIPTOR.message_types_by_name['AccountStatusReportRequest'] = _ACCOUNTSTATUSREPORTREQUEST
 DESCRIPTOR.message_types_by_name['Position'] = _POSITION
 DESCRIPTOR.message_types_by_name['Balance'] = _BALANCE
 DESCRIPTOR.message_types_by_name['BalanceIncrementalRefresh'] = _BALANCEINCREMENTALREFRESH
+DESCRIPTOR.message_types_by_name['BalanceSnapshotRefresh'] = _BALANCESNAPSHOTREFRESH
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 AccountStatusReportRequest = _reflection.GeneratedProtocolMessageType('AccountStatusReportRequest', (_message.Message,), dict(
@@ -309,6 +398,13 @@ BalanceIncrementalRefresh = _reflection.GeneratedProtocolMessageType('BalanceInc
   # @@protoc_insertion_point(class_scope:api.BalanceIncrementalRefresh)
   ))
 _sym_db.RegisterMessage(BalanceIncrementalRefresh)
+
+BalanceSnapshotRefresh = _reflection.GeneratedProtocolMessageType('BalanceSnapshotRefresh', (_message.Message,), dict(
+  DESCRIPTOR = _BALANCESNAPSHOTREFRESH,
+  __module__ = 'balance_pb2'
+  # @@protoc_insertion_point(class_scope:api.BalanceSnapshotRefresh)
+  ))
+_sym_db.RegisterMessage(BalanceSnapshotRefresh)
 
 
 # @@protoc_insertion_point(module_scope)

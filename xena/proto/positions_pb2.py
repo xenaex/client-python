@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0fpositions.proto\x12\x03\x61pi\x1a\x0cmargin.proto\"T\n\x07Payment\x12\x15\n\x0bPaymentType\x18\x95\xba\x02 \x01(\t\x12\x19\n\x0fPaymentCurrency\x18\x98\xba\x02 \x01(\t\x12\x17\n\rPaymentAmount\x18\x99\xba\x02 \x01(\t\"B\n\x0cRelatedTrade\x12\x17\n\x0eRelatedTradeID\x18\xc0\x0e \x01(\t\x12\x19\n\x10RelatedTradeType\x18\xc1\x0e \x01(\t\"\xb5\x03\n\x0ePositionReport\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04\x12\x13\n\nPositionID\x18\xba\x14 \x01(\x04\x12\x14\n\x0cTransactTime\x18< \x01(\x03\x12\x0e\n\x06Symbol\x18\x37 \x01(\t\x12\x19\n\x10PositionOpenTime\x18\x8d\x0e \x01(\x03\x12\r\n\x05\x41vgPx\x18\x06 \x01(\t\x12\x0e\n\x06Volume\x18\x35 \x01(\t\x12\x0c\n\x04Side\x18\x36 \x01(\t\x12\x11\n\tSettlDate\x18@ \x01(\x03\x12\x13\n\nSettlPrice\x18\xda\x05 \x01(\t\x12\x18\n\x0fPriorSettlPrice\x18\xde\x05 \x01(\t\x12%\n\x1cPreviousClearingBusinessDate\x18\xbc\x08 \x01(\x03\x12\x1d\n\x14\x43learingBusinessDate\x18\xcb\x05 \x01(\x03\x12)\n\rMarginAmounts\x18\xeb\x0c \x03(\x0b\x32\x11.api.MarginAmount\x12 \n\x08Payments\x18\x94\xba\x02 \x03(\x0b\x32\x0c.api.Payment\x12)\n\rRelatedTrades\x18\xbf\x0e \x03(\x0b\x32\x11.api.RelatedTrade\"\xcd\x01\n\x12MassPositionReport\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04\x12\x14\n\x0cTransactTime\x18< \x01(\x03\x12+\n\rOpenPositions\x18\xd7\x05 \x03(\x0b\x32\x13.api.PositionReport\x12-\n\x0fPositionHistory\x18\xd6\x05 \x03(\x0b\x32\x13.api.PositionReport\x12\x15\n\x0cRejectReason\x18\xfc\x02 \x01(\t\x12\x0c\n\x04Text\x18: \x01(\t\"4\n\x10PositionsRequest\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04\"\x91\x01\n\x1aPositionMaintenanceRequest\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x11\n\x08PosReqID\x18\xc6\x05 \x01(\t\x12\x15\n\x0cPosTransType\x18\xc5\x05 \x01(\t\x12\x17\n\x0ePosMaintAction\x18\xe4\x36 \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04\x12\x0e\n\x06Symbol\x18\x37 \x01(\t\"\x90\x01\n\x19PositionMaintenanceReport\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x11\n\x08PosReqID\x18\xc6\x05 \x01(\t\x12\x15\n\x0cPosTransType\x18\xc5\x05 \x01(\t\x12\x17\n\x0ePosMaintAction\x18\xe4\x36 \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04\x12\x0e\n\x06Symbol\x18\x37 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x0fpositions.proto\x12\x03\x61pi\x1a\x0cmargin.proto\"\x81\x01\n\x07Payment\x12\"\n\x0bPaymentType\x18\x95\xba\x02 \x01(\tR\x0bpaymentType\x12*\n\x0fPaymentCurrency\x18\x98\xba\x02 \x01(\tR\x0fpaymentCurrency\x12&\n\rPaymentAmount\x18\x99\xba\x02 \x01(\tR\rpaymentAmount\"d\n\x0cRelatedTrade\x12\'\n\x0eRelatedTradeId\x18\xc0\x0e \x01(\tR\x0erelatedTradeId\x12+\n\x10RelatedTradeType\x18\xc1\x0e \x01(\tR\x10relatedTradeType\"\x94\x05\n\x0ePositionReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12+\n\x10PositionOpenTime\x18\x8d\x0e \x01(\x03R\x10positionOpenTime\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x16\n\x06Volume\x18\x35 \x01(\tR\x06volume\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1c\n\tSettlDate\x18@ \x01(\x03R\tsettlDate\x12\x1f\n\nSettlPrice\x18\xda\x05 \x01(\tR\nsettlPrice\x12)\n\x0fPriorSettlPrice\x18\xde\x05 \x01(\tR\x0fpriorSettlPrice\x12\x43\n\x1cPreviousClearingBusinessDate\x18\xbc\x08 \x01(\x03R\x1cpreviousClearingBusinessDate\x12\x33\n\x14\x43learingBusinessDate\x18\xcb\x05 \x01(\x03R\x14\x63learingBusinessDate\x12\x38\n\rMarginAmounts\x18\xeb\x0c \x03(\x0b\x32\x11.api.MarginAmountR\rmarginAmounts\x12*\n\x08Payments\x18\x94\xba\x02 \x03(\x0b\x32\x0c.api.PaymentR\x08payments\x12\x38\n\rRelatedTrades\x18\xbf\x0e \x03(\x0b\x32\x11.api.RelatedTradeR\rrelatedTrades\"\xbe\x02\n\x12MassPositionReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x1b\n\x08PosReqId\x18\xc6\x05 \x01(\tR\x08posReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12:\n\rOpenPositions\x18\xd7\x05 \x03(\x0b\x32\x13.api.PositionReportR\ropenPositions\x12>\n\x0fPositionHistory\x18\xd6\x05 \x03(\x0b\x32\x13.api.PositionReportR\x0fpositionHistory\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"c\n\x10PositionsRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x1b\n\x08PosReqId\x18\xc6\x05 \x01(\tR\x08posReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xd3\x01\n\x1aPositionMaintenanceRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x1b\n\x08PosReqId\x18\xc6\x05 \x01(\tR\x08posReqId\x12#\n\x0cPosTransType\x18\xc5\x05 \x01(\tR\x0cposTransType\x12\'\n\x0ePosMaintAction\x18\xe4\x36 \x01(\tR\x0eposMaintAction\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\"\xd2\x01\n\x19PositionMaintenanceReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x1b\n\x08PosReqId\x18\xc6\x05 \x01(\tR\x08posReqId\x12#\n\x0cPosTransType\x18\xc5\x05 \x01(\tR\x0cposTransType\x12\'\n\x0ePosMaintAction\x18\xe4\x36 \x01(\tR\x0eposMaintAction\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbolb\x06proto3')
   ,
   dependencies=[margin__pb2.DESCRIPTOR,])
 
@@ -40,21 +40,21 @@ _PAYMENT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='paymentType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PaymentCurrency', full_name='api.Payment.PaymentCurrency', index=1,
       number=40216, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='paymentCurrency', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PaymentAmount', full_name='api.Payment.PaymentAmount', index=2,
       number=40217, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='paymentAmount', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -67,8 +67,8 @@ _PAYMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=38,
-  serialized_end=122,
+  serialized_start=39,
+  serialized_end=168,
 )
 
 
@@ -80,19 +80,19 @@ _RELATEDTRADE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='RelatedTradeID', full_name='api.RelatedTrade.RelatedTradeID', index=0,
+      name='RelatedTradeId', full_name='api.RelatedTrade.RelatedTradeId', index=0,
       number=1856, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='relatedTradeId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='RelatedTradeType', full_name='api.RelatedTrade.RelatedTradeType', index=1,
       number=1857, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='relatedTradeType', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -105,8 +105,8 @@ _RELATEDTRADE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=124,
-  serialized_end=190,
+  serialized_start=170,
+  serialized_end=270,
 )
 
 
@@ -123,119 +123,119 @@ _POSITIONREPORT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Account', full_name='api.PositionReport.Account', index=1,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PositionID', full_name='api.PositionReport.PositionID', index=2,
+      name='PositionId', full_name='api.PositionReport.PositionId', index=2,
       number=2618, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='positionId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='TransactTime', full_name='api.PositionReport.TransactTime', index=3,
       number=60, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='transactTime', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Symbol', full_name='api.PositionReport.Symbol', index=4,
       number=55, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PositionOpenTime', full_name='api.PositionReport.PositionOpenTime', index=5,
       number=1805, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='positionOpenTime', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='AvgPx', full_name='api.PositionReport.AvgPx', index=6,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='avgPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Volume', full_name='api.PositionReport.Volume', index=7,
       number=53, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='volume', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Side', full_name='api.PositionReport.Side', index=8,
       number=54, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='side', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='SettlDate', full_name='api.PositionReport.SettlDate', index=9,
       number=64, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='settlDate', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='SettlPrice', full_name='api.PositionReport.SettlPrice', index=10,
       number=730, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='settlPrice', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PriorSettlPrice', full_name='api.PositionReport.PriorSettlPrice', index=11,
       number=734, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='priorSettlPrice', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PreviousClearingBusinessDate', full_name='api.PositionReport.PreviousClearingBusinessDate', index=12,
       number=1084, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='previousClearingBusinessDate', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ClearingBusinessDate', full_name='api.PositionReport.ClearingBusinessDate', index=13,
       number=715, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='clearingBusinessDate', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MarginAmounts', full_name='api.PositionReport.MarginAmounts', index=14,
       number=1643, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='marginAmounts', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Payments', full_name='api.PositionReport.Payments', index=15,
       number=40212, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='payments', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='RelatedTrades', full_name='api.PositionReport.RelatedTrades', index=16,
       number=1855, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='relatedTrades', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -248,8 +248,8 @@ _POSITIONREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=193,
-  serialized_end=630,
+  serialized_start=273,
+  serialized_end=933,
 )
 
 
@@ -266,49 +266,56 @@ _MASSPOSITIONREPORT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Account', full_name='api.MassPositionReport.Account', index=1,
+      name='PosReqId', full_name='api.MassPositionReport.PosReqId', index=1,
+      number=710, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='posReqId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.MassPositionReport.Account', index=2,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='TransactTime', full_name='api.MassPositionReport.TransactTime', index=2,
+      name='TransactTime', full_name='api.MassPositionReport.TransactTime', index=3,
       number=60, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='transactTime', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='OpenPositions', full_name='api.MassPositionReport.OpenPositions', index=3,
+      name='OpenPositions', full_name='api.MassPositionReport.OpenPositions', index=4,
       number=727, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='openPositions', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PositionHistory', full_name='api.MassPositionReport.PositionHistory', index=4,
+      name='PositionHistory', full_name='api.MassPositionReport.PositionHistory', index=5,
       number=726, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='positionHistory', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='RejectReason', full_name='api.MassPositionReport.RejectReason', index=5,
+      name='RejectReason', full_name='api.MassPositionReport.RejectReason', index=6,
       number=380, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='rejectReason', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Text', full_name='api.MassPositionReport.Text', index=6,
+      name='Text', full_name='api.MassPositionReport.Text', index=7,
       number=58, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='text', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -321,8 +328,8 @@ _MASSPOSITIONREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=633,
-  serialized_end=838,
+  serialized_start=936,
+  serialized_end=1254,
 )
 
 
@@ -339,14 +346,21 @@ _POSITIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Account', full_name='api.PositionsRequest.Account', index=1,
+      name='PosReqId', full_name='api.PositionsRequest.PosReqId', index=1,
+      number=710, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='posReqId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.PositionsRequest.Account', index=2,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -359,8 +373,8 @@ _POSITIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=840,
-  serialized_end=892,
+  serialized_start=1256,
+  serialized_end=1355,
 )
 
 
@@ -377,42 +391,42 @@ _POSITIONMAINTENANCEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PosReqID', full_name='api.PositionMaintenanceRequest.PosReqID', index=1,
+      name='PosReqId', full_name='api.PositionMaintenanceRequest.PosReqId', index=1,
       number=710, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='posReqId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PosTransType', full_name='api.PositionMaintenanceRequest.PosTransType', index=2,
       number=709, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='posTransType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PosMaintAction', full_name='api.PositionMaintenanceRequest.PosMaintAction', index=3,
       number=7012, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='posMaintAction', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Account', full_name='api.PositionMaintenanceRequest.Account', index=4,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Symbol', full_name='api.PositionMaintenanceRequest.Symbol', index=5,
       number=55, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -425,8 +439,8 @@ _POSITIONMAINTENANCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=895,
-  serialized_end=1040,
+  serialized_start=1358,
+  serialized_end=1569,
 )
 
 
@@ -443,42 +457,42 @@ _POSITIONMAINTENANCEREPORT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PosReqID', full_name='api.PositionMaintenanceReport.PosReqID', index=1,
+      name='PosReqId', full_name='api.PositionMaintenanceReport.PosReqId', index=1,
       number=710, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='posReqId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PosTransType', full_name='api.PositionMaintenanceReport.PosTransType', index=2,
       number=709, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='posTransType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PosMaintAction', full_name='api.PositionMaintenanceReport.PosMaintAction', index=3,
       number=7012, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='posMaintAction', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Account', full_name='api.PositionMaintenanceReport.Account', index=4,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Symbol', full_name='api.PositionMaintenanceReport.Symbol', index=5,
       number=55, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -491,8 +505,8 @@ _POSITIONMAINTENANCEREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1043,
-  serialized_end=1187,
+  serialized_start=1572,
+  serialized_end=1782,
 )
 
 _POSITIONREPORT.fields_by_name['MarginAmounts'].message_type = margin__pb2._MARGINAMOUNT

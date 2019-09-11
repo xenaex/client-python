@@ -25,7 +25,7 @@ setup(
     author_email='',
     install_requires=[
         'requests', 'six', 'pyOpenSSL', 'service-identity', 'dateparser', 'urllib3', 'chardet', 'certifi',
-        'cryptography', 'aiohttp', 'ecdsa', 'protobuf'
+        'cryptography', 'aiohttp', 'ecdsa', 'protobuf', 'simplejson'
     ],
     keywords='xena exchange api bitcoin ethereum btc eth neo',
     classifiers=[

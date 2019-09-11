@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cmargin.proto\x12\x03\x61pi\"Q\n\x0cMarginAmount\x12\x12\n\tMarginAmt\x18\xed\x0c \x01(\t\x12\x16\n\rMarginAmtType\x18\xec\x0c \x01(\t\x12\x15\n\x0cMarginAmtCcy\x18\xee\x0c \x01(\t\"\xa8\x01\n\x17MarginRequirementReport\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x1b\n\x12MarginReqmtRptType\x18\xc7\x0e \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04\x12)\n\rMarginAmounts\x18\xeb\x0c \x03(\x0b\x32\x11.api.MarginAmount\x12\x15\n\x0cRejectReason\x18\xfc\x02 \x01(\t\x12\x0c\n\x04Text\x18: \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x0cmargin.proto\x12\x03\x61pi\"y\n\x0cMarginAmount\x12\x1d\n\tMarginAmt\x18\xed\x0c \x01(\tR\tmarginAmt\x12%\n\rMarginAmtType\x18\xec\x0c \x01(\tR\rmarginAmtType\x12#\n\x0cMarginAmtCcy\x18\xee\x0c \x01(\tR\x0cmarginAmtCcy\"\xab\x02\n\x17MarginRequirementReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\x12/\n\x12MarginReqmtRptType\x18\xc7\x0e \x01(\tR\x12marginReqmtRptType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\rMarginAmounts\x18\xeb\x0c \x03(\x0b\x32\x11.api.MarginAmountR\rmarginAmounts\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04textb\x06proto3')
 )
 
 
@@ -38,21 +38,21 @@ _MARGINAMOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='marginAmt', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MarginAmtType', full_name='api.MarginAmount.MarginAmtType', index=1,
       number=1644, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='marginAmtType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MarginAmtCcy', full_name='api.MarginAmount.MarginAmtCcy', index=2,
       number=1646, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='marginAmtCcy', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -66,7 +66,7 @@ _MARGINAMOUNT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=21,
-  serialized_end=102,
+  serialized_end=142,
 )
 
 
@@ -83,42 +83,49 @@ _MARGINREQUIREMENTREPORT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MarginReqmtRptType', full_name='api.MarginRequirementReport.MarginReqmtRptType', index=1,
+      name='AccountStatusRequestId', full_name='api.MarginRequirementReport.AccountStatusRequestId', index=1,
+      number=42513, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='accountStatusRequestId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MarginReqmtRptType', full_name='api.MarginRequirementReport.MarginReqmtRptType', index=2,
       number=1863, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='marginReqmtRptType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Account', full_name='api.MarginRequirementReport.Account', index=2,
+      name='Account', full_name='api.MarginRequirementReport.Account', index=3,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MarginAmounts', full_name='api.MarginRequirementReport.MarginAmounts', index=3,
+      name='MarginAmounts', full_name='api.MarginRequirementReport.MarginAmounts', index=4,
       number=1643, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='marginAmounts', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='RejectReason', full_name='api.MarginRequirementReport.RejectReason', index=4,
+      name='RejectReason', full_name='api.MarginRequirementReport.RejectReason', index=5,
       number=380, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='rejectReason', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Text', full_name='api.MarginRequirementReport.Text', index=5,
+      name='Text', full_name='api.MarginRequirementReport.Text', index=6,
       number=58, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='text', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -131,8 +138,8 @@ _MARGINREQUIREMENTREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=105,
-  serialized_end=273,
+  serialized_start=145,
+  serialized_end=444,
 )
 
 _MARGINREQUIREMENTREPORT.fields_by_name['MarginAmounts'].message_type = _MARGINAMOUNT

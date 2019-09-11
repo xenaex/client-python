@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0c\x63ommon.proto\x12\x03\x61pi\" \n\rMsgTypeHeader\x12\x0f\n\x07MsgType\x18# \x01(\t\"E\n\tHeartbeat\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x11\n\tTestReqID\x18p \x01(\t\x12\x14\n\x0cTransactTime\x18< \x01(\x03\x62\x06proto3')
+  serialized_pb=_b('\n\x0c\x63ommon.proto\x12\x03\x61pi\" \n\rMsgTypeHeader\x12\x0f\n\x07MsgType\x18# \x01(\t\"E\n\tHeartbeat\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x11\n\tTestReqId\x18p \x01(\t\x12\x14\n\x0cTransactTime\x18< \x01(\x03\x62\x06proto3')
 )
 
 
@@ -71,7 +71,7 @@ _HEARTBEAT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='TestReqID', full_name='api.Heartbeat.TestReqID', index=1,
+      name='TestReqId', full_name='api.Heartbeat.TestReqId', index=1,
       number=112, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,

@@ -4,6 +4,12 @@ import xena.proto.order_pb2 as order_pb2
 import xena.proto.constants as constants
 
 
+def is_margin(account):
+    if account > 1000000000:
+        return True
+    return False
+
+
 def cancel_from_execution_report(cancel_id, execution_report):
     """Create OrderCancelRequest from given execution report
     For more info about OrderCancelRequest look at https://support.xena.exchange/support/solutions/articles/44000222082-ws-trading-api#order_cancel_request
@@ -125,7 +131,7 @@ def mit_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs)
 def for_position(cmd, position_id):
     """ Helper to make order for position close"""
 
-    cmd.PositionID = position_id
+    cmd.PositionId = position_id
     cmd.PositionEffect = constants.PositionEffect_Close
 
 def add_stop_loss(cmd, stop_price):

@@ -1,4 +1,4 @@
-import json
+import simplejson as json
 import google.protobuf.descriptor as descriptor
 
 import xena.proto.constants as constants
@@ -43,7 +43,6 @@ TYPES = {
     constants.MsgType_Heartbeat: common_pb2.Heartbeat
 }
 
-
 def to_json(msg):
     """Convert protobuf message to json string"""
 
@@ -52,35 +51,78 @@ def to_json(msg):
     return json.dumps(result)
 
 
-def _read_from(result, msg):
+def to_fix_json(msg):
+    """Convert protobuf message to json string with fix protocol fields"""
+
+    result = {}
+    _read_from(result, msg, use_fix=True)
+    return json.dumps(result, separators=(',', ':'))
+
+
+def _read_from(result, msg, use_fix=False):
     for field in msg.DESCRIPTOR.fields:
         value = getattr(msg, field.name)
+        field_name = _get_field_name(field, use_fix)
         if field.type == descriptor.FieldDescriptor.TYPE_MESSAGE:
             if field.label == descriptor.FieldDescriptor.LABEL_REPEATED:
                 if value:
-                    result[field.number] = []
+                    result[field_name] = []
                     for in_value in value:
                         in_result = {}
-                        _read_from(in_result, in_value)
-                        result[field.number].append(in_result)
+                        _read_from(in_result, in_value, use_fix)
+                        result[field_name].append(in_result)
             else:
                 if value != field.default_value:
-                    result[field.number] = {}
-                    _read_from(result[field.number], value)
+                    result[field_name] = {}
+                    _read_from(result[field_name], value, use_fix)
         else:
             if field.label == descriptor.FieldDescriptor.LABEL_REPEATED:
                 if value:
-                    result[field.number] = []
+                    result[field_name] = []
                     for in_value in value:
-                        result[field.number].append(in_value)
+                        result[field_name].append(in_value)
             else:
                 if value != field.default_value:
-                    result[field.number] = value
-
+                    result[field_name] = value
 
 
 def from_json(raw_data):
     """Convert json string to protobuf message"""
+
+    data = json.loads(raw_data)
+    if isinstance(data, list):
+        result = []
+        for element in data:
+            if isinstance(element, dict):
+                result.append(from_dict(element))
+            else:
+                return data
+
+        return result
+
+    return from_dict(data)
+
+
+def from_dict(data):
+    """Convert dict to protobuf message"""
+
+    if "msgType" in data:
+        if data["msgType"] == constants.MsgType_UnknownMsgType:
+            raise exceptions.UnknownMsgTypeException(constants.MsgType_UnknownMsgType)
+
+        msg_type = data["msgType"]
+        if msg_type not in TYPES or TYPES[msg_type] is None:
+            raise exceptions.UnknownMsgTypeException(msg_type)
+
+        msg = TYPES[msg_type]()
+        _fill_from(msg, data)
+        return msg
+
+    return data
+
+
+def from_fix_json(raw_data):
+    """Convert json string with fix protocol names to protobuf message"""
 
     data = json.loads(raw_data)
 
@@ -92,27 +134,37 @@ def from_json(raw_data):
         raise exceptions.UnknownMsgTypeException(msg_type)
 
     msg = TYPES[msg_type]()
-    _fill_from(msg, data)
+    _fill_from(msg, data, use_fix=True)
 
     return msg
 
-def _fill_from(msg, data):
+def _fill_from(msg, data, use_fix=False):
     for field in msg.DESCRIPTOR.fields:
-        num = str(field.number)
-        if num in data:
-            value = data[num]
+        field_name = _get_field_name(field, use_fix)
+        if field_name in data:
+            value = data[field_name]
             if field.type == descriptor.FieldDescriptor.TYPE_MESSAGE:
                 if field.label == descriptor.FieldDescriptor.LABEL_REPEATED:
                     for in_value in value:
                         attr = getattr(msg, field.name).add()
-                        _fill_from(attr, in_value)
+                        _fill_from(attr, in_value, use_fix)
                 else:
                     attr = getattr(msg, field.name)
-                    _fill_from(attr, value)
+                    _fill_from(attr, value, use_fix)
             else:
                 if field.label == descriptor.FieldDescriptor.LABEL_REPEATED:
                     attr = getattr(msg, field.name)
                     for in_value in value:
                         attr.append(in_value)
                 else:
-                    setattr(msg, field.name, data[num])
+                    setattr(msg, field.name, data[field_name])
+
+
+def _get_field_name(field, use_fix=False):
+    if use_fix:
+        return str(field.number)
+
+    if hasattr(field, "json_name"):
+        return field.json_name
+
+    return field.name

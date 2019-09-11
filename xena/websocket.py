@@ -35,7 +35,7 @@ class WebsocketClient:
     async def _heartbeat(self, interval):
         heartbeat = common_pb2.Heartbeat()
         heartbeat.MsgType = constants.MsgType_Heartbeat
-        data = serialization.to_json(heartbeat)
+        data = serialization.to_fix_json(heartbeat)
 
         try:
             while True:
@@ -60,7 +60,7 @@ class WebsocketClient:
                 await self._socket.send(self._login_msg_fnc())
 
             evt = await self._socket.recv()
-            logon = serialization.from_json(evt)
+            logon = serialization.from_fix_json(evt)
             if logon.MsgType != constants.MsgType_LogonMsgType:
                 raise exceptions.LoginException('Got "{}" message instead of login'.format(logon.MsgType))
 
@@ -122,9 +122,9 @@ class XenaMDWebsocketClient(WebsocketClient):
 
     async def _handle(self, msg):
         try:
-            msg = serialization.from_json(msg)
+            msg = serialization.from_fix_json(msg)
             if msg.MsgType in self._md_response_types:
-                await self._streams[msg.MDStreamID](self, msg)
+                await self._streams[msg.MDStreamId](self, msg)
         except Exception as e:
             self._log.debug('handle exception: %s', e)
 
@@ -155,12 +155,12 @@ class XenaMDWebsocketClient(WebsocketClient):
         request = market_pb2.MarketDataRequest()
         request.MsgType = constants.MsgType_MarketDataRequest
         request.SubscriptionRequestType = constants.SubscriptionRequestType_SnapshotAndUpdates
-        request.MDStreamID = stream_id
+        request.MDStreamId = stream_id
         request.ThrottleType = constants.ThrottleType_OutstandingRequests
         request.ThrottleTimeInterval = throttle_interval
         request.ThrottleTimeUnit = throttle_unit
 
-        data = serialization.to_json(request)
+        data = serialization.to_fix_json(request)
         await self.send(data)
 
         self._streams[stream_id] = callback
@@ -178,9 +178,9 @@ class XenaMDWebsocketClient(WebsocketClient):
         request = market_pb2.MarketDataRequest()
         request.MsgType = constants.MsgType_MarketDataRequest
         request.SubscriptionRequestType = constants.SubscriptionRequestType_DisablePreviousSnapshot
-        request.MDStreamID = stream_id
+        request.MDStreamId = stream_id
 
-        data = serialization.to_json(request)
+        data = serialization.to_fix_json(request)
         await self.send(data)
         del self._streams[stream_id]
 
@@ -311,11 +311,11 @@ class XenaTradingWebsocketClient(WebsocketClient):
         msg.RawData = auth_payload
         msg.Username = self._api_key
         msg.Password = signing_key.sign(auth_payload.encode('utf-8'), hashfunc=sha256).hex()
-        return serialization.to_json(msg)
+        return serialization.to_fix_json(msg)
 
     async def _handle(self, msg):
         try:
-            msg = serialization.from_json(msg)
+            msg = serialization.from_fix_json(msg)
             if msg.MsgType in self._listeners:
                 await self._listeners[msg.MsgType](self, msg)
 
@@ -380,9 +380,9 @@ class XenaTradingWebsocketClient(WebsocketClient):
         if not hasattr(cmd, "DESCRIPTOR"):
             raise ValueError("Command has to be protobuf object")
 
-        await self.send(serialization.to_json(cmd))
+        await self.send(serialization.to_fix_json(cmd))
 
-    async def account_status_report(self, account):
+    async def account_status_report(self, account, request_id=""):
         """Request balances and margin requirements for :account
         To receive respose, client has to listen constants.MsgType_AccountStatusReport and 
         constants.MsgType_MarginRequirementReport for getting margin requirements report
@@ -393,10 +393,11 @@ class XenaTradingWebsocketClient(WebsocketClient):
 
         cmd = balance_pb2.AccountStatusReportRequest()
         cmd.MsgType = constants.MsgType_AccountStatusReportRequest
+        cmd.AccountStatusRequestId = request_id
         cmd.Account = account
         await self.send_cmd(cmd)
 
-    async def positions(self, account):
+    async def positions(self, account, request_id=""):
         """Request all position for :account
         To receive respose, client has to listen constants.MsgType_MassPositionReport
 
@@ -406,10 +407,11 @@ class XenaTradingWebsocketClient(WebsocketClient):
 
         cmd = positions_pb2.PositionsRequest()
         cmd.MsgType = constants.MsgType_RequestForPositions
+        cmd.PosReqId = request_id
         cmd.Account = account
         await self.send_cmd(cmd)
 
-    async def orders(self, account):
+    async def orders(self, account, request_id=""):
         """Request all orders for :account
         To receive respose, client has to listen constants.MsgType_MassPositionReport
 
@@ -419,6 +421,7 @@ class XenaTradingWebsocketClient(WebsocketClient):
 
         cmd = order_pb2.OrderStatusRequest()
         cmd.MsgType = constants.MsgType_OrderMassStatusRequest
+        cmd.MassStatusReqId = request_id
         cmd.Account = account
         await self.send_cmd(cmd)
 
@@ -493,7 +496,7 @@ class XenaTradingWebsocketClient(WebsocketClient):
         cmd.MsgType = constants.MsgType_PositionMaintenanceRequest
         cmd.Symbol = symbol
         cmd.Account = account
-        cmd.PosReqID = request_id
+        cmd.PosReqId = request_id
         cmd.PosTransType = constants.PosTransType_Collapse
         cmd.PosMaintAction = constants.PosMaintAction_Replace
         await self.send_cmd(cmd)
