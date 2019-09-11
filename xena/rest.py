@@ -18,8 +18,8 @@ import xena.exceptions as exceptions
 
 class XenaTradingClient:
 
-    URL = 'https://api.xena.exchange/trading'
-    #  URL = 'http://localhost:8130/trading'
+    #  URL = 'https://api.xena.exchange/trading'
+    URL = 'http://localhost:8130/trading'
 
     def __init__(self, api_key, api_secret, loop):
         #  super().__init__(loop, self._handle, self.URL)
@@ -136,7 +136,7 @@ class XenaTradingClient:
         cmd.PosReqId = request_id
         cmd.PosTransType = constants.PosTransType_Collapse
         cmd.PosMaintAction = constants.PosMaintAction_Replace
-        return await self._post('/positions/collapse', data=serialization.to_json(cmd))
+        return await self._post('/position/maintenance', data=serialization.to_json(cmd))
     
     async def positions(self, account):
         """Request list of open positions for :account
