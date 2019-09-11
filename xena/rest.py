@@ -251,6 +251,9 @@ class XenaTradingClient:
         :returns: list of int
         """
 
-        return await self._get('/accounts')
-
-
+        response = await self._get('/accounts')
+        result = []
+        for item in response['accounts']:
+            result.append(item['id'])
+        
+        return result

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\nauth.proto\x12\x03\x61pi\"\xb6\x01\n\x05Logon\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x12\n\nHeartBtInt\x18l \x01(\x05\x12\x13\n\nRejectText\x18\xb0\n \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x03(\x04\x12\x13\n\x0bSendingTime\x18\x34 \x01(\x03\x12\x16\n\rCstmApplVerId\x18\xe9\x08 \x01(\t\x12\x11\n\x08Username\x18\xa9\x04 \x01(\t\x12\x11\n\x08Password\x18\xaa\x04 \x01(\t\x12\x0f\n\x07RawData\x18` \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\nauth.proto\x12\x03\x61pi\"\xb6\x01\n\x05Logon\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x12\n\nHeartBtInt\x18l \x01(\x05\x12\x13\n\nRejectText\x18\xb0\n \x01(\t\x12\x0f\n\x07\x41\x63\x63ount\x18\x01 \x03(\x04\x12\x13\n\x0bSendingTime\x18\x34 \x01(\x03\x12\x16\n\rCstmApplVerId\x18\xe9\x08 \x01(\t\x12\x11\n\x08Username\x18\xa9\x04 \x01(\t\x12\x11\n\x08Password\x18\xaa\x04 \x01(\t\x12\x0f\n\x07RawData\x18` \x01(\t\"M\n\x0b\x41\x63\x63ountInfo\x12\x0e\n\x02Id\x18\x01 \x01(\x04R\x02id\x12\x12\n\x04Kind\x18\x02 \x01(\tR\x04kind\x12\x1a\n\x08\x43urrency\x18\x03 \x01(\tR\x08\x63urrencyb\x06proto3')
 )
 
 
@@ -111,7 +111,53 @@ _LOGON = _descriptor.Descriptor(
   serialized_end=202,
 )
 
+
+_ACCOUNTINFO = _descriptor.Descriptor(
+  name='AccountInfo',
+  full_name='api.AccountInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Id', full_name='api.AccountInfo.Id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Kind', full_name='api.AccountInfo.Kind', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='kind', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Currency', full_name='api.AccountInfo.Currency', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='currency', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=204,
+  serialized_end=281,
+)
+
 DESCRIPTOR.message_types_by_name['Logon'] = _LOGON
+DESCRIPTOR.message_types_by_name['AccountInfo'] = _ACCOUNTINFO
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Logon = _reflection.GeneratedProtocolMessageType('Logon', (_message.Message,), dict(
@@ -120,6 +166,13 @@ Logon = _reflection.GeneratedProtocolMessageType('Logon', (_message.Message,), d
   # @@protoc_insertion_point(class_scope:api.Logon)
   ))
 _sym_db.RegisterMessage(Logon)
+
+AccountInfo = _reflection.GeneratedProtocolMessageType('AccountInfo', (_message.Message,), dict(
+  DESCRIPTOR = _ACCOUNTINFO,
+  __module__ = 'auth_pb2'
+  # @@protoc_insertion_point(class_scope:api.AccountInfo)
+  ))
+_sym_db.RegisterMessage(AccountInfo)
 
 
 # @@protoc_insertion_point(module_scope)
