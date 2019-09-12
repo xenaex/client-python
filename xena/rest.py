@@ -220,6 +220,7 @@ class XenaTradingClient:
 
         return await self._get('/accounts/' + str(account) + '/trade-history', params={
             "trade_id": trade_id,
+            "client_order_id": client_order_id,
             "symbol": symbol,
             "from": ts_from,
             "to": ts_to,
