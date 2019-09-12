@@ -18,8 +18,8 @@ import xena.exceptions as exceptions
 
 class XenaTradingClient:
 
-    URL = 'https://api.xena.exchange/trading'
-    #  URL = 'http://localhost:8130/trading'
+    #  URL = 'https://api.xena.exchange/trading'
+    URL = 'http://localhost:8130/trading'
 
     def __init__(self, api_key, api_secret, loop):
         #  super().__init__(loop, self._handle, self.URL)
@@ -181,7 +181,9 @@ class XenaTradingClient:
             "openfrom": open_ts_from,
             "opento": open_ts_to,
             "closefrom": close_ts_from,
-            "closeto": close_ts_to
+            "closeto": close_ts_to,
+            "page": page,
+            "limit": limit
         })
     
     async def orders(self, account):
