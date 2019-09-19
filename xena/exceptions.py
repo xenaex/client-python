@@ -16,7 +16,10 @@ class RequestException(Exception):
         self.error = None
         try:
             json_res = json.loads(text)
-            self.error = json_res['error']
+            if 'error' in json_res:
+                self.error = json_res['error']
+            if '1328' in json_res:
+                self.error = json_res['1328']
         except Exception:
             pass
 

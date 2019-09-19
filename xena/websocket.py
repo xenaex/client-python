@@ -60,7 +60,7 @@ class WebsocketClient:
                 await self._socket.send(self._login_msg_fnc())
 
             evt = await self._socket.recv()
-            logon = serialization.from_fix_json(evt)
+            logon = serialization.from_json(evt)
             if logon.MsgType != constants.MsgType_LogonMsgType:
                 raise exceptions.LoginException('Got "{}" message instead of login'.format(logon.MsgType))
 
@@ -107,7 +107,7 @@ class XenaMDWebsocketClient(WebsocketClient):
     """
 
     URL = 'wss://api.xena.exchange/ws/market-data'
-    #  URL = 'ws://localhost:8110/api/ws/market-data'
+    #  URL = 'ws://localhost/api/ws/market-data'
 
     def __init__(self, loop):
         super().__init__(loop, self._handle, self.URL)
@@ -122,7 +122,7 @@ class XenaMDWebsocketClient(WebsocketClient):
 
     async def _handle(self, msg):
         try:
-            msg = serialization.from_fix_json(msg)
+            msg = serialization.from_json(msg)
             if msg.MsgType in self._md_response_types:
                 await self._streams[msg.MDStreamId](self, msg)
         except Exception as e:
@@ -290,7 +290,7 @@ class XenaTradingWebsocketClient(WebsocketClient):
     """
 
     URL = 'wss://api.xena.exchange/ws/trading'
-    #  URL = 'ws://localhost:8120/api/ws/trading'
+    #  URL = 'ws://localhost/api/ws/trading'
 
     def __init__(self, api_key, api_secret, loop):
         super().__init__(loop, self._handle, self.URL)
@@ -315,7 +315,7 @@ class XenaTradingWebsocketClient(WebsocketClient):
 
     async def _handle(self, msg):
         try:
-            msg = serialization.from_fix_json(msg)
+            msg = serialization.from_json(msg)
             if msg.MsgType in self._listeners:
                 await self._listeners[msg.MsgType](self, msg)
 

@@ -62,7 +62,9 @@ def to_fix_json(msg):
 def _read_from(result, msg, use_fix=False):
     for field in msg.DESCRIPTOR.fields:
         value = getattr(msg, field.name)
-        field_name = _get_field_name(field, use_fix)
+        field_name, field_number = _get_field_name(field)
+        if use_fix:
+            field_name = field_number
         if field.type == descriptor.FieldDescriptor.TYPE_MESSAGE:
             if field.label == descriptor.FieldDescriptor.LABEL_REPEATED:
                 if value:
@@ -86,85 +88,81 @@ def _read_from(result, msg, use_fix=False):
                     result[field_name] = value
 
 
-def from_json(raw_data):
-    """Convert json string to protobuf message"""
+def from_json(raw_data, to=None):
+    """Convert json string to protobuf message or dict"""
 
     data = json.loads(raw_data)
     if isinstance(data, list):
         result = []
         for element in data:
             if isinstance(element, dict):
-                result.append(from_dict(element))
+                result.append(from_dict(element, to))
             else:
                 return data
 
         return result
 
-    return from_dict(data)
+    return from_dict(data, to)
 
 
-def from_dict(data):
+def from_dict(data, msg=None):
     """Convert dict to protobuf message"""
 
+    msg_type = None
     if "msgType" in data:
-        if data["msgType"] == constants.MsgType_UnknownMsgType:
+        msg_type = data["msgType"]
+
+    if "35" in data:
+        msg_type = data["35"]
+
+    if msg_type is not None:
+        if msg_type == constants.MsgType_UnknownMsgType:
             raise exceptions.UnknownMsgTypeException(constants.MsgType_UnknownMsgType)
 
-        msg_type = data["msgType"]
         if msg_type not in TYPES or TYPES[msg_type] is None:
             raise exceptions.UnknownMsgTypeException(msg_type)
 
         msg = TYPES[msg_type]()
+
+    if msg is not None:
         _fill_from(msg, data)
         return msg
 
     return data
 
 
-def from_fix_json(raw_data):
-    """Convert json string with fix protocol names to protobuf message"""
-
-    data = json.loads(raw_data)
-
-    if "35" not in data or data["35"] == constants.MsgType_UnknownMsgType:
-        raise exceptions.UnknownMsgTypeException(constants.MsgType_UnknownMsgType)
-
-    msg_type = data["35"]
-    if msg_type not in TYPES or TYPES[msg_type] is None:
-        raise exceptions.UnknownMsgTypeException(msg_type)
-
-    msg = TYPES[msg_type]()
-    _fill_from(msg, data, use_fix=True)
-
-    return msg
-
-def _fill_from(msg, data, use_fix=False):
+def _fill_from(msg, data):
     for field in msg.DESCRIPTOR.fields:
-        field_name = _get_field_name(field, use_fix)
+        field_name, field_number = _get_field_name(field)
+        value = None
         if field_name in data:
             value = data[field_name]
+        if field_number in data:
+            value = data[field_number]
+        if value is not None:
             if field.type == descriptor.FieldDescriptor.TYPE_MESSAGE:
-                if field.label == descriptor.FieldDescriptor.LABEL_REPEATED:
+                if field.message_type.GetOptions().map_entry:
+                    attr = getattr(msg, field.name)
+                    for key, value in value.items():
+                        attr[key] = value
+                elif field.label == descriptor.FieldDescriptor.LABEL_REPEATED:
                     for in_value in value:
                         attr = getattr(msg, field.name).add()
-                        _fill_from(attr, in_value, use_fix)
+                        _fill_from(attr, in_value)
                 else:
                     attr = getattr(msg, field.name)
-                    _fill_from(attr, value, use_fix)
+                    _fill_from(attr, value)
             else:
                 if field.label == descriptor.FieldDescriptor.LABEL_REPEATED:
                     attr = getattr(msg, field.name)
                     for in_value in value:
                         attr.append(in_value)
                 else:
-                    setattr(msg, field.name, data[field_name])
+                    setattr(msg, field.name, value)
 
 
-def _get_field_name(field, use_fix=False):
-    if use_fix:
-        return str(field.number)
-
+def _get_field_name(field):
     if hasattr(field, "json_name"):
-        return field.json_name
+        return field.json_name, str(field.number)
 
-    return field.name
+    return field.name, str(field.number)

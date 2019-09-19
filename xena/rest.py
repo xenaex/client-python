@@ -10,57 +10,125 @@ import xena.proto.auth_pb2 as auth_pb2
 import xena.proto.order_pb2 as order_pb2
 import xena.proto.positions_pb2 as positions_pb2
 import xena.proto.balance_pb2 as balance_pb2
+import xena.proto.common_pb2 as common_pb2
 import xena.proto.constants as constants
 import xena.serialization as serialization
 import xena.helpers as helpers
 import xena.exceptions as exceptions
 
 
-class XenaTradingClient:
+class XenaClient:
 
-    #  URL = 'https://api.xena.exchange/trading'
-    URL = 'http://localhost:8130/trading'
-
-    def __init__(self, api_key, api_secret, loop):
-        #  super().__init__(loop, self._handle, self.URL)
-
-        self._api_key = api_key
-        self._api_secret = api_secret
+    def __init__(self, url, loop):
         self._log = logging.getLogger(__name__)
         self._loop = loop
+        self._url = url
 
     def _get_headers(self):
-        timestamp = int(time.time() * 1000000000)
-        auth_payload = 'AUTH' + str(timestamp)
-        signing_key = SigningKey.from_der(bytes.fromhex(self._api_secret))
-
         return {
             'Accept': 'application/json',
-            'User-Agent': 'xena/python',
-            'X-Auth-Api-Key': self._api_key,
-            'X-Auth-Api-Payload': auth_payload,
-            'X-Auth-Api-Signature': signing_key.sign(auth_payload.encode('utf-8'), hashfunc=sha256).hex(),
-            'X-Auth-Api-Nonce': str(timestamp), 
+            'User-Agent': 'xena/python'
         }
 
     async def _request(self, method, path, **kwargs):
         uri = self.URL + path 
+        msg = kwargs.pop('msg', None)
         kwargs['headers'] = self._get_headers()
         async with aiohttp.ClientSession(loop=self._loop) as session:
             async with getattr(session, method)(uri, **kwargs) as response:
-                return await self._handle_response(response)
+                return await self._handle_response(response, msg)
 
-    async def _handle_response(self, response):
+    async def _handle_response(self, response, msg=None):
         if not str(response.status).startswith('2'):
             raise exceptions.RequestException(response, response.status, await response.text())
 
-        return serialization.from_json(await response.text())
+        return serialization.from_json(await response.text(), to=msg)
 
     async def _get(self, path, **kwargs):
         return await self._request('get', path, **kwargs)
 
     async def _post(self, path, **kwargs):
         return await self._request('post', path, **kwargs)
+
+
+class XenaMDClient(XenaClient):
+
+    URL = 'https://api.xena.exchange'
+    #  URL = 'http://localhost/api'
+
+    def __init__(self, loop):
+        super().__init__(self.URL, loop)
+        self._log = logging.getLogger(__name__)
+
+    async def candles(self, symbol, timeframe='1m', ts_from="", ts_to=""):
+        """Get candles for :symbol with :timeframe from :ts_from to :ts_to,
+        if :ts_from or :ts_to not supplied it will return last 2 candles
+
+        :param symbol: required
+        :type symbol: str
+        :param timeframe: timeframe of bars
+        :type timeframe: str '1m', '15m' '30m', '1h', '3h', '6h', '24h'
+        :param ts_from: show candles from
+        :type ts_from: int unixtimestamp
+        :param ts_from: show candles to
+        :type ts_to: int unixtimestamp
+
+        :returns: xena.proto.MarketDataRefresh
+        """
+
+        return await self._get('/market-data/candles/'+symbol+'/'+timeframe, msg=market_pb2.MarketDataRefresh(), params={
+            "from": ts_from,
+            "to": ts_to,
+        })
+    
+    async def dom(self, symbol, aggr=0):
+        """Get L2 snapshot for :symbol 
+
+        :param symbol: required
+        :type symbol: str
+        :param aggr: aggregate leveles 
+        :type timeframe: int [0,5,10,25,50,100,250]
+
+        :returns: xena.proto.MarketDataRefresh
+        """
+
+        return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh(), params={
+            "aggr": aggr
+        })
+    
+    async def instruments(self):
+        """Get list of instruments""" 
+
+        return await self._get('/public/instruments', msg=common_pb2.Instrument())
+
+
+
+class XenaTradingClient(XenaClient):
+
+    URL = 'https://api.xena.exchange/trading'
+    #  URL = 'http://localhost/api/trading'
+
+    def __init__(self, api_key, api_secret, loop):
+        super().__init__(self.URL, loop)
+
+        self._api_key = api_key
+        self._api_secret = api_secret
+        self._log = logging.getLogger(__name__)
+
+    def _get_headers(self):
+        timestamp = int(time.time() * 1000000000)
+        auth_payload = 'AUTH' + str(timestamp)
+        signing_key = SigningKey.from_der(bytes.fromhex(self._api_secret))
+
+        headers = super()._get_headers()
+        headers.update({
+            'X-Auth-Api-Key': self._api_key,
+            'X-Auth-Api-Payload': auth_payload,
+            'X-Auth-Api-Signature': signing_key.sign(auth_payload.encode('utf-8'), hashfunc=sha256).hex(),
+            'X-Auth-Api-Nonce': str(timestamp), 
+        })
+        
+        return headers
 
     async def order(self, cmd):
         return await self._post('/order/new', data=serialization.to_json(cmd))

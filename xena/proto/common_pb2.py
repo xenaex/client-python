@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0c\x63ommon.proto\x12\x03\x61pi\" \n\rMsgTypeHeader\x12\x0f\n\x07MsgType\x18# \x01(\t\"E\n\tHeartbeat\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x11\n\tTestReqId\x18p \x01(\t\x12\x14\n\x0cTransactTime\x18< \x01(\x03\x62\x06proto3')
+  serialized_pb=_b('\n\x0c\x63ommon.proto\x12\x03\x61pi\" \n\rMsgTypeHeader\x12\x0f\n\x07MsgType\x18# \x01(\t\"E\n\tHeartbeat\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x11\n\tTestReqId\x18p \x01(\t\x12\x14\n\x0cTransactTime\x18< \x01(\x03\"\xfd\n\n\nInstrument\x12\x0e\n\x02ID\x18\x01 \x01(\tR\x02id\x12\x12\n\x04Type\x18\x02 \x01(\tR\x04type\x12\x16\n\x06Symbol\x18\x03 \x01(\tR\x06symbol\x12&\n\x10\x42\x61seCurrencyName\x18\x04 \x01(\tR\x0c\x62\x61seCurrency\x12(\n\x11QuoteCurrencyName\x18\x05 \x01(\tR\rquoteCurrency\x12(\n\x11SettlCurrencyName\x18\x06 \x01(\tR\rsettlCurrency\x12\x1a\n\x08TickSize\x18\x07 \x01(\x05R\x08tickSize\x12%\n\x0bMinOrderQty\x18\x08 \x01(\tR\x10minOrderQuantity\x12\"\n\x0cOrderQtyStep\x18\t \x01(\tR\x0corderQtyStep\x12\x34\n\x15LimitOrderMaxDistance\x18\n \x01(\tR\x15limitOrderMaxDistance\x12&\n\x0ePriceInputMask\x18\x0b \x01(\tR\x0epriceInputMask\x12\x18\n\x07Indexes\x18\x0c \x03(\tR\x07indexes\x12\x18\n\x07\x45nabled\x18\r \x01(\x08R\x07\x65nabled\x12\x36\n\x16LiquidationMaxDistance\x18\x0e \x01(\tR\x16liquidationMaxDistance\x12$\n\rContractValue\x18\x0f \x01(\tR\rcontractValue\x12*\n\x10\x43ontractCurrency\x18\x10 \x01(\tR\x10\x63ontractCurrency\x12\x18\n\x07LotSize\x18\x11 \x01(\tR\x07lotSize\x12\x1c\n\tTickValue\x18\x12 \x01(\tR\ttickValue\x12 \n\x0bMaxOrderQty\x18\x13 \x01(\tR\x0bmaxOrderQty\x12\"\n\x0cMaxPosVolume\x18\x14 \x01(\tR\x0cmaxPosVolume\x12\x12\n\x04Mark\x18\x15 \x01(\tR\x04mark\x12\x1e\n\nFloatingPL\x18\x16 \x01(\tR\nfloatingPL\x12.\n\x12\x41\x64\x64UvmToFreeMargin\x18\x17 \x01(\tR\x12\x61\x64\x64UvmToFreeMargin\x12 \n\x0bMinLeverage\x18\x18 \x01(\tR\x0bminLeverage\x12 \n\x0bMaxLeverage\x18\x19 \x01(\tR\x0bmaxLeverage\x12#\n\x06Margin\x18\x1a \x01(\x0b\x32\x0b.api.MarginR\x06margin\x12\x34\n\x08\x43learing\x18\x1b \x01(\x0b\x32\x18.api.DerivativeOperationR\x08\x63learing\x12\x34\n\x08Interest\x18\x1c \x01(\x0b\x32\x18.api.DerivativeOperationR\x08interest\x12\x32\n\x07Premium\x18\x1d \x01(\x0b\x32\x18.api.DerivativeOperationR\x07premium\x12@\n\x0eRiskAdjustment\x18\x1e \x01(\x0b\x32\x18.api.DerivativeOperationR\x0eriskAdjustment\x12&\n\x0ePricePrecision\x18\x1f \x01(\x05R\x0epricePrecision\x12/\n\nPriceRange\x18  \x01(\x0b\x32\x0f.api.PriceRangeR\npriceRange\x12\x32\n\x0bPriceLimits\x18! \x01(\x0b\x32\x10.api.PriceLimitsR\x0bpriceLimits\x12\x18\n\x07Inverse\x18\" \x01(\x08R\x07inverse\x12*\n\x10TradingStartDate\x18# \x01(\tR\x10tradingStartDate\x12\x1e\n\nExpiryDate\x18$ \x01(\tR\nexpiryDate\x12\x14\n\x05\x42\x61sis\x18% \x01(\x05R\x05\x62\x61sis\"\xcd\x01\n\x06Margin\x12\x18\n\x07Netting\x18\x01 \x01(\tR\x07netting\x12%\n\x05Rates\x18\x02 \x03(\x0b\x32\x0f.api.MarginRateR\x05rates\x12J\n\x0fRateMultipliers\x18\x03 \x03(\x0b\x32 .api.Margin.RateMultipliersEntryR\x0frateMultipliers\x1a\x36\n\x14RateMultipliersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"v\n\nMarginRate\x12\x1c\n\tMaxVolume\x18\x01 \x01(\tR\tmaxVolume\x12 \n\x0bInitialRate\x18\x02 \x01(\tR\x0binitialRate\x12(\n\x0fMaintenanceRate\x18\x03 \x01(\tR\x0fmaintenanceRate\"j\n\x13\x44\x65rivativeOperation\x12!\n\x07\x45nabled\x18\x01 \x01(\x08R\x10maxVolenabledume\x12\x14\n\x05Index\x18\x02 \x01(\tR\x05index\x12\x1a\n\x08Schedule\x18\x03 \x01(\x03R\x08schedule\"\xc4\x01\n\nPriceRange\x12\x18\n\x07\x45nabled\x18\x01 \x01(\x08R\x07\x65nabled\x12\x1a\n\x08\x44istance\x18\x02 \x01(\tR\x08\x64istance\x12&\n\x0eMovingBoundary\x18\x03 \x01(\tR\x0emovingBoundary\x12\x1e\n\nMovingTime\x18\x04 \x01(\x03R\nmovingTime\x12\x1a\n\x08LowIndex\x18\x05 \x01(\tR\x08lowIndex\x12\x1c\n\tHighIndex\x18\x06 \x01(\tR\thighIndex\"}\n\x0bPriceLimits\x12\x18\n\x07\x45nabled\x18\x01 \x01(\x08R\x07\x65nabled\x12\x1a\n\x08\x44istance\x18\x02 \x01(\tR\x08\x64istance\x12\x1a\n\x08LowIndex\x18\x03 \x01(\tR\x08lowIndex\x12\x1c\n\tHighIndex\x18\x04 \x01(\tR\thighIndexb\x06proto3')
 )
 
 
@@ -100,8 +100,597 @@ _HEARTBEAT = _descriptor.Descriptor(
   serialized_end=124,
 )
 
+
+_INSTRUMENT = _descriptor.Descriptor(
+  name='Instrument',
+  full_name='api.Instrument',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='api.Instrument.ID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Type', full_name='api.Instrument.Type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='type', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Symbol', full_name='api.Instrument.Symbol', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='BaseCurrencyName', full_name='api.Instrument.BaseCurrencyName', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='baseCurrency', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='QuoteCurrencyName', full_name='api.Instrument.QuoteCurrencyName', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='quoteCurrency', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SettlCurrencyName', full_name='api.Instrument.SettlCurrencyName', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='settlCurrency', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TickSize', full_name='api.Instrument.TickSize', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tickSize', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MinOrderQty', full_name='api.Instrument.MinOrderQty', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='minOrderQuantity', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='OrderQtyStep', full_name='api.Instrument.OrderQtyStep', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='orderQtyStep', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='LimitOrderMaxDistance', full_name='api.Instrument.LimitOrderMaxDistance', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='limitOrderMaxDistance', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='PriceInputMask', full_name='api.Instrument.PriceInputMask', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='priceInputMask', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Indexes', full_name='api.Instrument.Indexes', index=11,
+      number=12, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='indexes', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Enabled', full_name='api.Instrument.Enabled', index=12,
+      number=13, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='enabled', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='LiquidationMaxDistance', full_name='api.Instrument.LiquidationMaxDistance', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='liquidationMaxDistance', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ContractValue', full_name='api.Instrument.ContractValue', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='contractValue', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ContractCurrency', full_name='api.Instrument.ContractCurrency', index=15,
+      number=16, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='contractCurrency', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='LotSize', full_name='api.Instrument.LotSize', index=16,
+      number=17, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='lotSize', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TickValue', full_name='api.Instrument.TickValue', index=17,
+      number=18, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tickValue', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MaxOrderQty', full_name='api.Instrument.MaxOrderQty', index=18,
+      number=19, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='maxOrderQty', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MaxPosVolume', full_name='api.Instrument.MaxPosVolume', index=19,
+      number=20, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='maxPosVolume', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Mark', full_name='api.Instrument.Mark', index=20,
+      number=21, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='mark', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='FloatingPL', full_name='api.Instrument.FloatingPL', index=21,
+      number=22, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='floatingPL', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='AddUvmToFreeMargin', full_name='api.Instrument.AddUvmToFreeMargin', index=22,
+      number=23, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='addUvmToFreeMargin', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MinLeverage', full_name='api.Instrument.MinLeverage', index=23,
+      number=24, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='minLeverage', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MaxLeverage', full_name='api.Instrument.MaxLeverage', index=24,
+      number=25, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='maxLeverage', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Margin', full_name='api.Instrument.Margin', index=25,
+      number=26, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='margin', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Clearing', full_name='api.Instrument.Clearing', index=26,
+      number=27, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='clearing', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Interest', full_name='api.Instrument.Interest', index=27,
+      number=28, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='interest', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Premium', full_name='api.Instrument.Premium', index=28,
+      number=29, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='premium', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RiskAdjustment', full_name='api.Instrument.RiskAdjustment', index=29,
+      number=30, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='riskAdjustment', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='PricePrecision', full_name='api.Instrument.PricePrecision', index=30,
+      number=31, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='pricePrecision', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='PriceRange', full_name='api.Instrument.PriceRange', index=31,
+      number=32, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='priceRange', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='PriceLimits', full_name='api.Instrument.PriceLimits', index=32,
+      number=33, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='priceLimits', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Inverse', full_name='api.Instrument.Inverse', index=33,
+      number=34, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='inverse', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TradingStartDate', full_name='api.Instrument.TradingStartDate', index=34,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tradingStartDate', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ExpiryDate', full_name='api.Instrument.ExpiryDate', index=35,
+      number=36, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expiryDate', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Basis', full_name='api.Instrument.Basis', index=36,
+      number=37, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='basis', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=127,
+  serialized_end=1532,
+)
+
+
+_MARGIN_RATEMULTIPLIERSENTRY = _descriptor.Descriptor(
+  name='RateMultipliersEntry',
+  full_name='api.Margin.RateMultipliersEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.Margin.RateMultipliersEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.Margin.RateMultipliersEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1686,
+  serialized_end=1740,
+)
+
+_MARGIN = _descriptor.Descriptor(
+  name='Margin',
+  full_name='api.Margin',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Netting', full_name='api.Margin.Netting', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='netting', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Rates', full_name='api.Margin.Rates', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='rates', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RateMultipliers', full_name='api.Margin.RateMultipliers', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='rateMultipliers', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_MARGIN_RATEMULTIPLIERSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1535,
+  serialized_end=1740,
+)
+
+
+_MARGINRATE = _descriptor.Descriptor(
+  name='MarginRate',
+  full_name='api.MarginRate',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MaxVolume', full_name='api.MarginRate.MaxVolume', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='maxVolume', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='InitialRate', full_name='api.MarginRate.InitialRate', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='initialRate', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MaintenanceRate', full_name='api.MarginRate.MaintenanceRate', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='maintenanceRate', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1742,
+  serialized_end=1860,
+)
+
+
+_DERIVATIVEOPERATION = _descriptor.Descriptor(
+  name='DerivativeOperation',
+  full_name='api.DerivativeOperation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Enabled', full_name='api.DerivativeOperation.Enabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='maxVolenabledume', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Index', full_name='api.DerivativeOperation.Index', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='index', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Schedule', full_name='api.DerivativeOperation.Schedule', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='schedule', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1862,
+  serialized_end=1968,
+)
+
+
+_PRICERANGE = _descriptor.Descriptor(
+  name='PriceRange',
+  full_name='api.PriceRange',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Enabled', full_name='api.PriceRange.Enabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='enabled', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Distance', full_name='api.PriceRange.Distance', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='distance', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MovingBoundary', full_name='api.PriceRange.MovingBoundary', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='movingBoundary', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MovingTime', full_name='api.PriceRange.MovingTime', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='movingTime', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='LowIndex', full_name='api.PriceRange.LowIndex', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='lowIndex', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='HighIndex', full_name='api.PriceRange.HighIndex', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='highIndex', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1971,
+  serialized_end=2167,
+)
+
+
+_PRICELIMITS = _descriptor.Descriptor(
+  name='PriceLimits',
+  full_name='api.PriceLimits',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Enabled', full_name='api.PriceLimits.Enabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='enabled', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Distance', full_name='api.PriceLimits.Distance', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='distance', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='LowIndex', full_name='api.PriceLimits.LowIndex', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='lowIndex', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='HighIndex', full_name='api.PriceLimits.HighIndex', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='highIndex', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2169,
+  serialized_end=2294,
+)
+
+_INSTRUMENT.fields_by_name['Margin'].message_type = _MARGIN
+_INSTRUMENT.fields_by_name['Clearing'].message_type = _DERIVATIVEOPERATION
+_INSTRUMENT.fields_by_name['Interest'].message_type = _DERIVATIVEOPERATION
+_INSTRUMENT.fields_by_name['Premium'].message_type = _DERIVATIVEOPERATION
+_INSTRUMENT.fields_by_name['RiskAdjustment'].message_type = _DERIVATIVEOPERATION
+_INSTRUMENT.fields_by_name['PriceRange'].message_type = _PRICERANGE
+_INSTRUMENT.fields_by_name['PriceLimits'].message_type = _PRICELIMITS
+_MARGIN_RATEMULTIPLIERSENTRY.containing_type = _MARGIN
+_MARGIN.fields_by_name['Rates'].message_type = _MARGINRATE
+_MARGIN.fields_by_name['RateMultipliers'].message_type = _MARGIN_RATEMULTIPLIERSENTRY
 DESCRIPTOR.message_types_by_name['MsgTypeHeader'] = _MSGTYPEHEADER
 DESCRIPTOR.message_types_by_name['Heartbeat'] = _HEARTBEAT
+DESCRIPTOR.message_types_by_name['Instrument'] = _INSTRUMENT
+DESCRIPTOR.message_types_by_name['Margin'] = _MARGIN
+DESCRIPTOR.message_types_by_name['MarginRate'] = _MARGINRATE
+DESCRIPTOR.message_types_by_name['DerivativeOperation'] = _DERIVATIVEOPERATION
+DESCRIPTOR.message_types_by_name['PriceRange'] = _PRICERANGE
+DESCRIPTOR.message_types_by_name['PriceLimits'] = _PRICELIMITS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 MsgTypeHeader = _reflection.GeneratedProtocolMessageType('MsgTypeHeader', (_message.Message,), dict(
@@ -118,5 +707,56 @@ Heartbeat = _reflection.GeneratedProtocolMessageType('Heartbeat', (_message.Mess
   ))
 _sym_db.RegisterMessage(Heartbeat)
 
+Instrument = _reflection.GeneratedProtocolMessageType('Instrument', (_message.Message,), dict(
+  DESCRIPTOR = _INSTRUMENT,
+  __module__ = 'common_pb2'
+  # @@protoc_insertion_point(class_scope:api.Instrument)
+  ))
+_sym_db.RegisterMessage(Instrument)
 
+Margin = _reflection.GeneratedProtocolMessageType('Margin', (_message.Message,), dict(
+
+  RateMultipliersEntry = _reflection.GeneratedProtocolMessageType('RateMultipliersEntry', (_message.Message,), dict(
+    DESCRIPTOR = _MARGIN_RATEMULTIPLIERSENTRY,
+    __module__ = 'common_pb2'
+    # @@protoc_insertion_point(class_scope:api.Margin.RateMultipliersEntry)
+    ))
+  ,
+  DESCRIPTOR = _MARGIN,
+  __module__ = 'common_pb2'
+  # @@protoc_insertion_point(class_scope:api.Margin)
+  ))
+_sym_db.RegisterMessage(Margin)
+_sym_db.RegisterMessage(Margin.RateMultipliersEntry)
+
+MarginRate = _reflection.GeneratedProtocolMessageType('MarginRate', (_message.Message,), dict(
+  DESCRIPTOR = _MARGINRATE,
+  __module__ = 'common_pb2'
+  # @@protoc_insertion_point(class_scope:api.MarginRate)
+  ))
+_sym_db.RegisterMessage(MarginRate)
+
+DerivativeOperation = _reflection.GeneratedProtocolMessageType('DerivativeOperation', (_message.Message,), dict(
+  DESCRIPTOR = _DERIVATIVEOPERATION,
+  __module__ = 'common_pb2'
+  # @@protoc_insertion_point(class_scope:api.DerivativeOperation)
+  ))
+_sym_db.RegisterMessage(DerivativeOperation)
+
+PriceRange = _reflection.GeneratedProtocolMessageType('PriceRange', (_message.Message,), dict(
+  DESCRIPTOR = _PRICERANGE,
+  __module__ = 'common_pb2'
+  # @@protoc_insertion_point(class_scope:api.PriceRange)
+  ))
+_sym_db.RegisterMessage(PriceRange)
+
+PriceLimits = _reflection.GeneratedProtocolMessageType('PriceLimits', (_message.Message,), dict(
+  DESCRIPTOR = _PRICELIMITS,
+  __module__ = 'common_pb2'
+  # @@protoc_insertion_point(class_scope:api.PriceLimits)
+  ))
+_sym_db.RegisterMessage(PriceLimits)
+
+
+_MARGIN_RATEMULTIPLIERSENTRY._options = None
 # @@protoc_insertion_point(module_scope)
