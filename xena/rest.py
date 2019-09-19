@@ -73,7 +73,7 @@ class XenaMDClient(XenaClient):
         :param ts_from: show candles to
         :type ts_to: int unixtimestamp
 
-        :returns: xena.proto.MarketDataRefresh
+        :returns: xena.proto.market_pb2.MarketDataRefresh
         """
 
         return await self._get('/market-data/candles/'+symbol+'/'+timeframe, msg=market_pb2.MarketDataRefresh(), params={
@@ -89,7 +89,7 @@ class XenaMDClient(XenaClient):
         :param aggr: aggregate leveles 
         :type timeframe: int [0,5,10,25,50,100,250]
 
-        :returns: xena.proto.MarketDataRefresh
+        :returns: xena.proto.market_pb2.MarketDataRefresh
         """
 
         return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh(), params={
@@ -97,7 +97,10 @@ class XenaMDClient(XenaClient):
         })
     
     async def instruments(self):
-        """Get list of instruments""" 
+        """Get list of instruments
+        
+        :returns: xena.proto.common_pb2.Instrument
+        """ 
 
         return await self._get('/public/instruments', msg=common_pb2.Instrument())
 
