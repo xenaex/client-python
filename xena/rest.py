@@ -76,7 +76,7 @@ class XenaMDClient(XenaClient):
         :returns: xena.proto.market_pb2.MarketDataRefresh
         """
 
-        return await self._get('/market-data/candles/'+symbol+'/'+timeframe, msg=market_pb2.MarketDataRefresh(), params={
+        return await self._get('/market-data/candles/'+symbol+'/'+timeframe, msg=market_pb2.MarketDataRefresh, params={
             "from": ts_from,
             "to": ts_to,
         })
@@ -92,7 +92,7 @@ class XenaMDClient(XenaClient):
         :returns: xena.proto.market_pb2.MarketDataRefresh
         """
 
-        return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh(), params={
+        return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh, params={
             "aggr": aggr
         })
     
@@ -102,7 +102,7 @@ class XenaMDClient(XenaClient):
         :returns: xena.proto.common_pb2.Instrument
         """ 
 
-        return await self._get('/public/instruments', msg=common_pb2.Instrument())
+        return await self._get('/public/instruments', msg=common_pb2.Instrument)
 
 
 

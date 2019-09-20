@@ -96,13 +96,13 @@ def from_json(raw_data, to=None):
         result = []
         for element in data:
             if isinstance(element, dict):
-                result.append(from_dict(element, to))
+                result.append(from_dict(element, to()))
             else:
                 return data
 
         return result
 
-    return from_dict(data, to)
+    return from_dict(data, to())
 
 
 def from_dict(data, msg=None):
