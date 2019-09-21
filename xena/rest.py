@@ -1,6 +1,7 @@
 import aiohttp
 import logging
 import time
+import requests
 from hashlib import sha256
 from ecdsa import SigningKey
 
@@ -49,6 +50,39 @@ class XenaClient:
 
     async def _post(self, path, **kwargs):
         return await self._request('post', path, **kwargs)
+
+
+class XenaSyncClient:
+
+    def __init__(self, url):
+        self._log = logging.getLogger(__name__)
+        self._url = url
+
+    def _get_headers(self):
+        return {
+            'Accept': 'application/json',
+            'User-Agent': 'xena/python'
+        }
+
+    def _request(self, method, path, **kwargs):
+        uri = self.URL + path 
+        msg = kwargs.pop('msg', None)
+        kwargs['headers'] = self._get_headers()
+        with requests.Session() as session:
+            with getattr(session, method)(uri, **kwargs) as response:
+                return self._handle_response(response, msg)
+
+    def _handle_response(self, response, msg=None):
+        if not str(response.status_code).startswith('2'):
+            raise exceptions.RequestException(response, response.status_code, response.text)
+
+        return serialization.from_json(response.text, to=msg)
+
+    def _get(self, path, **kwargs):
+        return self._request('get', path, **kwargs)
+
+    def _post(self, path, **kwargs):
+        return self._request('post', path, **kwargs)
 
 
 class XenaMDClient(XenaClient):
@@ -104,6 +138,30 @@ class XenaMDClient(XenaClient):
 
         return await self._get('/public/instruments', msg=common_pb2.Instrument)
 
+
+class XenaMDSyncClient(XenaSyncClient):
+    """All docs look up at XenaMDClient"""
+
+    URL = 'https://api.xena.exchange'
+    #  URL = 'http://localhost/api'
+
+    def __init__(self):
+        super().__init__(self.URL)
+        self._log = logging.getLogger(__name__)
+
+    def candles(self, symbol, timeframe='1m', ts_from="", ts_to=""):
+        return self._get('/market-data/candles/'+symbol+'/'+timeframe, msg=market_pb2.MarketDataRefresh, params={
+            "from": ts_from,
+            "to": ts_to,
+        })
+    
+    def dom(self, symbol, aggr=0):
+        return self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh, params={
+            "aggr": aggr
+        })
+    
+    def instruments(self):
+        return self._get('/public/instruments', msg=common_pb2.Instrument)
 
 
 class XenaTradingClient(XenaClient):
@@ -325,6 +383,140 @@ class XenaTradingClient(XenaClient):
         :returns: list of int
         """
 
+        response = await self._get('/accounts')
+        result = []
+        for item in response['accounts']:
+            result.append(item['id'])
+        
+        return result
+
+
+class XenaTradingSyncClient(XenaSyncClient):
+    """All docs look up at XenaTradingClient"""
+
+    URL = 'https://api.xena.exchange/trading'
+    #  URL = 'http://localhost/api/trading'
+
+    def __init__(self, api_key, api_secret, loop):
+        super().__init__(self.URL, loop)
+
+        self._api_key = api_key
+        self._api_secret = api_secret
+        self._log = logging.getLogger(__name__)
+
+    def _get_headers(self):
+        timestamp = int(time.time() * 1000000000)
+        auth_payload = 'AUTH' + str(timestamp)
+        signing_key = SigningKey.from_der(bytes.fromhex(self._api_secret))
+
+        headers = super()._get_headers()
+        headers.update({
+            'X-Auth-Api-Key': self._api_key,
+            'X-Auth-Api-Payload': auth_payload,
+            'X-Auth-Api-Signature': signing_key.sign(auth_payload.encode('utf-8'), hashfunc=sha256).hex(),
+            'X-Auth-Api-Nonce': str(timestamp), 
+        })
+        
+        return headers
+
+    async def order(self, cmd):
+        return await self._post('/order/new', data=serialization.to_json(cmd))
+
+    async def market_order(self, account, client_order_id, symbol, side, qty, **kwargs):
+        return await self.order(helpers.market_order(account, client_order_id, symbol, side, qty, **kwargs))
+
+    async def limit_order(self, account, client_order_id, symbol, side, price, qty, **kwargs):
+        return await self.order(helpers.limit_order(account, client_order_id, symbol, side, price, qty, **kwargs))
+
+    async def stop_order(self, account, client_order_id, symbol, side, stop_price, qty, **kwargs):
+        return await self.order(helpers.stop_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
+
+    async def mit_order(self, account, client_order_id, symbol, side, stop_price, qty, **kwargs):
+        return await self.order(helpers.mit_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
+
+    async def cancel(self, cmd):
+        if not isinstance(cmd, order_pb2.OrderCancelRequest):
+            raise ValueError("Command has to be OrderCancelRequest")
+
+        return await self._post('/order/cancel', data=serialization.to_json(cmd))
+
+    async def cancel_by_client_id(self, account, cancel_id, client_order_id, symbol, side):
+        cmd = order_pb2.OrderCancelRequest()
+        cmd.MsgType = constants.MsgType_OrderCancelRequestMsgType
+        cmd.ClOrdId = cancel_id
+        cmd.OrigClOrdId = client_order_id
+        cmd.Symbol = symbol
+        cmd.Side = side
+        cmd.TransactTime = int(time.time() * 1000000000)
+        cmd.Account = account
+        return await self.cancel(cmd)
+
+    async def cancel_by_order_id(self, account, cancel_id, order_id, symbol, side):
+        cmd = order_pb2.OrderCancelRequest()
+        cmd.MsgType = constants.MsgType_OrderCancelRequestMsgType
+        cmd.ClOrdId = cancel_id
+        cmd.OrderId = order_id
+        cmd.Symbol = symbol
+        cmd.Side = side
+        cmd.TransactTime = int(time.time() * 1000000000)
+        cmd.Account = account
+        return await self.cancel(cmd)
+
+    async def replace(self, cmd):
+        if not isinstance(cmd, order_pb2.OrderCancelReplaceRequest):
+            raise ValueError("Command has to be OrderCancelRequest")
+
+        return await self._post('/order/replace', data=serialization.to_json(cmd))
+
+    async def collapse_positions(self, account, symbol):
+        request_id = str(time.time())
+        cmd = positions_pb2.PositionMaintenanceRequest()
+        cmd.MsgType = constants.MsgType_PositionMaintenanceRequest
+        cmd.Symbol = symbol
+        cmd.Account = account
+        cmd.PosReqId = request_id
+        cmd.PosTransType = constants.PosTransType_Collapse
+        cmd.PosMaintAction = constants.PosMaintAction_Replace
+        return await self._post('/position/maintenance', data=serialization.to_json(cmd))
+    
+    async def positions(self, account):
+        return await self._get('/accounts/' + str(account) + '/positions')
+    
+    async def positions_history(self, account, id=0, parentid=0, symbol="", open_ts_from=0, open_ts_to=0, close_ts_from=0, close_ts_to=0, page=1, limit=0):
+        return await self._get('/accounts/' + str(account) + '/positions-history', params={
+            "id": id,
+            "parentid": parentid,
+            "symbol": symbol,
+            "openfrom": open_ts_from,
+            "opento": open_ts_to,
+            "closefrom": close_ts_from,
+            "closeto": close_ts_to,
+            "page": page,
+            "limit": limit
+        })
+    
+    async def orders(self, account):
+        return await self._get('/accounts/' + str(account) + '/orders')
+    
+    async def trade_history(self, account, trade_id="", client_order_id="", symbol="", ts_from=0, ts_to=0, page=1, limit=0):
+        return await self._get('/accounts/' + str(account) + '/trade-history', params={
+            "trade_id": trade_id,
+            "client_order_id": client_order_id,
+            "symbol": symbol,
+            "from": ts_from,
+            "to": ts_to,
+            "page": page,
+            "limit": limit
+        })
+    
+    async def balance(self, account):
+        return await self._get('/accounts/' + str(account) + '/balance')
+    
+    async def margin_requirements(self, account):
+        return await self._get('/accounts/' + str(account) + '/margin-requirements')
+    
+    
+    async def accounts(self):
         response = await self._get('/accounts')
         result = []
         for item in response['accounts']:
