@@ -90,21 +90,23 @@ def _read_from(result, msg, use_fix=False):
 
 def from_json(raw_data, to=None):
     """Convert json string to protobuf message or dict"""
-    msg = None
-    if to is not None:
-        msg = to()
-
     data = json.loads(raw_data)
     if isinstance(data, list):
         result = []
         for element in data:
             if isinstance(element, dict):
+                msg = None
+                if to is not None:
+                    msg = to()
                 result.append(from_dict(element, msg))
             else:
                 return data
 
         return result
 
+    msg = None
+    if to is not None:
+        msg = to()
     return from_dict(data, msg)
 
 
