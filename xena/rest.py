@@ -397,8 +397,8 @@ class XenaTradingSyncClient(XenaSyncClient):
     URL = 'https://api.xena.exchange/trading'
     #  URL = 'http://localhost/api/trading'
 
-    def __init__(self, api_key, api_secret, loop):
-        super().__init__(self.URL, loop)
+    def __init__(self, api_key, api_secret):
+        super().__init__(self.URL)
 
         self._api_key = api_key
         self._api_secret = api_secret
@@ -419,28 +419,28 @@ class XenaTradingSyncClient(XenaSyncClient):
         
         return headers
 
-    async def order(self, cmd):
-        return await self._post('/order/new', data=serialization.to_json(cmd))
+    def order(self, cmd):
+        return self._post('/order/new', data=serialization.to_json(cmd))
 
-    async def market_order(self, account, client_order_id, symbol, side, qty, **kwargs):
-        return await self.order(helpers.market_order(account, client_order_id, symbol, side, qty, **kwargs))
+    def market_order(self, account, client_order_id, symbol, side, qty, **kwargs):
+        return self.order(helpers.market_order(account, client_order_id, symbol, side, qty, **kwargs))
 
-    async def limit_order(self, account, client_order_id, symbol, side, price, qty, **kwargs):
-        return await self.order(helpers.limit_order(account, client_order_id, symbol, side, price, qty, **kwargs))
+    def limit_order(self, account, client_order_id, symbol, side, price, qty, **kwargs):
+        return self.order(helpers.limit_order(account, client_order_id, symbol, side, price, qty, **kwargs))
 
-    async def stop_order(self, account, client_order_id, symbol, side, stop_price, qty, **kwargs):
-        return await self.order(helpers.stop_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
+    def stop_order(self, account, client_order_id, symbol, side, stop_price, qty, **kwargs):
+        return self.order(helpers.stop_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
 
-    async def mit_order(self, account, client_order_id, symbol, side, stop_price, qty, **kwargs):
-        return await self.order(helpers.mit_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
+    def mit_order(self, account, client_order_id, symbol, side, stop_price, qty, **kwargs):
+        return self.order(helpers.mit_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
 
-    async def cancel(self, cmd):
+    def cancel(self, cmd):
         if not isinstance(cmd, order_pb2.OrderCancelRequest):
             raise ValueError("Command has to be OrderCancelRequest")
 
-        return await self._post('/order/cancel', data=serialization.to_json(cmd))
+        return self._post('/order/cancel', data=serialization.to_json(cmd))
 
-    async def cancel_by_client_id(self, account, cancel_id, client_order_id, symbol, side):
+    def cancel_by_client_id(self, account, cancel_id, client_order_id, symbol, side):
         cmd = order_pb2.OrderCancelRequest()
         cmd.MsgType = constants.MsgType_OrderCancelRequestMsgType
         cmd.ClOrdId = cancel_id
@@ -449,9 +449,9 @@ class XenaTradingSyncClient(XenaSyncClient):
         cmd.Side = side
         cmd.TransactTime = int(time.time() * 1000000000)
         cmd.Account = account
-        return await self.cancel(cmd)
+        return self.cancel(cmd)
 
-    async def cancel_by_order_id(self, account, cancel_id, order_id, symbol, side):
+    def cancel_by_order_id(self, account, cancel_id, order_id, symbol, side):
         cmd = order_pb2.OrderCancelRequest()
         cmd.MsgType = constants.MsgType_OrderCancelRequestMsgType
         cmd.ClOrdId = cancel_id
@@ -460,15 +460,15 @@ class XenaTradingSyncClient(XenaSyncClient):
         cmd.Side = side
         cmd.TransactTime = int(time.time() * 1000000000)
         cmd.Account = account
-        return await self.cancel(cmd)
+        return self.cancel(cmd)
 
-    async def replace(self, cmd):
+    def replace(self, cmd):
         if not isinstance(cmd, order_pb2.OrderCancelReplaceRequest):
             raise ValueError("Command has to be OrderCancelRequest")
 
-        return await self._post('/order/replace', data=serialization.to_json(cmd))
+        return self._post('/order/replace', data=serialization.to_json(cmd))
 
-    async def collapse_positions(self, account, symbol):
+    def collapse_positions(self, account, symbol):
         request_id = str(time.time())
         cmd = positions_pb2.PositionMaintenanceRequest()
         cmd.MsgType = constants.MsgType_PositionMaintenanceRequest
@@ -477,13 +477,13 @@ class XenaTradingSyncClient(XenaSyncClient):
         cmd.PosReqId = request_id
         cmd.PosTransType = constants.PosTransType_Collapse
         cmd.PosMaintAction = constants.PosMaintAction_Replace
-        return await self._post('/position/maintenance', data=serialization.to_json(cmd))
+        return self._post('/position/maintenance', data=serialization.to_json(cmd))
     
-    async def positions(self, account):
-        return await self._get('/accounts/' + str(account) + '/positions')
+    def positions(self, account):
+        return self._get('/accounts/' + str(account) + '/positions')
     
-    async def positions_history(self, account, id=0, parentid=0, symbol="", open_ts_from=0, open_ts_to=0, close_ts_from=0, close_ts_to=0, page=1, limit=0):
-        return await self._get('/accounts/' + str(account) + '/positions-history', params={
+    def positions_history(self, account, id=0, parentid=0, symbol="", open_ts_from=0, open_ts_to=0, close_ts_from=0, close_ts_to=0, page=1, limit=0):
+        return self._get('/accounts/' + str(account) + '/positions-history', params={
             "id": id,
             "parentid": parentid,
             "symbol": symbol,
@@ -495,11 +495,11 @@ class XenaTradingSyncClient(XenaSyncClient):
             "limit": limit
         })
     
-    async def orders(self, account):
-        return await self._get('/accounts/' + str(account) + '/orders')
+    def orders(self, account):
+        return self._get('/accounts/' + str(account) + '/orders')
     
-    async def trade_history(self, account, trade_id="", client_order_id="", symbol="", ts_from=0, ts_to=0, page=1, limit=0):
-        return await self._get('/accounts/' + str(account) + '/trade-history', params={
+    def trade_history(self, account, trade_id="", client_order_id="", symbol="", ts_from=0, ts_to=0, page=1, limit=0):
+        return self._get('/accounts/' + str(account) + '/trade-history', params={
             "trade_id": trade_id,
             "client_order_id": client_order_id,
             "symbol": symbol,
@@ -509,15 +509,15 @@ class XenaTradingSyncClient(XenaSyncClient):
             "limit": limit
         })
     
-    async def balance(self, account):
-        return await self._get('/accounts/' + str(account) + '/balance')
+    def balance(self, account):
+        return self._get('/accounts/' + str(account) + '/balance')
     
-    async def margin_requirements(self, account):
-        return await self._get('/accounts/' + str(account) + '/margin-requirements')
+    def margin_requirements(self, account):
+        return self._get('/accounts/' + str(account) + '/margin-requirements')
     
     
-    async def accounts(self):
-        response = await self._get('/accounts')
+    def accounts(self):
+        response = self._get('/accounts')
         result = []
         for item in response['accounts']:
             result.append(item['id'])
