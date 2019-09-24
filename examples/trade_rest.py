@@ -159,6 +159,10 @@ async def example_of_positions():
             resp = await rest.positions(account)
             print(resp)
 
+            # aggregated volume by symbol
+            volumes = helpers.aggregate_positions_volume(resp)
+            print(volumes)
+
 
 async def example_of_positions_history():
     # look up documentation to get all available filters

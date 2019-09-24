@@ -155,6 +155,10 @@ def example_of_positions():
         if helpers.is_margin(account):
             resp = rest.positions(account)
             print(resp)
+            
+            # aggregated volume by symbol
+            volumes = helpers.aggregate_positions_volume(resp)
+            print(volumes)
 
 
 def example_of_positions_history():

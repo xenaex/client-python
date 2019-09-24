@@ -1,4 +1,5 @@
 import time
+from decimal import Decimal
 
 import xena.proto.order_pb2 as order_pb2
 import xena.proto.constants as constants
@@ -164,3 +165,18 @@ def add_take_profit(cmd, price):
     sltp = cmd.SLTP.add()
     sltp.OrdType = constants.OrdType_Limit
     sltp.Price = price
+
+
+def aggregate_positions_volume(positions):
+    tmp_res = {}
+    for position in positions:
+        if position.Symbol not in tmp_res:
+            tmp_res[position.Symbol] = Decimal(0)
+
+        mul = Decimal(1)
+        if position.Side == constants.Side_Sell:
+            mul = Decimal(-1)
+
+        tmp_res[position.Symbol] += Decimal(position.Volume) * mul
+
+    return {symbol: str(volume) for symbol, volume in tmp_res.items()}
