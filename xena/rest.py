@@ -277,6 +277,43 @@ class XenaTradingClient(XenaClient):
 
         return await self._get('/accounts/' + str(account) + '/positions')
     
+    async def positions_for_symbol(self, account, symbol):
+        """Request list of open positions for :account and :symbol
+        
+        :param account: required
+        :type account: int
+        :param symbol: required
+        :type account: string
+        :returns: list of xena.proto.positions_pb2.PositionReport
+        """
+
+        result = []
+        for p in await self.positions(account):
+            if p.Symbol == symbol:
+                result.append(p)
+
+        return result
+    
+    async def aggregate_positions_volume(self, account, symbol):
+        """Request list of open positions for :account and :symbol
+        
+        :param account: required
+        :type account: int
+        :param symbol: required
+        :type account: string
+        :returns: list of xena.proto.positions_pb2.PositionReport
+        """
+
+        positions = await self.positions_for_symbol(account, symbol)
+        if len(positions) == 0:
+            return "0"
+
+        result = helpers.aggregate_positions_volume(positions)
+        if symbol not in result:
+            return "0"
+        
+        return result[symbol]
+    
     async def positions_history(self, account, id=0, parentid=0, symbol="", open_ts_from=0, open_ts_to=0, close_ts_from=0, close_ts_to=0, page=1, limit=0):
         """Request position history for :account
         
@@ -481,6 +518,25 @@ class XenaTradingSyncClient(XenaSyncClient):
     
     def positions(self, account):
         return self._get('/accounts/' + str(account) + '/positions')
+    
+    def positions_for_symbol(self, account, symbol):
+        result = []
+        for p in self.positions(account):
+            if p.Symbol == symbol:
+                result.append(p)
+
+        return result
+    
+    def aggregate_positions_volume(self, account, symbol):
+        positions = self.positions_for_symbol(account, symbol)
+        if len(positions) == 0:
+            return "0"
+
+        result = helpers.aggregate_positions_volume(positions)
+        if symbol not in result:
+            return "0"
+        
+        return result[symbol]
     
     def positions_history(self, account, id=0, parentid=0, symbol="", open_ts_from=0, open_ts_to=0, close_ts_from=0, close_ts_to=0, page=1, limit=0):
         return self._get('/accounts/' + str(account) + '/positions-history', params={

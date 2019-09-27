@@ -164,6 +164,14 @@ async def example_of_positions():
             print(volumes)
 
 
+async def example_of_aggregated_position_volume():
+    rest = await get_client()
+    for account in await rest.accounts():
+        if helpers.is_margin(account):
+            resp = await rest.aggregate_positions_volume(account, "XBTUSD")
+            print(resp)
+
+
 async def example_of_positions_history():
     # look up documentation to get all available filters
     rest = await get_client()

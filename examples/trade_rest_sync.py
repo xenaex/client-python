@@ -161,6 +161,14 @@ def example_of_positions():
             print(volumes)
 
 
+def example_of_aggregated_position_volume():
+    rest = get_client()
+    for account in rest.accounts():
+        if helpers.is_margin(account):
+            resp = rest.aggregate_positions_volume(account, "XBTUSD")
+            print(resp)
+
+
 def example_of_positions_history():
     # look up documentation to get all available filters
     rest = get_client()
