@@ -115,20 +115,16 @@ class XenaMDClient(XenaClient):
             "to": ts_to,
         })
     
-    async def dom(self, symbol, aggr=0):
+    async def dom(self, symbol):
         """Get L2 snapshot for :symbol 
 
         :param symbol: required
         :type symbol: str
-        :param aggr: aggregate leveles 
-        :type timeframe: int [0,5,10,25,50,100,250]
 
         :returns: xena.proto.market_pb2.MarketDataRefresh
         """
 
-        return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh, params={
-            "aggr": aggr
-        })
+        return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh)
     
     async def instruments(self):
         """Get list of instruments
@@ -155,10 +151,8 @@ class XenaMDSyncClient(XenaSyncClient):
             "to": ts_to,
         })
     
-    def dom(self, symbol, aggr=0):
-        return self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh, params={
-            "aggr": aggr
-        })
+    def dom(self, symbol):
+        return self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh)
     
     def instruments(self):
         return self._get('/public/instruments', msg=common_pb2.Instrument)
