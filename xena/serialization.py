@@ -29,6 +29,8 @@ TYPES = {
     constants.MsgType_OrderCancelReplaceRequestMsgType: order_pb2.OrderCancelReplaceRequest,
     constants.MsgType_OrderStatusRequest: order_pb2.OrderStatusRequest,
     constants.MsgType_ListStatus: order_pb2.ListStatus,
+    constants.MsgType_OrderMassCancelRequest: order_pb2.OrderMassCancelRequest,
+    constants.MsgType_OrderMassCancelReport: order_pb2.OrderMassCancelReport,
     constants.MsgType_MarketDataRequest: market_pb2.MarketDataRequest,
     constants.MsgType_MarketDataSnapshotFullRefresh: market_pb2.MarketDataRefresh,
     constants.MsgType_MarketDataIncrementalRefresh: market_pb2.MarketDataRefresh,

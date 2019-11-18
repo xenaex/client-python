@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0border.proto\x12\x03\x61pi\"\xa7\x01\n\x15TriggeringInstruction\x12\x1f\n\nRefClOrdId\x18\x8e\x0e \x01(\tR\nrefClordId\x12%\n\rTriggerAction\x18\xcd\x08 \x01(\tR\rtriggerAction\x12!\n\x0bTriggerType\x18\xcc\x08 \x01(\tR\x0btriggerType\x12#\n\x0cTriggerScope\x18\xdc\x0c \x01(\tR\x0ctriggerScope\"E\n\x06Partie\x12\x1b\n\x08PartieId\x18\xc0\x03 \x01(\tR\x08partieId\x12\x1e\n\nPartieRole\x18- \x01(\tR\npartieRole\"\xe0\x01\n\x04SLTP\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\"\xa1\x06\n\x0eNewOrderSingle\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x1c\n\tListSeqNo\x18\x43 \x01(\x05R\tlistSeqNo\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12)\n\x0f\x43ommissionLevel\x18\xc7\x17 \x01(\tR\x0f\x63ommissionLevel\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12S\n\x16TriggeringInstructions\x18\xda\x08 \x03(\x0b\x32\x1a.api.TriggeringInstructionR\x16triggeringInstructions\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xb4\x0b\n\x0f\x45xecutionReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x16\n\x06\x45xecId\x18\x11 \x01(\tR\x06\x65xecId\x12\x1b\n\x08\x45xecType\x18\x96\x01 \x01(\tR\x08\x65xecType\x12\x35\n\x15\x45xecRestatementReason\x18\xfa\x02 \x01(\tR\x15\x65xecRestatementReason\x12\x19\n\x07TradeId\x18\xeb\x07 \x01(\tR\x07tradeId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12\"\n\x0cOrdRejReason\x18g \x01(\tR\x0cordRejReason\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x1d\n\tLeavesQty\x18\x97\x01 \x01(\tR\tleavesQty\x12\x16\n\x06\x43umQty\x18\x0e \x01(\tR\x06\x63umQty\x12\x18\n\x07LastQty\x18  \x01(\tR\x07lastQty\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x16\n\x06LastPx\x18\x1f \x01(\tR\x06lastPx\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x33\n\x14\x43\x61lculatedCcyLastQty\x18\xa0\x08 \x01(\tR\x14\x63\x61lculatedCcyLastQty\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12$\n\rSettlCurrency\x18x \x01(\tR\rsettlCurrency\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\x1a\n\x08NetMoney\x18v \x01(\tR\x08netMoney\x12+\n\x10LastLiquidityInd\x18\xd3\x06 \x01(\tR\x10lastLiquidityInd\x12\x1e\n\nCommission\x18\x0c \x01(\tR\ncommission\x12\x1b\n\x08\x43ommRate\x18\xd1\t \x01(\tR\x08\x63ommRate\x12#\n\x0c\x43ommCurrency\x18\xdf\x03 \x01(\tR\x0c\x63ommCurrency\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1d\n\tMarginAmt\x18\xed\x0c \x01(\tR\tmarginAmt\x12%\n\rMarginAmtType\x18\xec\x0c \x01(\tR\rmarginAmtType\x12#\n\x0cMarginAmtCcy\x18\xee\x0c \x01(\tR\x0cmarginAmtCcy\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xee\x01\n\x12OrderCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xe9\x02\n\x11OrderCancelReject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12+\n\x10\x43xlRejResponseTo\x18\xb2\x03 \x01(\tR\x10\x63xlRejResponseTo\x12\"\n\x0c\x43xlRejReason\x18\x66 \x01(\tR\x0c\x63xlRejReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\"s\n\x12OrderStatusRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"[\n\x06Reject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x02\n\x17OrderMassStatusResponse\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12-\n\x06Orders\x18\xf4\t \x03(\x0b\x32\x14.api.ExecutionReportR\x06orders\x12+\n\x05\x46ills\x18\xf5\t \x03(\x0b\x32\x14.api.ExecutionReportR\x05\x66ills\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x04\n\x19OrderCancelReplaceRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xed\x02\n\x0cNewOrderList\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x19\n\x07\x42idType\x18\x8a\x03 \x01(\tR\x07\x62idType\x12 \n\x0bTotNoOrders\x18\x44 \x01(\x05R\x0btotNoOrders\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x33\n\nListOrdGrp\x18I \x03(\x0b\x32\x13.api.NewOrderSingleR\nlistOrdGrp\x12\x38\n\rNestedListGrp\x18\xed\r \x03(\x0b\x32\x11.api.NewOrderListR\rnestedListGrp\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"V\n\x0fOrderListAction\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x18\n\x07OrderId\x18% \x03(\tR\x07orderId\"\xaa\x03\n\nListStatus\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\'\n\x0eListStatusType\x18\xad\x03 \x01(\tR\x0elistStatusType\x12)\n\x0fListOrderStatus\x18\xaf\x03 \x01(\tR\x0flistOrderStatus\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12+\n\x10ListRejectReason\x18\xea\n \x01(\tR\x10listRejectReason\x12?\n\x0fListRejectOrder\x18\xeb\n \x01(\x0b\x32\x14.api.ExecutionReportR\x0flistRejectOrder\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\'\n\x0eListStatusText\x18\xbc\x03 \x01(\tR\x0elistStatusTextb\x06proto3')
+  serialized_pb=_b('\n\x0border.proto\x12\x03\x61pi\"\xa7\x01\n\x15TriggeringInstruction\x12\x1f\n\nRefClOrdId\x18\x8e\x0e \x01(\tR\nrefClordId\x12%\n\rTriggerAction\x18\xcd\x08 \x01(\tR\rtriggerAction\x12!\n\x0bTriggerType\x18\xcc\x08 \x01(\tR\x0btriggerType\x12#\n\x0cTriggerScope\x18\xdc\x0c \x01(\tR\x0ctriggerScope\"E\n\x06Partie\x12\x1b\n\x08PartieId\x18\xc0\x03 \x01(\tR\x08partieId\x12\x1e\n\nPartieRole\x18- \x01(\tR\npartieRole\"\xe0\x01\n\x04SLTP\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\"\xa1\x06\n\x0eNewOrderSingle\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x1c\n\tListSeqNo\x18\x43 \x01(\x05R\tlistSeqNo\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12)\n\x0f\x43ommissionLevel\x18\xc7\x17 \x01(\tR\x0f\x63ommissionLevel\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12S\n\x16TriggeringInstructions\x18\xda\x08 \x03(\x0b\x32\x1a.api.TriggeringInstructionR\x16triggeringInstructions\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xb4\x0b\n\x0f\x45xecutionReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x16\n\x06\x45xecId\x18\x11 \x01(\tR\x06\x65xecId\x12\x1b\n\x08\x45xecType\x18\x96\x01 \x01(\tR\x08\x65xecType\x12\x35\n\x15\x45xecRestatementReason\x18\xfa\x02 \x01(\tR\x15\x65xecRestatementReason\x12\x19\n\x07TradeId\x18\xeb\x07 \x01(\tR\x07tradeId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12\"\n\x0cOrdRejReason\x18g \x01(\tR\x0cordRejReason\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x1d\n\tLeavesQty\x18\x97\x01 \x01(\tR\tleavesQty\x12\x16\n\x06\x43umQty\x18\x0e \x01(\tR\x06\x63umQty\x12\x18\n\x07LastQty\x18  \x01(\tR\x07lastQty\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x16\n\x06LastPx\x18\x1f \x01(\tR\x06lastPx\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x33\n\x14\x43\x61lculatedCcyLastQty\x18\xa0\x08 \x01(\tR\x14\x63\x61lculatedCcyLastQty\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12$\n\rSettlCurrency\x18x \x01(\tR\rsettlCurrency\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\x1a\n\x08NetMoney\x18v \x01(\tR\x08netMoney\x12+\n\x10LastLiquidityInd\x18\xd3\x06 \x01(\tR\x10lastLiquidityInd\x12\x1e\n\nCommission\x18\x0c \x01(\tR\ncommission\x12\x1b\n\x08\x43ommRate\x18\xd1\t \x01(\tR\x08\x63ommRate\x12#\n\x0c\x43ommCurrency\x18\xdf\x03 \x01(\tR\x0c\x63ommCurrency\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1d\n\tMarginAmt\x18\xed\x0c \x01(\tR\tmarginAmt\x12%\n\rMarginAmtType\x18\xec\x0c \x01(\tR\rmarginAmtType\x12#\n\x0cMarginAmtCcy\x18\xee\x0c \x01(\tR\x0cmarginAmtCcy\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xee\x01\n\x12OrderCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xe9\x02\n\x11OrderCancelReject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12+\n\x10\x43xlRejResponseTo\x18\xb2\x03 \x01(\tR\x10\x63xlRejResponseTo\x12\"\n\x0c\x43xlRejReason\x18\x66 \x01(\tR\x0c\x63xlRejReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\"\xf1\x01\n\x16OrderMassCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x35\n\x15MassCancelRequestType\x18\x92\x04 \x01(\tR\x15massCancelRequestType\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xa4\x03\n\x15OrderMassCancelReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12/\n\x12MassActionReportID\x18\xd9\n \x01(\tR\x12massActionReportID\x12/\n\x12MassCancelResponse\x18\x93\x04 \x01(\tR\x12massCancelResponse\x12\x37\n\x16MassCancelRejectReason\x18\x94\x04 \x01(\tR\x16massCancelRejectReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x31\n\x13TotalAffectedOrders\x18\x95\x04 \x01(\x03R\x13totalAffectedOrders\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"s\n\x12OrderStatusRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"[\n\x06Reject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x02\n\x17OrderMassStatusResponse\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12-\n\x06Orders\x18\xf4\t \x03(\x0b\x32\x14.api.ExecutionReportR\x06orders\x12+\n\x05\x46ills\x18\xf5\t \x03(\x0b\x32\x14.api.ExecutionReportR\x05\x66ills\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x04\n\x19OrderCancelReplaceRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xed\x02\n\x0cNewOrderList\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x19\n\x07\x42idType\x18\x8a\x03 \x01(\tR\x07\x62idType\x12 \n\x0bTotNoOrders\x18\x44 \x01(\x05R\x0btotNoOrders\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x33\n\nListOrdGrp\x18I \x03(\x0b\x32\x13.api.NewOrderSingleR\nlistOrdGrp\x12\x38\n\rNestedListGrp\x18\xed\r \x03(\x0b\x32\x11.api.NewOrderListR\rnestedListGrp\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"V\n\x0fOrderListAction\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x18\n\x07OrderId\x18% \x03(\tR\x07orderId\"\xaa\x03\n\nListStatus\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\'\n\x0eListStatusType\x18\xad\x03 \x01(\tR\x0elistStatusType\x12)\n\x0fListOrderStatus\x18\xaf\x03 \x01(\tR\x0flistOrderStatus\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12+\n\x10ListRejectReason\x18\xea\n \x01(\tR\x10listRejectReason\x12?\n\x0fListRejectOrder\x18\xeb\n \x01(\x0b\x32\x14.api.ExecutionReportR\x0flistRejectOrder\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\'\n\x0eListStatusText\x18\xbc\x03 \x01(\tR\x0elistStatusTextb\x06proto3')
 )
 
 
@@ -907,6 +907,180 @@ _ORDERCANCELREJECT = _descriptor.Descriptor(
 )
 
 
+_ORDERMASSCANCELREQUEST = _descriptor.Descriptor(
+  name='OrderMassCancelRequest',
+  full_name='api.OrderMassCancelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MsgType', full_name='api.OrderMassCancelRequest.MsgType', index=0,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ClOrdId', full_name='api.OrderMassCancelRequest.ClOrdId', index=1,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='clOrdId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MassCancelRequestType', full_name='api.OrderMassCancelRequest.MassCancelRequestType', index=2,
+      number=530, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='massCancelRequestType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Symbol', full_name='api.OrderMassCancelRequest.Symbol', index=3,
+      number=55, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Side', full_name='api.OrderMassCancelRequest.Side', index=4,
+      number=54, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='side', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='PositionEffect', full_name='api.OrderMassCancelRequest.PositionEffect', index=5,
+      number=77, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='positionEffect', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.OrderMassCancelRequest.Account', index=6,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3361,
+  serialized_end=3602,
+)
+
+
+_ORDERMASSCANCELREPORT = _descriptor.Descriptor(
+  name='OrderMassCancelReport',
+  full_name='api.OrderMassCancelReport',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MsgType', full_name='api.OrderMassCancelReport.MsgType', index=0,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ClOrdId', full_name='api.OrderMassCancelReport.ClOrdId', index=1,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='clOrdId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MassActionReportID', full_name='api.OrderMassCancelReport.MassActionReportID', index=2,
+      number=1369, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='massActionReportID', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MassCancelResponse', full_name='api.OrderMassCancelReport.MassCancelResponse', index=3,
+      number=531, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='massCancelResponse', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MassCancelRejectReason', full_name='api.OrderMassCancelReport.MassCancelRejectReason', index=4,
+      number=532, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='massCancelRejectReason', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RejectText', full_name='api.OrderMassCancelReport.RejectText', index=5,
+      number=1328, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='rejectText', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Symbol', full_name='api.OrderMassCancelReport.Symbol', index=6,
+      number=55, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Side', full_name='api.OrderMassCancelReport.Side', index=7,
+      number=54, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='side', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TransactTime', full_name='api.OrderMassCancelReport.TransactTime', index=8,
+      number=60, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='transactTime', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TotalAffectedOrders', full_name='api.OrderMassCancelReport.TotalAffectedOrders', index=9,
+      number=533, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='totalAffectedOrders', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.OrderMassCancelReport.Account', index=10,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3605,
+  serialized_end=4025,
+)
+
+
 _ORDERSTATUSREQUEST = _descriptor.Descriptor(
   name='OrderStatusRequest',
   full_name='api.OrderStatusRequest',
@@ -947,8 +1121,8 @@ _ORDERSTATUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3360,
-  serialized_end=3475,
+  serialized_start=4027,
+  serialized_end=4142,
 )
 
 
@@ -992,8 +1166,8 @@ _REJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3477,
-  serialized_end=3568,
+  serialized_start=4144,
+  serialized_end=4235,
 )
 
 
@@ -1065,8 +1239,8 @@ _ORDERMASSSTATUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3571,
-  serialized_end=3840,
+  serialized_start=4238,
+  serialized_end=4507,
 )
 
 
@@ -1208,8 +1382,8 @@ _ORDERCANCELREPLACEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3843,
-  serialized_end=4368,
+  serialized_start=4510,
+  serialized_end=5035,
 )
 
 
@@ -1302,8 +1476,8 @@ _NEWORDERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4371,
-  serialized_end=4736,
+  serialized_start=5038,
+  serialized_end=5403,
 )
 
 
@@ -1340,8 +1514,8 @@ _ORDERLISTACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4738,
-  serialized_end=4824,
+  serialized_start=5405,
+  serialized_end=5491,
 )
 
 
@@ -1441,8 +1615,8 @@ _LISTSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4827,
-  serialized_end=5253,
+  serialized_start=5494,
+  serialized_end=5920,
 )
 
 _NEWORDERSINGLE.fields_by_name['TriggeringInstructions'].message_type = _TRIGGERINGINSTRUCTION
@@ -1461,6 +1635,8 @@ DESCRIPTOR.message_types_by_name['NewOrderSingle'] = _NEWORDERSINGLE
 DESCRIPTOR.message_types_by_name['ExecutionReport'] = _EXECUTIONREPORT
 DESCRIPTOR.message_types_by_name['OrderCancelRequest'] = _ORDERCANCELREQUEST
 DESCRIPTOR.message_types_by_name['OrderCancelReject'] = _ORDERCANCELREJECT
+DESCRIPTOR.message_types_by_name['OrderMassCancelRequest'] = _ORDERMASSCANCELREQUEST
+DESCRIPTOR.message_types_by_name['OrderMassCancelReport'] = _ORDERMASSCANCELREPORT
 DESCRIPTOR.message_types_by_name['OrderStatusRequest'] = _ORDERSTATUSREQUEST
 DESCRIPTOR.message_types_by_name['Reject'] = _REJECT
 DESCRIPTOR.message_types_by_name['OrderMassStatusResponse'] = _ORDERMASSSTATUSRESPONSE
@@ -1518,6 +1694,20 @@ OrderCancelReject = _reflection.GeneratedProtocolMessageType('OrderCancelReject'
   # @@protoc_insertion_point(class_scope:api.OrderCancelReject)
   ))
 _sym_db.RegisterMessage(OrderCancelReject)
+
+OrderMassCancelRequest = _reflection.GeneratedProtocolMessageType('OrderMassCancelRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ORDERMASSCANCELREQUEST,
+  __module__ = 'order_pb2'
+  # @@protoc_insertion_point(class_scope:api.OrderMassCancelRequest)
+  ))
+_sym_db.RegisterMessage(OrderMassCancelRequest)
+
+OrderMassCancelReport = _reflection.GeneratedProtocolMessageType('OrderMassCancelReport', (_message.Message,), dict(
+  DESCRIPTOR = _ORDERMASSCANCELREPORT,
+  __module__ = 'order_pb2'
+  # @@protoc_insertion_point(class_scope:api.OrderMassCancelReport)
+  ))
+_sym_db.RegisterMessage(OrderMassCancelReport)
 
 OrderStatusRequest = _reflection.GeneratedProtocolMessageType('OrderStatusRequest', (_message.Message,), dict(
   DESCRIPTOR = _ORDERSTATUSREQUEST,

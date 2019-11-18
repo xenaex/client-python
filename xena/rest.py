@@ -254,6 +254,20 @@ class XenaTradingClient(XenaClient):
         cmd.Account = account
         return await self.cancel(cmd)
 
+    async def masss_cancel(self, account, cancel_id, symbol="", side="", position_effect=constants.PositionEffect_Default):
+        """ Create OrderMassCancelRequest and send request"""
+
+        cmd = order_pb2.OrderMassCancelRequest
+        cmd.MsgType = constants.MsgType_OrderMassCancelRequest
+        cmd.MassCancelRequestType = constants.MassCancelRequestType_CancelOrdersForASecurity if symbol != "" else constants.MassCancelRequestType_CancelAllOrders
+        cmd.ClOrdId = cancel_id
+        cmd.Account = account
+        cmd.Symbol = symbol
+        cmd.Side = side
+        cmd.PositionEffect = position_effect
+        cmd.TransactTime = int(time.time() * 1000000000)
+        return await self._post('/order/mass-cancel', data=serialization.to_json(cmd))
+
     async def replace(self, cmd):
         """Wrapper for post with convenient methond name for sending replace commnads"""
 
@@ -506,6 +520,18 @@ class XenaTradingSyncClient(XenaSyncClient):
         cmd.TransactTime = int(time.time() * 1000000000)
         cmd.Account = account
         return self.cancel(cmd)
+
+    def masss_cancel(self, account, cancel_id, symbol="", side="", position_effect=constants.PositionEffect_Default):
+        cmd = order_pb2.OrderMassCancelRequest
+        cmd.MsgType = constants.MsgType_OrderMassCancelRequest
+        cmd.MassCancelRequestType = constants.MassCancelRequestType_CancelOrdersForASecurity if symbol != "" else constants.MassCancelRequestType_CancelAllOrders
+        cmd.ClOrdId = cancel_id
+        cmd.Account = account
+        cmd.Symbol = symbol
+        cmd.Side = side
+        cmd.PositionEffect = position_effect
+        cmd.TransactTime = int(time.time() * 1000000000)
+        return self._post('/order/mass-cancel', data=serialization.to_json(cmd))
 
     def replace(self, cmd):
         if not isinstance(cmd, order_pb2.OrderCancelReplaceRequest):
