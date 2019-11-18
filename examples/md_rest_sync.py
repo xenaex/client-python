@@ -25,6 +25,12 @@ def example_of_instruments():
     print(res)
 
 
+def example_of_server_time():
+    rest = XenaMDSyncClient()
+    res = rest.server_time()
+    print(res)
+
+
 if __name__ == "__main__":
     examples = {name:obj for name, obj in inspect.getmembers(sys.modules[__name__])  if (inspect.isfunction(obj) and  name.startswith('example'))}
 

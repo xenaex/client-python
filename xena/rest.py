@@ -2,6 +2,7 @@ import aiohttp
 import logging
 import time
 import requests
+from datetime import datetime
 from hashlib import sha256
 from ecdsa import SigningKey
 
@@ -126,6 +127,15 @@ class XenaMDClient(XenaClient):
 
         return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh)
     
+    async def server_time(self):
+        """Get server time
+        
+        :returns: datetime.datetime
+        """ 
+
+        resp = await self._get('/market-data/server-time', msg=common_pb2.Heartbeat)
+        return datetime.fromtimestamp(resp.TransactTime/1000000000)
+    
     async def instruments(self):
         """Get list of instruments
         
@@ -153,6 +163,10 @@ class XenaMDSyncClient(XenaSyncClient):
     
     def dom(self, symbol):
         return self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh)
+    
+    def server_time(self):
+        resp = self._get('/market-data/server-time', msg=common_pb2.Heartbeat)
+        return datetime.fromtimestamp(resp.TransactTime/1000000000)
     
     def instruments(self):
         return self._get('/public/instruments', msg=common_pb2.Instrument)
