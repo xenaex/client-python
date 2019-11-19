@@ -104,9 +104,9 @@ class XenaMDClient(XenaClient):
         :param timeframe: timeframe of bars
         :type timeframe: str '1m', '15m' '30m', '1h', '3h', '6h', '24h'
         :param ts_from: show candles from
-        :type ts_from: int unixtimestamp
+        :type ts_from: int unixtimestamp in nanoseconds
         :param ts_from: show candles to
-        :type ts_to: int unixtimestamp
+        :type ts_to: int unixtimestamp in nanoseconds
 
         :returns: xena.proto.market_pb2.MarketDataRefresh
         """
@@ -126,6 +126,30 @@ class XenaMDClient(XenaClient):
         """
 
         return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh)
+    
+    async def trades(self, symbol, ts_from="", ts_to="", page=1, limit=0):
+        """Get trades for :symbol 
+
+        :param symbol: required
+        :type symbol: str
+        :param ts_from: show trades which TransactTime greater than ts_from, max value is now - 7 days
+        :type ts_from: int unixtimestamp in nanoseconds
+        :param ts_to: show trades which TransactTime less than ts_to
+        :type ts_to: int unixtimestamp in nanoseconds
+        :param page: use for pagination to move through pages
+        :type page: int
+        :param limit: number of trades to return
+        :type limit: int
+
+        :returns: xena.proto.market_pb2.MarketDataRefresh
+        """
+
+        return await self._get('/market-data/trades/'+symbol, msg=market_pb2.MarketDataRefresh, params={
+            "from": ts_from,
+            "to": ts_to,
+            "page": page,
+            "limit": limit
+        })
     
     async def server_time(self):
         """Get server time
@@ -163,6 +187,14 @@ class XenaMDSyncClient(XenaSyncClient):
     
     def dom(self, symbol):
         return self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh)
+    
+    def trades(self, symbol, ts_from="", ts_to="", page=1, limit=0):
+        return self._get('/market-data/trades/'+symbol, msg=market_pb2.MarketDataRefresh, params={
+            "from": ts_from,
+            "to": ts_to,
+            "page": page,
+            "limit": limit
+        })
     
     def server_time(self):
         resp = self._get('/market-data/server-time', msg=common_pb2.Heartbeat)
@@ -348,13 +380,13 @@ class XenaTradingClient(XenaClient):
         :param symbol: filter positions by symbol
         :type sybmol: string
         :param open_ts_from: show positions which PositionOpenTime greater than open_ts_from
-        :type open_ts_from: int unixtimestamp
+        :type open_ts_from: int unixtimestamp in nanoseconds
         :param open_ts_from: show trades which PositionOpenTime less than open_ts_to
-        :type open_ts_to: int unixtimestamp
+        :type open_ts_to: int unixtimestamp in nanoseconds
         :param close_ts_from: show positions which SettlDate greater than close_ts_from
-        :type close_ts_from: int unixtimestamp
+        :type close_ts_from: int unixtimestamp in nanoseconds
         :param close_ts_from: show trades which SettlDate less than close_ts_to
-        :type close_ts_to: int unixtimestamp
+        :type close_ts_to: int unixtimestamp in nanoseconds
         :param page: use for pagination to move through pages
         :type page: int
         :param limit: number of position to return
@@ -396,9 +428,9 @@ class XenaTradingClient(XenaClient):
         :param symbol: filter trades by symbol
         :type sybmol: string
         :param ts_from: show trades which TransactTime greater than ts_from
-        :type ts_from: int unixtimestamp
-        :param ts_from: show trades which TransactTime less than ts_to
-        :type ts_to: int unixtimestamp
+        :type ts_from: int unixtimestamp in nanoseconds
+        :param ts_to: show trades which TransactTime less than ts_to
+        :type ts_to: int unixtimestamp in nanoseconds
         :param page: use for pagination to move through pages
         :type page: int
         :param limit: number of trades to return

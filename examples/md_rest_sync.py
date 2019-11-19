@@ -19,6 +19,14 @@ def example_of_dom():
     print(res)
 
 
+def example_of_trades():
+    rest = XenaMDSyncClient()
+    ts_from = ts_from=int((datetime.today() - timedelta(days=10)).timestamp()) * 1000000000 # nanoseconds
+    ts_to =  int(datetime.now().timestamp())*1000000000 # nanoseconds
+    res = rest.trades("XBTUSD", ts_from=ts_from, ts_to=ts_to)
+    print(res)
+
+
 def example_of_instruments():
     rest = XenaMDSyncClient()
     res = rest.instruments()
