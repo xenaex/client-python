@@ -50,6 +50,7 @@ OrdType_MarketIfTouched = "J" # real FIX value is 'J'
 OrdType_Pegged = "P" # real FIX value is 'P'
 
 ExecInst_StayOnOfferSide = "0"
+ExecInst_PegToOfferSide = "9"
 ExecInst_AllOrNone = "G"
 ExecInst_IgnoreNotionalValueChecks = "x"
 ExecInst_Suspend = "s"

@@ -76,7 +76,8 @@ class XenaSyncClient:
     def _handle_response(self, response, msg=None):
         if not str(response.status_code).startswith('2'):
             raise exceptions.RequestException(response, response.status_code, response.text)
-
+        
+        print(response.text)
         return serialization.from_json(response.text, to=msg)
 
     def _get(self, path, **kwargs):
@@ -485,8 +486,8 @@ class XenaTradingClient(XenaClient):
 class XenaTradingSyncClient(XenaSyncClient):
     """All docs look up at XenaTradingClient"""
 
-    URL = 'https://api.xena.exchange/trading'
-    #  URL = 'http://localhost/api/trading'
+    #  URL = 'https://api.xena.exchange/trading'
+    URL = 'http://localhost/api/trading'
 
     def __init__(self, api_key, api_secret):
         super().__init__(self.URL)

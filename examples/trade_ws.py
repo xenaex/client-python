@@ -89,6 +89,27 @@ async def example_of_limit_order():
         await asyncio.sleep(20, loop=loop)
 
 
+async def example_of_limit_order_post_only():
+    ws = await get_client()
+
+    async def handle(ws, msg):
+        print(msg)
+
+
+    ws.listen_type(constants.MsgType_ExecutionReportMsgType, handle)
+
+    # will return cancel if can't be placed with provide price
+    await ws.limit_order(8263200, id("limit-order"), "BTC/USDT", constants.Side_Buy, "10000", "0.01", exec_inst=[constants.ExecInst_StayOnOfferSide])
+   
+    # will set new price if can't be placed with provide price
+    await ws.limit_order(8263200, id("limit-order"), "BTC/USDT", constants.Side_Buy, "10000", "0.01", exec_inst=[constants.ExecInst_PegToOfferSide])
+
+
+    # looop
+    while True:
+        await asyncio.sleep(20, loop=loop)
+
+
 async def example_of_stop_order():
     ws = await get_client()
 
