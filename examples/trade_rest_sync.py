@@ -132,19 +132,19 @@ def example_of_mass_cancel():
     rest = get_client()
 
     # cancel orders that will open positions for specific symbol and side
-    resp = rest.masss_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD", side=constants.Side_Buy, position_effect=constants.PositionEffect_Open)
+    resp = rest.mass_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD", side=constants.Side_Buy, position_effect=constants.PositionEffect_Open)
     print(resp)
 
     # cancel all orders for specific symbol and side
-    resp = rest.masss_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD", side=constants.Side_Buy)
+    resp = rest.mass_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD", side=constants.Side_Buy)
     print(resp)
 
     # cancel all orders for specific symbol
-    resp = rest.masss_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD")
+    resp = rest.mass_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD")
     print(resp)
 
     # cancel all order for account
-    resp = rest.masss_cancel(1012833458, id("mass-cancel-1"))
+    resp = rest.mass_cancel(1012833458, id("mass-cancel-1"))
     print(resp)
 
 

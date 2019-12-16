@@ -268,16 +268,16 @@ async def example_of_mass_cancel():
     ws.listen_type(constants.MsgType_OrderMassCancelReport, handle)
     
     # cancel orders that will open positions for specific symbol and side
-    await ws.masss_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD", side=constants.Side_Buy, position_effect=constants.PositionEffect_Open)
+    await ws.mass_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD", side=constants.Side_Buy, position_effect=constants.PositionEffect_Open)
     
     # cancel all orders for specific symbol and side
-    await ws.masss_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD", side=constants.Side_Buy)
+    await ws.mass_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD", side=constants.Side_Buy)
     
     # cancel all orders for specific symbol
-    await ws.masss_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD")
+    await ws.mass_cancel(1012833458, id("mass-cancel-1"), symbol="XBTUSD")
     
     # cancel all order for account
-    await ws.masss_cancel(1012833458, id("mass-cancel-1"))
+    await ws.mass_cancel(1012833458, id("mass-cancel-1"))
 
     # looop
     while True:

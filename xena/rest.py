@@ -287,7 +287,7 @@ class XenaTradingClient(XenaClient):
         cmd.Account = account
         return await self.cancel(cmd)
 
-    async def masss_cancel(self, account, cancel_id, symbol="", side="", position_effect=constants.PositionEffect_Default):
+    async def mass_cancel(self, account, cancel_id, symbol="", side="", position_effect=constants.PositionEffect_Default):
         """ Create OrderMassCancelRequest and send request"""
 
         cmd = order_pb2.OrderMassCancelRequest

@@ -484,7 +484,7 @@ class XenaTradingWebsocketClient(WebsocketClient):
         cmd.Account = account
         await self.cancel(cmd)
 
-    async def masss_cancel(self, account, cancel_id, symbol="", side="", position_effect=constants.PositionEffect_Default):
+    async def mass_cancel(self, account, cancel_id, symbol="", side="", position_effect=constants.PositionEffect_Default):
         """ Create OrderMassCancelRequest and send request
 
         To receive respose, client has to listen constants.MsgType_MsgType_OrderMassCancelReport.

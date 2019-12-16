@@ -62,7 +62,7 @@ def replace_from_execution_report(replace_id, execution_report):
 def order(
         account, client_order_id, ord_type, symbol, side, qty, price=None, stop_price=None,
         position_id=None, stop_loss_price=None, take_profit_price=None, trailing_offset=None, cap_price=None,
-        time_in_force=None, exec_inst=[]
+        time_in_force=None, exec_inst=[], text=''
     ):
     """Create NewOrderSingle from given params
     For more info about NewOrderSingle look at https://support.xena.exchange/support/solutions/articles/44000222082-ws-trading-api#new_order_single
@@ -78,6 +78,7 @@ def order(
     cmd.TransactTime = int(time.time() * 1000000000)
     cmd.OrderQty = qty
     cmd.Account = account
+    #  cmd.Text = text
 
     if price is not None:
         cmd.Price = price
