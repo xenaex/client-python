@@ -78,7 +78,7 @@ def order(
     cmd.TransactTime = int(time.time() * 1000000000)
     cmd.OrderQty = qty
     cmd.Account = account
-    #  cmd.Text = text
+    cmd.Text = text
 
     if price is not None:
         cmd.Price = price

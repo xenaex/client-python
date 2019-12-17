@@ -78,7 +78,7 @@ async def example_of_limit_order():
         print(msg)
 
     ws.listen_type(constants.MsgType_ExecutionReportMsgType, handle)
-    await ws.limit_order(8263200, id("limit-order"), "BTC/USDT", constants.Side_Buy, "10000", "0.01")
+    await ws.limit_order(8263200, id("limit-order"), "BTC/USDT", constants.Side_Buy, "10000", "0.01", text="comment")
 
     # or using helpers method
     cmd = helpers.limit_order(8263200, id("limit-order"), "BTC/USDT", constants.Side_Buy, "10000", "0.01")
