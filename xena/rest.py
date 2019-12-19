@@ -554,7 +554,7 @@ class XenaTradingSyncClient(XenaSyncClient):
         cmd.Account = account
         return self.cancel(cmd)
 
-    def masss_cancel(self, account, cancel_id, symbol="", side="", position_effect=constants.PositionEffect_Default):
+    def mass_cancel(self, account, cancel_id, symbol="", side="", position_effect=constants.PositionEffect_Default):
         cmd = order_pb2.OrderMassCancelRequest
         cmd.MsgType = constants.MsgType_OrderMassCancelRequest
         cmd.MassCancelRequestType = constants.MassCancelRequestType_CancelOrdersForASecurity if symbol != "" else constants.MassCancelRequestType_CancelAllOrders
