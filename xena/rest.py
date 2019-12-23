@@ -486,8 +486,8 @@ class XenaTradingClient(XenaClient):
 class XenaTradingSyncClient(XenaSyncClient):
     """All docs look up at XenaTradingClient"""
 
-    #  URL = 'https://api.xena.exchange/trading'
-    URL = 'http://localhost/api/trading'
+    URL = 'https://api.xena.exchange/trading'
+    #  URL = 'http://localhost/api/trading'
 
     def __init__(self, api_key, api_secret):
         super().__init__(self.URL)
