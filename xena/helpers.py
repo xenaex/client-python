@@ -124,6 +124,13 @@ def stop_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs
     kwargs["stop_price"] = stop_price
     return order(account, client_order_id, constants.OrdType_Stop, symbol, side, qty, **kwargs)
 
+def stop_limit_order(account, client_order_id, symbol, side, price, stop_price, qty, **kwargs):
+    """Wrapper around order() method to create simple stop order"""
+
+    kwargs["price"] = price
+    kwargs["stop_price"] = stop_price
+    return order(account, client_order_id, constants.OrdType_StopLimit, symbol, side, qty, **kwargs)
+
 def mit_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs):
     """Wrapper around order() method to create simple "market if toucehd" order"""
 
