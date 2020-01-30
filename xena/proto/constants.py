@@ -75,6 +75,7 @@ ExecType_Restated = "D"
 ExecType_PendingReplaceExec = "E"
 ExecType_Trade = "F"
 ExecType_OrderStatus = "I"
+ExecType_TriggeredOrActivatedBySystem = "L"
 
 ExecRestatementReason_UnknownRestatementReason = ""
 ExecRestatementReason_RepricingOfOrder = "3"
