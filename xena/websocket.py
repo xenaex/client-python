@@ -530,3 +530,11 @@ class XenaTradingWebsocketClient(WebsocketClient):
         cmd.PosMaintAction = constants.PosMaintAction_Replace
         await self.send_cmd(cmd)
 
+    async def heartbeat(self, group_id, intervalInSec):
+        """Send application heartbeat"""
+
+        cmd = order_pb2.ApplicationHeartbeat()
+        cmd.MsgType = constants.MsgType_ApplicationHeartbeat
+        cmd.GrpID = group_id
+        cmd.HeartBtInt = intervalInSec
+        await self.send_cmd(cmd)

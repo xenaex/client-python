@@ -77,7 +77,6 @@ class XenaSyncClient:
         if not str(response.status_code).startswith('2'):
             raise exceptions.RequestException(response, response.status_code, response.text)
         
-        print(response.text)
         return serialization.from_json(response.text, to=msg)
 
     def _get(self, path, **kwargs):
@@ -479,7 +478,6 @@ class XenaTradingClient(XenaClient):
 
         return await self._get('/accounts/' + str(account) + '/margin-requirements')
     
-    
     async def accounts(self):
         """Request list of acconts id
         :returns: list of int
@@ -491,6 +489,16 @@ class XenaTradingClient(XenaClient):
             result.append(item['id'])
         
         return result
+    
+    async def heartbeat(self, group_id, intervalInSec):
+        """Send application heartbeat"""
+
+        cmd = order_pb2.ApplicationHeartbeat()
+        cmd.MsgType = constants.MsgType_ApplicationHeartbeat
+        cmd.GrpID = group_id
+        cmd.HeartBtInt = intervalInSec
+        
+        await self._post('/heartbeat', data=serialization.to_json(cmd))
 
 
 class XenaTradingSyncClient(XenaSyncClient):
@@ -656,3 +664,13 @@ class XenaTradingSyncClient(XenaSyncClient):
             result.append(item['id'])
         
         return result
+    
+    def heartbeat(self, group_id, intervalInSec):
+        """Send application heartbeat"""
+
+        cmd = order_pb2.ApplicationHeartbeat()
+        cmd.MsgType = constants.MsgType_ApplicationHeartbeat
+        cmd.GrpID = group_id
+        cmd.HeartBtInt = intervalInSec
+       
+        self._post('/order/heartbeat', data=serialization.to_json(cmd))

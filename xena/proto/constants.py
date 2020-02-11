@@ -28,6 +28,7 @@ MsgType_PositionReport = "AP"
 MsgType_MassPositionReport = "MAP"
 MsgType_MarginRequirementReport = "CJ"
 MsgType_Heartbeat = "0"
+MsgType_ApplicationHeartbeat = "XAH"
 
 BusinessRejectReason_ApplicationNotAvailable = "4"
 BusinessRejectReason_ThrottleLimitExceeded = "8"

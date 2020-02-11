@@ -367,6 +367,15 @@ async def example_of_getting_balances():
     print(balances)
 
 
+async def example_of_heartbeat():
+    ws = await get_client()
+
+    # looop
+    while True:
+        await ws.heartbeat("test_group_id", 10)
+        await asyncio.sleep(10, loop=loop)
+
+
 if __name__ == "__main__":
     examples = {name:obj for name,obj in inspect.getmembers(sys.modules[__name__])  if (inspect.isfunction(obj) and  name.startswith('example'))}
     

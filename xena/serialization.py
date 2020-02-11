@@ -115,6 +115,9 @@ def from_json(raw_data, to=None):
 def from_dict(data, msg=None):
     """Convert dict to protobuf message"""
 
+    if data is None:
+        return data
+
     msg_type = None
     if "msgType" in data:
         msg_type = data["msgType"]

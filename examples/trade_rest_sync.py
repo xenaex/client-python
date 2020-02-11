@@ -228,6 +228,11 @@ def example_of_margin_requirements():
             print(resp)
 
 
+def example_of_heartbeat():
+    rest = get_client()
+    rest.heartbeat("test_group_id", 10)
+
+
 if __name__ == "__main__":
     examples = {name:obj for name,obj in inspect.getmembers(sys.modules[__name__])  if (inspect.isfunction(obj) and  name.startswith('example'))}
     
