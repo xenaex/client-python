@@ -15,7 +15,7 @@ def example_of_candles():
 
 def example_of_dom():
     rest = XenaMDSyncClient()
-    res = rest.dom("BTC/USDT")
+    res = rest.dom("BTC/USDT", market_depth=10, aggregation=5)
     print(res)
 
 

@@ -19,10 +19,55 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0border.proto\x12\x03\x61pi\"\xa7\x01\n\x15TriggeringInstruction\x12\x1f\n\nRefClOrdId\x18\x8e\x0e \x01(\tR\nrefClordId\x12%\n\rTriggerAction\x18\xcd\x08 \x01(\tR\rtriggerAction\x12!\n\x0bTriggerType\x18\xcc\x08 \x01(\tR\x0btriggerType\x12#\n\x0cTriggerScope\x18\xdc\x0c \x01(\tR\x0ctriggerScope\"E\n\x06Partie\x12\x1b\n\x08PartieId\x18\xc0\x03 \x01(\tR\x08partieId\x12\x1e\n\nPartieRole\x18- \x01(\tR\npartieRole\"\xe0\x01\n\x04SLTP\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\"\xb5\x06\n\x0eNewOrderSingle\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x1c\n\tListSeqNo\x18\x43 \x01(\x05R\tlistSeqNo\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12)\n\x0f\x43ommissionLevel\x18\xc7\x17 \x01(\tR\x0f\x63ommissionLevel\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12S\n\x16TriggeringInstructions\x18\xda\x08 \x03(\x0b\x32\x1a.api.TriggeringInstructionR\x16triggeringInstructions\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\xc8\x0b\n\x0f\x45xecutionReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x16\n\x06\x45xecId\x18\x11 \x01(\tR\x06\x65xecId\x12\x1b\n\x08\x45xecType\x18\x96\x01 \x01(\tR\x08\x65xecType\x12\x35\n\x15\x45xecRestatementReason\x18\xfa\x02 \x01(\tR\x15\x65xecRestatementReason\x12\x19\n\x07TradeId\x18\xeb\x07 \x01(\tR\x07tradeId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12\"\n\x0cOrdRejReason\x18g \x01(\tR\x0cordRejReason\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x1d\n\tLeavesQty\x18\x97\x01 \x01(\tR\tleavesQty\x12\x16\n\x06\x43umQty\x18\x0e \x01(\tR\x06\x63umQty\x12\x18\n\x07LastQty\x18  \x01(\tR\x07lastQty\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x16\n\x06LastPx\x18\x1f \x01(\tR\x06lastPx\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x33\n\x14\x43\x61lculatedCcyLastQty\x18\xa0\x08 \x01(\tR\x14\x63\x61lculatedCcyLastQty\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12$\n\rSettlCurrency\x18x \x01(\tR\rsettlCurrency\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\x1a\n\x08NetMoney\x18v \x01(\tR\x08netMoney\x12+\n\x10LastLiquidityInd\x18\xd3\x06 \x01(\tR\x10lastLiquidityInd\x12\x1e\n\nCommission\x18\x0c \x01(\tR\ncommission\x12\x1b\n\x08\x43ommRate\x18\xd1\t \x01(\tR\x08\x63ommRate\x12#\n\x0c\x43ommCurrency\x18\xdf\x03 \x01(\tR\x0c\x63ommCurrency\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1d\n\tMarginAmt\x18\xed\x0c \x01(\tR\tmarginAmt\x12%\n\rMarginAmtType\x18\xec\x0c \x01(\tR\rmarginAmtType\x12#\n\x0cMarginAmtCcy\x18\xee\x0c \x01(\tR\x0cmarginAmtCcy\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\xee\x01\n\x12OrderCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xe9\x02\n\x11OrderCancelReject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12+\n\x10\x43xlRejResponseTo\x18\xb2\x03 \x01(\tR\x10\x63xlRejResponseTo\x12\"\n\x0c\x43xlRejReason\x18\x66 \x01(\tR\x0c\x63xlRejReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\"\xf1\x01\n\x16OrderMassCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x35\n\x15MassCancelRequestType\x18\x92\x04 \x01(\tR\x15massCancelRequestType\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xa4\x03\n\x15OrderMassCancelReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12/\n\x12MassActionReportID\x18\xd9\n \x01(\tR\x12massActionReportID\x12/\n\x12MassCancelResponse\x18\x93\x04 \x01(\tR\x12massCancelResponse\x12\x37\n\x16MassCancelRejectReason\x18\x94\x04 \x01(\tR\x16massCancelRejectReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x31\n\x13TotalAffectedOrders\x18\x95\x04 \x01(\x03R\x13totalAffectedOrders\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"s\n\x12OrderStatusRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"[\n\x06Reject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x02\n\x17OrderMassStatusResponse\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12-\n\x06Orders\x18\xf4\t \x03(\x0b\x32\x14.api.ExecutionReportR\x06orders\x12+\n\x05\x46ills\x18\xf5\t \x03(\x0b\x32\x14.api.ExecutionReportR\x05\x66ills\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x04\n\x19OrderCancelReplaceRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xed\x02\n\x0cNewOrderList\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x19\n\x07\x42idType\x18\x8a\x03 \x01(\tR\x07\x62idType\x12 \n\x0bTotNoOrders\x18\x44 \x01(\x05R\x0btotNoOrders\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x33\n\nListOrdGrp\x18I \x03(\x0b\x32\x13.api.NewOrderSingleR\nlistOrdGrp\x12\x38\n\rNestedListGrp\x18\xed\r \x03(\x0b\x32\x11.api.NewOrderListR\rnestedListGrp\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"V\n\x0fOrderListAction\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x18\n\x07OrderId\x18% \x03(\tR\x07orderId\"\xaa\x03\n\nListStatus\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\'\n\x0eListStatusType\x18\xad\x03 \x01(\tR\x0elistStatusType\x12)\n\x0fListOrderStatus\x18\xaf\x03 \x01(\tR\x0flistOrderStatus\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12+\n\x10ListRejectReason\x18\xea\n \x01(\tR\x10listRejectReason\x12?\n\x0fListRejectOrder\x18\xeb\n \x01(\x0b\x32\x14.api.ExecutionReportR\x0flistRejectOrder\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\'\n\x0eListStatusText\x18\xbc\x03 \x01(\tR\x0elistStatusTextb\x06proto3')
+  serialized_pb=_b('\n\x0border.proto\x12\x03\x61pi\"g\n\x14\x41pplicationHeartbeat\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x15\n\x05GrpID\x18\x89\' \x01(\tR\x05grpId\x12\x1e\n\nHeartBtInt\x18l \x01(\x05R\nheartBtInt\"\xa7\x01\n\x15TriggeringInstruction\x12\x1f\n\nRefClOrdId\x18\x8e\x0e \x01(\tR\nrefClordId\x12%\n\rTriggerAction\x18\xcd\x08 \x01(\tR\rtriggerAction\x12!\n\x0bTriggerType\x18\xcc\x08 \x01(\tR\x0btriggerType\x12#\n\x0cTriggerScope\x18\xdc\x0c \x01(\tR\x0ctriggerScope\"E\n\x06Partie\x12\x1b\n\x08PartieId\x18\xc0\x03 \x01(\tR\x08partieId\x12\x1e\n\nPartieRole\x18- \x01(\tR\npartieRole\"\xe0\x01\n\x04SLTP\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\"\xcc\x06\n\x0eNewOrderSingle\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x1c\n\tListSeqNo\x18\x43 \x01(\x05R\tlistSeqNo\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12)\n\x0f\x43ommissionLevel\x18\xc7\x17 \x01(\tR\x0f\x63ommissionLevel\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12S\n\x16TriggeringInstructions\x18\xda\x08 \x03(\x0b\x32\x1a.api.TriggeringInstructionR\x16triggeringInstructions\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\x12\x12\n\x04Text\x18: \x01(\tR\x04text\x12\x15\n\x05GrpID\x18\x89\' \x01(\tR\x05grpId\"\xc8\x0b\n\x0f\x45xecutionReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x16\n\x06\x45xecId\x18\x11 \x01(\tR\x06\x65xecId\x12\x1b\n\x08\x45xecType\x18\x96\x01 \x01(\tR\x08\x65xecType\x12\x35\n\x15\x45xecRestatementReason\x18\xfa\x02 \x01(\tR\x15\x65xecRestatementReason\x12\x19\n\x07TradeId\x18\xeb\x07 \x01(\tR\x07tradeId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12\"\n\x0cOrdRejReason\x18g \x01(\tR\x0cordRejReason\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x1d\n\tLeavesQty\x18\x97\x01 \x01(\tR\tleavesQty\x12\x16\n\x06\x43umQty\x18\x0e \x01(\tR\x06\x63umQty\x12\x18\n\x07LastQty\x18  \x01(\tR\x07lastQty\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x16\n\x06LastPx\x18\x1f \x01(\tR\x06lastPx\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x33\n\x14\x43\x61lculatedCcyLastQty\x18\xa0\x08 \x01(\tR\x14\x63\x61lculatedCcyLastQty\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12$\n\rSettlCurrency\x18x \x01(\tR\rsettlCurrency\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\x1a\n\x08NetMoney\x18v \x01(\tR\x08netMoney\x12+\n\x10LastLiquidityInd\x18\xd3\x06 \x01(\tR\x10lastLiquidityInd\x12\x1e\n\nCommission\x18\x0c \x01(\tR\ncommission\x12\x1b\n\x08\x43ommRate\x18\xd1\t \x01(\tR\x08\x63ommRate\x12#\n\x0c\x43ommCurrency\x18\xdf\x03 \x01(\tR\x0c\x63ommCurrency\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1d\n\tMarginAmt\x18\xed\x0c \x01(\tR\tmarginAmt\x12%\n\rMarginAmtType\x18\xec\x0c \x01(\tR\rmarginAmtType\x12#\n\x0cMarginAmtCcy\x18\xee\x0c \x01(\tR\x0cmarginAmtCcy\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\xee\x01\n\x12OrderCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xe9\x02\n\x11OrderCancelReject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12+\n\x10\x43xlRejResponseTo\x18\xb2\x03 \x01(\tR\x10\x63xlRejResponseTo\x12\"\n\x0c\x43xlRejReason\x18\x66 \x01(\tR\x0c\x63xlRejReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\"\xf1\x01\n\x16OrderMassCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x35\n\x15MassCancelRequestType\x18\x92\x04 \x01(\tR\x15massCancelRequestType\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xa4\x03\n\x15OrderMassCancelReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12/\n\x12MassActionReportID\x18\xd9\n \x01(\tR\x12massActionReportID\x12/\n\x12MassCancelResponse\x18\x93\x04 \x01(\tR\x12massCancelResponse\x12\x37\n\x16MassCancelRejectReason\x18\x94\x04 \x01(\tR\x16massCancelRejectReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x31\n\x13TotalAffectedOrders\x18\x95\x04 \x01(\x03R\x13totalAffectedOrders\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"s\n\x12OrderStatusRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"[\n\x06Reject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x02\n\x17OrderMassStatusResponse\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12-\n\x06Orders\x18\xf4\t \x03(\x0b\x32\x14.api.ExecutionReportR\x06orders\x12+\n\x05\x46ills\x18\xf5\t \x03(\x0b\x32\x14.api.ExecutionReportR\x05\x66ills\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x04\n\x19OrderCancelReplaceRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xed\x02\n\x0cNewOrderList\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x19\n\x07\x42idType\x18\x8a\x03 \x01(\tR\x07\x62idType\x12 \n\x0bTotNoOrders\x18\x44 \x01(\x05R\x0btotNoOrders\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x33\n\nListOrdGrp\x18I \x03(\x0b\x32\x13.api.NewOrderSingleR\nlistOrdGrp\x12\x38\n\rNestedListGrp\x18\xed\r \x03(\x0b\x32\x11.api.NewOrderListR\rnestedListGrp\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"V\n\x0fOrderListAction\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x18\n\x07OrderId\x18% \x03(\tR\x07orderId\"\xaa\x03\n\nListStatus\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\'\n\x0eListStatusType\x18\xad\x03 \x01(\tR\x0elistStatusType\x12)\n\x0fListOrderStatus\x18\xaf\x03 \x01(\tR\x0flistOrderStatus\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12+\n\x10ListRejectReason\x18\xea\n \x01(\tR\x10listRejectReason\x12?\n\x0fListRejectOrder\x18\xeb\n \x01(\x0b\x32\x14.api.ExecutionReportR\x0flistRejectOrder\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\'\n\x0eListStatusText\x18\xbc\x03 \x01(\tR\x0elistStatusTextb\x06proto3')
 )
 
 
+
+
+_APPLICATIONHEARTBEAT = _descriptor.Descriptor(
+  name='ApplicationHeartbeat',
+  full_name='api.ApplicationHeartbeat',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MsgType', full_name='api.ApplicationHeartbeat.MsgType', index=0,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='GrpID', full_name='api.ApplicationHeartbeat.GrpID', index=1,
+      number=5001, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='grpId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='HeartBtInt', full_name='api.ApplicationHeartbeat.HeartBtInt', index=2,
+      number=108, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='heartBtInt', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=20,
+  serialized_end=123,
+)
 
 
 _TRIGGERINGINSTRUCTION = _descriptor.Descriptor(
@@ -72,8 +117,8 @@ _TRIGGERINGINSTRUCTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21,
-  serialized_end=188,
+  serialized_start=126,
+  serialized_end=293,
 )
 
 
@@ -110,8 +155,8 @@ _PARTIE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=190,
-  serialized_end=259,
+  serialized_start=295,
+  serialized_end=364,
 )
 
 
@@ -183,8 +228,8 @@ _SLTP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=262,
-  serialized_end=486,
+  serialized_start=367,
+  serialized_end=591,
 )
 
 
@@ -370,6 +415,13 @@ _NEWORDERSINGLE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='text', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='GrpID', full_name='api.NewOrderSingle.GrpID', index=25,
+      number=5001, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='grpId', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -382,8 +434,8 @@ _NEWORDERSINGLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=489,
-  serialized_end=1310,
+  serialized_start=594,
+  serialized_end=1438,
 )
 
 
@@ -735,8 +787,8 @@ _EXECUTIONREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1313,
-  serialized_end=2793,
+  serialized_start=1441,
+  serialized_end=2921,
 )
 
 
@@ -815,8 +867,8 @@ _ORDERCANCELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2796,
-  serialized_end=3034,
+  serialized_start=2924,
+  serialized_end=3162,
 )
 
 
@@ -916,8 +968,8 @@ _ORDERCANCELREJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3037,
-  serialized_end=3398,
+  serialized_start=3165,
+  serialized_end=3526,
 )
 
 
@@ -989,8 +1041,8 @@ _ORDERMASSCANCELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3401,
-  serialized_end=3642,
+  serialized_start=3529,
+  serialized_end=3770,
 )
 
 
@@ -1090,8 +1142,8 @@ _ORDERMASSCANCELREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3645,
-  serialized_end=4065,
+  serialized_start=3773,
+  serialized_end=4193,
 )
 
 
@@ -1135,8 +1187,8 @@ _ORDERSTATUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4067,
-  serialized_end=4182,
+  serialized_start=4195,
+  serialized_end=4310,
 )
 
 
@@ -1180,8 +1232,8 @@ _REJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4184,
-  serialized_end=4275,
+  serialized_start=4312,
+  serialized_end=4403,
 )
 
 
@@ -1253,8 +1305,8 @@ _ORDERMASSSTATUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4278,
-  serialized_end=4547,
+  serialized_start=4406,
+  serialized_end=4675,
 )
 
 
@@ -1396,8 +1448,8 @@ _ORDERCANCELREPLACEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4550,
-  serialized_end=5075,
+  serialized_start=4678,
+  serialized_end=5203,
 )
 
 
@@ -1490,8 +1542,8 @@ _NEWORDERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5078,
-  serialized_end=5443,
+  serialized_start=5206,
+  serialized_end=5571,
 )
 
 
@@ -1528,8 +1580,8 @@ _ORDERLISTACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5445,
-  serialized_end=5531,
+  serialized_start=5573,
+  serialized_end=5659,
 )
 
 
@@ -1629,8 +1681,8 @@ _LISTSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5534,
-  serialized_end=5960,
+  serialized_start=5662,
+  serialized_end=6088,
 )
 
 _NEWORDERSINGLE.fields_by_name['TriggeringInstructions'].message_type = _TRIGGERINGINSTRUCTION
@@ -1642,6 +1694,7 @@ _ORDERCANCELREPLACEREQUEST.fields_by_name['SLTP'].message_type = _SLTP
 _NEWORDERLIST.fields_by_name['ListOrdGrp'].message_type = _NEWORDERSINGLE
 _NEWORDERLIST.fields_by_name['NestedListGrp'].message_type = _NEWORDERLIST
 _LISTSTATUS.fields_by_name['ListRejectOrder'].message_type = _EXECUTIONREPORT
+DESCRIPTOR.message_types_by_name['ApplicationHeartbeat'] = _APPLICATIONHEARTBEAT
 DESCRIPTOR.message_types_by_name['TriggeringInstruction'] = _TRIGGERINGINSTRUCTION
 DESCRIPTOR.message_types_by_name['Partie'] = _PARTIE
 DESCRIPTOR.message_types_by_name['SLTP'] = _SLTP
@@ -1659,6 +1712,13 @@ DESCRIPTOR.message_types_by_name['NewOrderList'] = _NEWORDERLIST
 DESCRIPTOR.message_types_by_name['OrderListAction'] = _ORDERLISTACTION
 DESCRIPTOR.message_types_by_name['ListStatus'] = _LISTSTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+ApplicationHeartbeat = _reflection.GeneratedProtocolMessageType('ApplicationHeartbeat', (_message.Message,), dict(
+  DESCRIPTOR = _APPLICATIONHEARTBEAT,
+  __module__ = 'order_pb2'
+  # @@protoc_insertion_point(class_scope:api.ApplicationHeartbeat)
+  ))
+_sym_db.RegisterMessage(ApplicationHeartbeat)
 
 TriggeringInstruction = _reflection.GeneratedProtocolMessageType('TriggeringInstruction', (_message.Message,), dict(
   DESCRIPTOR = _TRIGGERINGINSTRUCTION,

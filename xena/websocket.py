@@ -136,7 +136,7 @@ class XenaMDWebsocketClient(WebsocketClient):
 
         return await self._connect()
 
-    async def subscribe(self, stream_id, callback, throttle_interval=500, throttle_unit=constants.ThrottleTimeUnit_Milliseconds, aggregation=0):
+    async def subscribe(self, stream_id, callback, throttle_interval=500, throttle_unit=constants.ThrottleTimeUnit_Milliseconds, aggregation=0, market_depth=0):
         """Subsrcibe to :stream_id. If client already subsctibe to :stream_id, method will raise KeyError
 
         :param stream_id: required
@@ -147,6 +147,10 @@ class XenaMDWebsocketClient(WebsocketClient):
         :type throttle_interval: int
         :param throttle_unit: throttling units of throttle_interval:
         :type throttle_unit: string, sett constants.ThrottleTimeUnit_*
+        :param aggregation: dom prices are rounded to TickSize*aggregation and than aggregated, available values are 0,5,10,25,50,100,250, used only for dom subscrition
+        :type aggreagation: int
+        :param market_depth: number of dom levels to return, available values are 0,10,20, used only for dom subscrition
+        :type market_depth: int
         """
 
         if stream_id in self._streams:
@@ -160,6 +164,7 @@ class XenaMDWebsocketClient(WebsocketClient):
         request.ThrottleTimeInterval = throttle_interval
         request.ThrottleTimeUnit = throttle_unit
         request.AggregatedBook = aggregation
+        request.MarketDepth = market_depth
 
         data = serialization.to_fix_json(request)
         await self.send(data)
@@ -185,7 +190,7 @@ class XenaMDWebsocketClient(WebsocketClient):
         await self.send(data)
         del self._streams[stream_id]
 
-    async def candles(self, symbol, callback, timeframe="1m", throttle_interval=250, throttle_unit=constants.ThrottleTimeUnit_Milliseconds, aggregation=0):
+    async def candles(self, symbol, callback, timeframe="1m", throttle_interval=250, throttle_unit=constants.ThrottleTimeUnit_Milliseconds):
         """Subsrcibe to candles stream for symbol :symbol.
         The first messge to callback will be xena.proto.market_pb2.MarketDataRefresh message with MsgType_MarketDataSnapshotFullRefresh,
         then callback will continue to receive xena.proto.market_pb2.MarketDataRefresh with with MsgType_MarketDataIncrementalRefresh.
@@ -201,8 +206,6 @@ class XenaMDWebsocketClient(WebsocketClient):
         :type throttle_interval: int
         :param throttle_unit: throttling units of throttle_interval:
         :type throttle_unit: string, sett constants.ThrottleTimeUnit_*
-        :param aggregation: used only for dom subscrition; dom prices are rounded to TickSize*aggregation and than aggregated, available values are 0,5,10,25,50,100,250
-        :type aggreagation: int
 
         :returns: stream id to use in usubscribe
         """
@@ -214,7 +217,7 @@ class XenaMDWebsocketClient(WebsocketClient):
         await self.subscribe(stream_id, callback, throttle_interval, throttle_unit)
         return stream_id
 
-    async def dom(self, symbol, callback, throttle_interval=500, throttle_unit=constants.ThrottleTimeUnit_Milliseconds, aggregation=0):
+    async def dom(self, symbol, callback, throttle_interval=500, throttle_unit=constants.ThrottleTimeUnit_Milliseconds, aggregation=0, market_depth=0):
         """
         Subsrcibe to dom stream for symbol :sybmol.
         The first messge to callback will be xena.proto.market_pb2.MarketDataRefresh message with MsgType_MarketDataSnapshotFullRefresh,
@@ -232,6 +235,8 @@ class XenaMDWebsocketClient(WebsocketClient):
         :type throttle_unit: string, sett constants.ThrottleTimeUnit_*
         :param aggregation: dom prices are rounded to TickSize*aggregation and than aggregated, available values are 0,5,10,25,50,100,250
         :type aggreagation: int
+        :param market_depth: number of dom levels to return, available values are 0,10,20
+        :type market_depth: int
 
         :returns: stream id to use in usubscribe
         """
@@ -240,7 +245,7 @@ class XenaMDWebsocketClient(WebsocketClient):
             raise ValueError("Symbol can not be empty")
 
         stream_id = "DOM:{}:aggregated".format(symbol)
-        await self.subscribe(stream_id, callback, throttle_interval, throttle_unit)
+        await self.subscribe(stream_id, callback, throttle_interval, throttle_unit, market_depth)
         return stream_id
 
     async def trades(self, symbol, callback, throttle_interval=500, throttle_unit=constants.ThrottleTimeUnit_Milliseconds):

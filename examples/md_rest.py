@@ -18,7 +18,7 @@ async def example_of_candles():
 
 async def example_of_dom():
     rest = XenaMDClient(loop)
-    res = await rest.dom("BTC/USDT")
+    res = await rest.dom("BTC/USDT", market_depth=10, aggregation=5)
     print(res)
 
 
