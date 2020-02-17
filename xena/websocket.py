@@ -310,18 +310,24 @@ class XenaTradingWebsocketClient(WebsocketClient):
         self._log = logging.getLogger(__name__)
         self._listeners = {}
 
-    def _login_msg(self):
-        timestamp = int(time.time() * 1000000000)
-        auth_payload = 'AUTH' + str(timestamp)
-        signing_key = SigningKey.from_der(bytes.fromhex(self._api_secret))
+    def _login_msg(self, accounts=None):
+        def inner():
+            timestamp = int(time.time() * 1000000000)
+            auth_payload = 'AUTH' + str(timestamp)
+            signing_key = SigningKey.from_der(bytes.fromhex(self._api_secret))
 
-        msg = auth_pb2.Logon()
-        msg.MsgType = constants.MsgType_LogonMsgType
-        msg.SendingTime = timestamp
-        msg.RawData = auth_payload
-        msg.Username = self._api_key
-        msg.Password = signing_key.sign(auth_payload.encode('utf-8'), hashfunc=sha256).hex()
-        return serialization.to_fix_json(msg)
+            msg = auth_pb2.Logon()
+            msg.MsgType = constants.MsgType_LogonMsgType
+            msg.SendingTime = timestamp
+            msg.RawData = auth_payload
+            msg.Username = self._api_key
+            msg.Password = signing_key.sign(auth_payload.encode('utf-8'), hashfunc=sha256).hex()
+            if accounts is not None:
+                for i in accounts:
+                    msg.Account.append(accounts[i])
+
+            return serialization.to_fix_json(msg)
+        return inner
 
     async def _handle(self, msg):
         try:
@@ -375,13 +381,13 @@ class XenaTradingWebsocketClient(WebsocketClient):
         if msg_type in self._listeners:
             del self._listeners[msg_type]
 
-    async def connect(self):
+    async def connect(self, accounts=None):
         """Connect to server, make login request, on failure the method will raise xena.exceptions.LoginException or any other network exceptions
 
         :returns: xena.proto.auth_pb2.Logon
         """
 
-        self._login_msg_fnc = self._login_msg
+        self._login_msg_fnc = self._login_msg(accounts)
         return await self._connect()
 
     async def send_cmd(self, cmd):
