@@ -498,7 +498,7 @@ class XenaTradingClient(XenaClient):
         cmd.GrpID = group_id
         cmd.HeartBtInt = intervalInSec
         
-        await self._post('/heartbeat', data=serialization.to_json(cmd))
+        await self._post('/order/heartbeat', data=serialization.to_json(cmd))
 
 
 class XenaTradingSyncClient(XenaSyncClient):
