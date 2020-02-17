@@ -56,6 +56,7 @@ ExecInst_AllOrNone = "G"
 ExecInst_IgnoreNotionalValueChecks = "x"
 ExecInst_Suspend = "s"
 ExecInst_LiquidationOrder = "Y"
+ExecInst_CancelOnConnectionLoss = "o"
 
 TimeInForce_GoodTillCancel = "1"
 TimeInForce_ImmediateOrCancel = "3"
