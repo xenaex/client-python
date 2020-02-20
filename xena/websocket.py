@@ -245,7 +245,7 @@ class XenaMDWebsocketClient(WebsocketClient):
             raise ValueError("Symbol can not be empty")
 
         stream_id = "DOM:{}:aggregated".format(symbol)
-        await self.subscribe(stream_id, callback, throttle_interval, throttle_unit, market_depth)
+        await self.subscribe(stream_id, callback, throttle_interval, throttle_unit, aggregation, market_depth)
         return stream_id
 
     async def trades(self, symbol, callback, throttle_interval=500, throttle_unit=constants.ThrottleTimeUnit_Milliseconds):
