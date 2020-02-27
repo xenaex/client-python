@@ -443,13 +443,19 @@ class XenaTradingWebsocketClient(WebsocketClient):
         cmd.ClOrdId = client_order_id
         cmd.OrderId = order_id
         await self.send_cmd(cmd)
+    
+    async def orders(self, account, request_id=""):
+        """ Depricated """
+        await self.active_orders(account, request_id)
 
-    async def orders(self, account, request_id="", symbol=""):
-        """Request all orders for :account
+    async def active_orders(self, account, request_id="", symbol=""):
+        """Request all active orders for :account
         To receive respose, client has to listen constants.MsgType_OrderMassStatusResponse
 
         :param account: required
         :type account: int
+        :param symbol: filter trades by symbol
+        :type sybmol: string
         """
 
         cmd = order_pb2.OrderMassStatusRequest()
@@ -457,6 +463,69 @@ class XenaTradingWebsocketClient(WebsocketClient):
         cmd.MassStatusReqType = constants.MassStatusReqType_ActiveOrders
         cmd.MassStatusReqId = request_id
         cmd.Account = account
+        cmd.Symbol = symbol
+        await self.send_cmd(cmd)
+    
+    async def last_order_statuses(self, account, request_id="", symbol="", ts_from=0, ts_to=0):
+        """Request last statuses from order history for :account
+        To receive respose, client has to listen constants.MsgType_OrderMassStatusResponse
+
+        :param account: required
+        :type account: int
+        :param symbol: filter trades by symbol
+        :type sybmol: string
+        :param ts_from: show execution reports which TransactTime greater than ts_from
+        :type ts_from: int unixtimestamp in nanoseconds
+        :param ts_to: show execution reports which TransactTime less than ts_to, if present - ts_from is required
+        :type ts_to: int unixtimestamp in nanoseconds
+        """
+
+        cmd = order_pb2.OrderMassStatusRequest()
+        cmd.MsgType = constants.MsgType_OrderMassStatusRequest
+        cmd.MassStatusReqType = constants.MassStatusReqType_DoneOrdersLastStatus
+        cmd.MassStatusReqId = request_id
+        cmd.Account = account
+        cmd.Symbol = symbol
+        
+        if ts_from != 0:
+            cmd.TransactTime.append(ts_from)
+
+        if ts_to != 0:
+            if ts_from == 0:
+                raise ValueError("ts_from is required")
+            cmd.TransactTime.append(ts_to)
+
+        await self.send_cmd(cmd)
+    
+    async def order_history(self, account, request_id="", symbol="", ts_from=0, ts_to=0):
+        """Request order history for :account
+        To receive respose, client has to listen constants.MsgType_OrderMassStatusResponse
+
+        :param account: required
+        :type account: int
+        :param symbol: filter trades by symbol
+        :type sybmol: string
+        :param ts_from: show execution reports which TransactTime greater than ts_from
+        :type ts_from: int unixtimestamp in nanoseconds
+        :param ts_to: show execution reports which TransactTime less than ts_to, if present - ts_from is required
+        :type ts_to: int unixtimestamp in nanoseconds
+        """
+
+        cmd = order_pb2.OrderMassStatusRequest()
+        cmd.MsgType = constants.MsgType_OrderMassStatusRequest
+        cmd.MassStatusReqType = constants.MassStatusReqType_History
+        cmd.MassStatusReqId = request_id
+        cmd.Account = account
+        cmd.Symbol = symbol
+        
+        if ts_from != 0:
+            cmd.TransactTime.append(ts_from)
+
+        if ts_to != 0:
+            if ts_from == 0:
+                raise ValueError("ts_from is required")
+            cmd.TransactTime.append(ts_to)
+
         await self.send_cmd(cmd)
 
     async def trade_history(self, account, request_id="", symbol="", ts_from=0, ts_to=0):

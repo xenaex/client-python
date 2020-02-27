@@ -167,7 +167,7 @@ class XenaTradingClient(XenaClient):
         
         return headers
 
-    async def order(self, cmd):
+    async def new_order(self, cmd):
         return await self._post('/order/new', data=serialization.to_json(cmd))
 
     async def market_order(self, account, client_order_id, symbol, side, qty, **kwargs):
@@ -342,15 +342,96 @@ class XenaTradingClient(XenaClient):
             "limit": limit
         })
     
+    async def order(self, account, client_order_id="", order_id=""):
+        """Request last status fro :client_order_id or :order_id for :account
+
+        :param account: required
+        :type account: int
+        :param client_order_id: required
+        :type client_order_id: string
+        :param order_id: required
+        :type order_id: string
+        """
+
+        if client_order_id == "" and order_id == "":
+            raise ValueError("client_order_id or order_id is required")
+
+        return await self._get('/accounts/' + str(account) + '/order', params={
+            "client_order_id": client_order_id,
+            "order_id": order_id,
+        })
+    
     async def orders(self, account):
+        """ Depricated """
+
+        return await self.active_orders(account)
+    
+    async def active_orders(self, account, symbol=""):
         """Request active orders for :account
         
         :param account: required
         :type account: int
+        :param symbol: filter execution reports by symbol
+        :type sybmol: string
+
         :returns: list of last xena.proto.order_pb2.ExecutionReport for each active order
         """
 
-        return await self._get('/accounts/' + str(account) + '/orders')
+        return await self._get('/accounts/' + str(account) + '/active-orders', params={
+            "symbol": symbol,
+        })
+ 
+   
+    async def last_order_statuses(self, account, symbol="", ts_from=0, ts_to=0, page=1, limit=0):
+        """Request last statuses from order history for :account
+        
+        :param account: required
+        :type account: int
+        :param symbol: filter execution reports by symbol
+        :type sybmol: string
+        :param ts_from: show execution reports which TransactTime greater than ts_from
+        :type ts_from: int unixtimestamp in nanoseconds
+        :param ts_to: show execution reports which TransactTime less than ts_to, if present - ts_from is required
+        :type ts_to: int unixtimestamp in nanoseconds
+
+        :returns: list of last xena.proto.order_pb2.ExecutionReport for each order
+        """
+
+        return await self._get('/accounts/' + str(account) + '/last-order-statuses', params={
+            "symbol": symbol,
+            "from": ts_from,
+            "to": ts_to,
+            "page": page,
+            "limit": limit
+        })
+    
+  
+    async def order_history(self, account, symbol="", ts_from=0, ts_to=0, page=1, limit=0):
+        """Request order history for :account
+        
+        :param account: required
+        :type account: int
+        :param symbol: filter execution reports by symbol
+        :type sybmol: string
+        :param client_order_id: filter by client_order_id
+        :type client_order_id: string
+        :param order_id: filter by order_id
+        :type order_id: string
+        :param ts_from: show execution reports which TransactTime greater than ts_from
+        :type ts_from: int unixtimestamp in nanoseconds
+        :param ts_to: show execution reports which TransactTime less than ts_to, if present - ts_from is required
+        :type ts_to: int unixtimestamp in nanoseconds
+
+        :returns: list of last xena.proto.order_pb2.ExecutionReport for each order
+        """
+
+        return await self._get('/accounts/' + str(account) + '/order-history', params={
+            "symbol": symbol,
+            "from": ts_from,
+            "to": ts_to,
+            "page": page,
+            "limit": limit
+        })
     
     async def trade_history(self, account, trade_id="", client_order_id="", symbol="", ts_from=0, ts_to=0, page=1, limit=0):
         """Request trade history for :account

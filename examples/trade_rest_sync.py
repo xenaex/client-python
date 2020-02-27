@@ -6,7 +6,7 @@ import inspect
 
 import xena.proto.constants as constants
 import xena.helpers as helpers
-from xena.rest import XenaTradingSyncClient
+from xena.rest_sync import XenaTradingSyncClient
 
 
 def id(prefix):
@@ -208,7 +208,21 @@ def example_of_active_order():
 def example_of_acitve_orders():
     rest = get_client()
     for account in rest.accounts():
-        resp = rest.orders(account)
+        resp = rest.active_orders(account)
+        print(resp)
+
+
+def example_of_order_history():
+    rest = get_client()
+    for account in rest.accounts():
+        resp = rest.order_history(account)
+        print(resp)
+
+
+def example_of_last_order_statuses():
+    rest = get_client()
+    for account in rest.accounts():
+        resp = rest.last_order_statuses(account)
         print(resp)
 
 

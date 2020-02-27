@@ -218,7 +218,7 @@ class XenaTradingSyncClient(XenaSyncClient):
             "page": page,
             "limit": limit
         })
- 
+
     def order(self, account, client_order_id="", order_id=""):
         if client_order_id == "" and order_id == "":
             raise ValueError("client_order_id or order_id is required")
@@ -229,7 +229,33 @@ class XenaTradingSyncClient(XenaSyncClient):
         })
 
     def orders(self, account):
-        return self._get('/accounts/' + str(account) + '/orders')
+        """ Depricated """
+        return self.active_orders(account)
+
+    def active_orders(self, account, symbol=""):
+        return self._get('/accounts/' + str(account) + '/active-orders', params={
+            "symbol": symbol,
+        })
+
+    def last_order_statuses(self, account, symbol="", ts_from=0, ts_to=0, page=1, limit=0):
+        return self._get('/accounts/' + str(account) + '/last-order-statuses', params={
+            "symbol": symbol,
+            "from": ts_from,
+            "to": ts_to,
+            "page": page,
+            "limit": limit
+        })
+    
+    def order_history(self, account, symbol="", client_order_id="", order_id="", ts_from=0, ts_to=0, page=1, limit=0):
+        return self._get('/accounts/' + str(account) + '/order-history', params={
+            "symbol": symbol,
+            "client_order_id": client_order_id,
+            "order_id": order_id,
+            "from": ts_from,
+            "to": ts_to,
+            "page": page,
+            "limit": limit
+        })
 
     def trade_history(self, account, trade_id="", client_order_id="", symbol="", ts_from=0, ts_to=0, page=1, limit=0):
         return self._get('/accounts/' + str(account) + '/trade-history', params={

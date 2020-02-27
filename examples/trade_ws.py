@@ -220,7 +220,7 @@ async def example_of_cancel():
         await asyncio.sleep(20, loop=loop)
 
 
-async def example_of_active_order():
+async def example_of_order_status():
     ws = await get_client()
 
     done = asyncio.Event()
@@ -251,7 +251,48 @@ async def example_of_active_orders():
         done.set()
 
     ws.listen_type(constants.MsgType_OrderMassStatusResponse, handle)
-    await ws.orders(1012833458, symbol="XBTUSD")
+    await ws.active_orders(1012833458, symbol="XBTUSD")
+    await done.wait()
+    print(orders)
+
+async def example_of_last_order_statuses():
+    ws = await get_client()
+
+    # remove default listeners that was added in get_client()
+    ws.remove_listener(constants.MsgType_OrderMassStatusResponse)
+
+    done = asyncio.Event()
+    orders = []
+    async def handle(ws, msg):
+        if msg.RejectReason:
+            raise Exception(msg.Text)
+
+        orders.extend(msg.ExecutionReports)
+        done.set()
+
+    ws.listen_type(constants.MsgType_OrderMassStatusResponse, handle)
+    await ws.last_order_statuses(1012833458, symbol="XBTUSD")
+    await done.wait()
+    print(orders)
+
+
+async def example_of_order_history():
+    ws = await get_client()
+
+    # remove default listeners that was added in get_client()
+    ws.remove_listener(constants.MsgType_OrderMassStatusResponse)
+
+    done = asyncio.Event()
+    orders = []
+    async def handle(ws, msg):
+        if msg.RejectReason:
+            raise Exception(msg.Text)
+
+        orders.extend(msg.ExecutionReports)
+        done.set()
+
+    ws.listen_type(constants.MsgType_OrderMassStatusResponse, handle)
+    await ws.order_history(1012833458, symbol="XBTUSD")
     await done.wait()
     print(orders)
 
