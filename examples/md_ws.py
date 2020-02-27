@@ -9,6 +9,11 @@ import xena.proto.constants as constants
 loop = None
 
 
+def get_client():
+    XenaMDWebsocketClient.URL = 'ws://localhost/api/ws/market-data'
+    return XenaMDWebsocketClient(loop)
+
+
 async def connect(ws):
     while True:
         try:
@@ -29,7 +34,7 @@ async def example_of_dom():
         await connect(ws)
         await ws.dom("BTC/USDT", handle, market_depth=10, aggregation=5)
 
-    ws = XenaMDWebsocketClient(loop)
+    ws = get_client()
     ws.on_connection_close(on_connection_close)
     await connect(ws)
 
@@ -47,7 +52,7 @@ async def example_of_candles():
         await connect(ws)
         await ws.candles("BTC/USDT", handle, timeframe="1h", throttle_interval=250, throttle_unit=constants.ThrottleTimeUnit_Milliseconds)
 
-    ws = XenaMDWebsocketClient(loop)
+    ws = get_client()
     ws.on_connection_close(on_connection_close)
     await connect(ws)
 
@@ -74,7 +79,7 @@ async def example_of_trades():
         await ws.unsubscribe(trade_stream_id)
         await ws.trades("BTC/USDT", handle)
 
-    ws = XenaMDWebsocketClient(loop)
+    ws = get_client()
     ws.on_connection_close(on_connection_close)
     await connect(ws)
 
@@ -92,7 +97,7 @@ async def example_of_marketwatch():
         await connect(ws)
         await ws.market_watch(handle)
 
-    ws = XenaMDWebsocketClient(loop)
+    ws = get_client()
     ws.on_connection_close(on_connection_close)
     await connect(ws)
 

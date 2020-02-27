@@ -18,7 +18,7 @@ def id(prefix):
 async def connect(ws):
     while True:
         try:
-            await ws.connect()
+            logon = await ws.connect()
             break
         except Exception as e:
             print("exception {}".format(e))
@@ -29,6 +29,8 @@ async def get_client():
     async def on_connection_close(ws, e):
         await connect(ws)
 
+
+    XenaTradingWebsocketClient.URL = 'ws://localhost/api/ws/trading'
     #  api_key = 'NW2ARM7euG7TiCJBEAm6aI1pjP2j2PBzYv6BiQF3pYY='
     #  api_secret = '3077020101042020df97867f7caceda1d5abe9a77d2244705142719bb9f02cef57e95dde4d659ba00a06082a8648ce3d030107a14403420004ebb31e05abe41ba75371c0f23823f82b0ab963b9bb97b15cd13c42b810a5e5a1408076cb5d5ef54f927879d963695e65c10a077ed5e90779f8b99f2ba60a3ef1'
     api_key = 'EmfLDuT0hitGG7LjzIh-Xc4APzzanGd_Zq5ivAjczuI='
@@ -218,6 +220,60 @@ async def example_of_cancel():
         await asyncio.sleep(20, loop=loop)
 
 
+async def example_of_active_order():
+    ws = await get_client()
+
+    done = asyncio.Event()
+    orders = []
+    async def handle(ws, msg):
+        orders.append(msg)
+        done.set()
+
+    ws.listen_type(constants.MsgType_ExecutionReportMsgType, handle)
+    await ws.order(1012833458, client_order_id="limit-order-5")
+    await done.wait()
+    print(orders)
+
+
+async def example_of_active_orders():
+    ws = await get_client()
+
+    # remove default listeners that was added in get_client()
+    ws.remove_listener(constants.MsgType_OrderMassStatusResponse)
+
+    done = asyncio.Event()
+    orders = []
+    async def handle(ws, msg):
+        if msg.RejectReason:
+            raise Exception(msg.Text)
+
+        orders.extend(msg.ExecutionReports)
+        done.set()
+
+    ws.listen_type(constants.MsgType_OrderMassStatusResponse, handle)
+    await ws.orders(1012833458, symbol="XBTUSD")
+    await done.wait()
+    print(orders)
+
+
+async def example_of_trade_history():
+    ws = await get_client()
+
+    done = asyncio.Event()
+    orders = []
+    async def handle(ws, msg):
+        if msg.RejectReason:
+            raise Exception(msg.Text)
+
+        orders.extend(msg.ExecutionReports)
+        done.set()
+
+    ws.listen_type(constants.MsgType_MassTradeCaptureReportResponse, handle)
+    await ws.trade_history(1012833458, symbol="XBTUSD", ts_from=1)
+    await done.wait()
+    print(orders)
+
+
 async def example_of_receiving_all_order_and_canceling():
     ws = await get_client()
 
@@ -245,7 +301,7 @@ async def example_of_receiving_all_order_and_canceling():
             for o in orders:
                 if o.OrderId == msg.OrderId:
                     counter += 1
-       
+
             if counter == len(orders):
                 canceled.set()
 
