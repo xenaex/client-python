@@ -171,22 +171,24 @@ class XenaTradingClient(XenaClient):
         return await self._post('/order/new', data=serialization.to_json(cmd))
 
     async def market_order(self, account, client_order_id, symbol, side, qty, **kwargs):
-        return await self.order(helpers.market_order(account, client_order_id, symbol, side, qty, **kwargs))
+        """Create market order and send request"""
+
+        return await self.new_order(helpers.market_order(account, client_order_id, symbol, side, qty, **kwargs))
 
     async def limit_order(self, account, client_order_id, symbol, side, price, qty, **kwargs):
         """Create limit order and send request"""
 
-        return await self.order(helpers.limit_order(account, client_order_id, symbol, side, price, qty, **kwargs))
+        return await self.new_order(helpers.limit_order(account, client_order_id, symbol, side, price, qty, **kwargs))
 
     async def stop_order(self, account, client_order_id, symbol, side, stop_price, qty, **kwargs):
         """Create stop order and send request"""
 
-        return await self.order(helpers.stop_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
+        return await self.new_order(helpers.stop_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
 
     async def mit_order(self, account, client_order_id, symbol, side, stop_price, qty, **kwargs):
         """Create "market if touched" order and send request"""
 
-        return await self.order(helpers.mit_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
+        return await self.new_order(helpers.mit_order(account, client_order_id, symbol, side, stop_price, qty, **kwargs))
 
     async def cancel(self, cmd):
         """Wrapper for send_cmd with convenient methond name for sending cancel commnads"""
