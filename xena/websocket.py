@@ -30,6 +30,7 @@ class WebsocketClient:
 
         async def on_connection_close(client, exception):
             self._log.debug('connection closed: %s', exception)
+
         self._on_connection_close.append(on_connection_close)
 
     async def _heartbeat(self, interval):
@@ -78,7 +79,7 @@ class WebsocketClient:
                 for fnc in self._on_connection_close:
                     await fnc(self, e)
         except Exception as ex:
-            print("on self._close", ex)
+            self._log.exception("on self._close")
 
     def on_connection_close(self, callback):
         """Add callback thath will be called on connection closed
@@ -107,7 +108,6 @@ class XenaMDWebsocketClient(WebsocketClient):
     """
 
     URL = 'wss://api.xena.exchange/ws/market-data'
-    #  URL = 'ws://localhost/api/ws/market-data'
 
     def __init__(self, loop):
         super().__init__(loop, self._handle, self.URL)
@@ -126,7 +126,7 @@ class XenaMDWebsocketClient(WebsocketClient):
             if msg.MsgType in self._md_response_types:
                 await self._streams[msg.MDStreamId](self, msg)
         except Exception as e:
-            self._log.debug('handle exception: %s', e)
+            self._log.exception('md handler')
 
     async def connect(self):
         """Connect to server, make login request, on failure the method will raise xena.exceptions.LoginException or any other network exceptions
@@ -300,7 +300,6 @@ class XenaTradingWebsocketClient(WebsocketClient):
     """
 
     URL = 'wss://api.xena.exchange/ws/trading'
-    #  URL = 'ws://localhost/api/ws/trading'
 
     def __init__(self, api_key, api_secret, loop):
         super().__init__(loop, self._handle, self.URL)
@@ -323,8 +322,7 @@ class XenaTradingWebsocketClient(WebsocketClient):
             msg.Username = self._api_key
             msg.Password = signing_key.sign(auth_payload.encode('utf-8'), hashfunc=sha256).hex()
             if accounts is not None:
-                for i in accounts:
-                    msg.Account.append(accounts[i])
+                msg.Account.extend(accounts)
 
             return serialization.to_fix_json(msg)
         return inner
@@ -339,7 +337,7 @@ class XenaTradingWebsocketClient(WebsocketClient):
             if "all" in self._listeners:
                 await self._listeners["all"](self, msg)
         except Exception as e:
-            self._log.debug('handle exception: %s', e)
+            self._log.exception('trade handler')
 
     def listen(self, callback):
         """ Add listener to all message types
@@ -426,19 +424,139 @@ class XenaTradingWebsocketClient(WebsocketClient):
         cmd.PosReqId = request_id
         cmd.Account = account
         await self.send_cmd(cmd)
-
-    async def orders(self, account, request_id=""):
-        """Request all orders for :account
-        To receive respose, client has to listen constants.MsgType_MassPositionReport
+    
+    async def order(self, account, request_id="", client_order_id="", order_id=""):
+        """Request order for :account by ClOrdId or OrderId
+        To receive respose, client has to listen constants.MsgType_ExecutionReportMsgType
 
         :param account: required
         :type account: int
         """
 
+        if client_order_id == "" and order_id == "":
+            raise ValueError("client_order_id or order_id is required")
+
         cmd = order_pb2.OrderStatusRequest()
+        cmd.MsgType = constants.MsgType_OrderStatusRequest
+        cmd.OrdStatusReqId = request_id
+        cmd.Account = account
+        cmd.ClOrdId = client_order_id
+        cmd.OrderId = order_id
+        await self.send_cmd(cmd)
+    
+    async def orders(self, account, request_id=""):
+        """ Depricated """
+        await self.active_orders(account, request_id)
+
+    async def active_orders(self, account, request_id="", symbol=""):
+        """Request all active orders for :account
+        To receive respose, client has to listen constants.MsgType_OrderMassStatusResponse
+
+        :param account: required
+        :type account: int
+        :param symbol: filter trades by symbol
+        :type sybmol: string
+        """
+
+        cmd = order_pb2.OrderMassStatusRequest()
         cmd.MsgType = constants.MsgType_OrderMassStatusRequest
+        cmd.MassStatusReqType = constants.MassStatusReqType_ActiveOrders
         cmd.MassStatusReqId = request_id
         cmd.Account = account
+        cmd.Symbol = symbol
+        await self.send_cmd(cmd)
+    
+    async def last_order_statuses(self, account, request_id="", symbol="", ts_from=0, ts_to=0):
+        """Request last statuses from order history for :account
+        To receive respose, client has to listen constants.MsgType_OrderMassStatusResponse
+
+        :param account: required
+        :type account: int
+        :param symbol: filter trades by symbol
+        :type sybmol: string
+        :param ts_from: show execution reports which TransactTime greater than ts_from
+        :type ts_from: int unixtimestamp in nanoseconds
+        :param ts_to: show execution reports which TransactTime less than ts_to, if present - ts_from is required
+        :type ts_to: int unixtimestamp in nanoseconds
+        """
+
+        cmd = order_pb2.OrderMassStatusRequest()
+        cmd.MsgType = constants.MsgType_OrderMassStatusRequest
+        cmd.MassStatusReqType = constants.MassStatusReqType_DoneOrdersLastStatus
+        cmd.MassStatusReqId = request_id
+        cmd.Account = account
+        cmd.Symbol = symbol
+        
+        if ts_from != 0:
+            cmd.TransactTime.append(ts_from)
+
+        if ts_to != 0:
+            if ts_from == 0:
+                raise ValueError("ts_from is required")
+            cmd.TransactTime.append(ts_to)
+
+        await self.send_cmd(cmd)
+    
+    async def order_history(self, account, request_id="", symbol="", ts_from=0, ts_to=0):
+        """Request order history for :account
+        To receive respose, client has to listen constants.MsgType_OrderMassStatusResponse
+
+        :param account: required
+        :type account: int
+        :param symbol: filter trades by symbol
+        :type sybmol: string
+        :param ts_from: show execution reports which TransactTime greater than ts_from
+        :type ts_from: int unixtimestamp in nanoseconds
+        :param ts_to: show execution reports which TransactTime less than ts_to, if present - ts_from is required
+        :type ts_to: int unixtimestamp in nanoseconds
+        """
+
+        cmd = order_pb2.OrderMassStatusRequest()
+        cmd.MsgType = constants.MsgType_OrderMassStatusRequest
+        cmd.MassStatusReqType = constants.MassStatusReqType_History
+        cmd.MassStatusReqId = request_id
+        cmd.Account = account
+        cmd.Symbol = symbol
+        
+        if ts_from != 0:
+            cmd.TransactTime.append(ts_from)
+
+        if ts_to != 0:
+            if ts_from == 0:
+                raise ValueError("ts_from is required")
+            cmd.TransactTime.append(ts_to)
+
+        await self.send_cmd(cmd)
+
+    async def trade_history(self, account, request_id="", symbol="", ts_from=0, ts_to=0):
+        """Request all orders for :account
+        To receive respose, client has to listen constants.MsgType_MassPositionReport.
+        Response will contain last 1000 trades.
+
+        :param account: required
+        :type account: int
+        :param symbol: filter trades by symbol
+        :type sybmol: string
+        :param ts_from: show trades which TransactTime greater than ts_from
+        :type ts_from: int unixtimestamp in nanoseconds
+        :param ts_to: show trades which TransactTime less than ts_to, if present - ts_from is required
+        :type ts_to: int unixtimestamp in nanoseconds
+        """
+
+        cmd = order_pb2.TradeCaptureReportRequest()
+        cmd.MsgType = constants.MsgType_TradeCaptureReportRequest
+        cmd.TradeRequestID = request_id
+        cmd.Account = account
+        cmd.Symbol = symbol
+
+        if ts_from != 0:
+            cmd.TransactTime.append(ts_from)
+
+        if ts_to != 0:
+            if ts_from == 0:
+                raise ValueError("ts_from is required")
+            cmd.TransactTime.append(ts_to)
+
         await self.send_cmd(cmd)
 
     async def market_order(self, account, client_order_id, symbol, side, qty, **kwargs):

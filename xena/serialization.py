@@ -36,6 +36,7 @@ TYPES = {
     constants.MsgType_MarketDataIncrementalRefresh: market_pb2.MarketDataRefresh,
     constants.MsgType_MarketDataRequestReject: market_pb2.MarketDataRequestReject,
     constants.MsgType_OrderMassStatusResponse: order_pb2.OrderMassStatusResponse,
+    constants.MsgType_MassTradeCaptureReportResponse: order_pb2.MassTradeCaptureReportResponse,
     constants.MsgType_PositionMaintenanceRequest: positions_pb2.PositionMaintenanceRequest,
     constants.MsgType_PositionMaintenanceReport: positions_pb2.PositionMaintenanceReport,
     constants.MsgType_RequestForPositions: positions_pb2.PositionsRequest,

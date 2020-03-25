@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0border.proto\x12\x03\x61pi\"g\n\x14\x41pplicationHeartbeat\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x15\n\x05GrpID\x18\x89\' \x01(\tR\x05grpId\x12\x1e\n\nHeartBtInt\x18l \x01(\x05R\nheartBtInt\"\xa7\x01\n\x15TriggeringInstruction\x12\x1f\n\nRefClOrdId\x18\x8e\x0e \x01(\tR\nrefClordId\x12%\n\rTriggerAction\x18\xcd\x08 \x01(\tR\rtriggerAction\x12!\n\x0bTriggerType\x18\xcc\x08 \x01(\tR\x0btriggerType\x12#\n\x0cTriggerScope\x18\xdc\x0c \x01(\tR\x0ctriggerScope\"E\n\x06Partie\x12\x1b\n\x08PartieId\x18\xc0\x03 \x01(\tR\x08partieId\x12\x1e\n\nPartieRole\x18- \x01(\tR\npartieRole\"\xe0\x01\n\x04SLTP\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\"\xcc\x06\n\x0eNewOrderSingle\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x1c\n\tListSeqNo\x18\x43 \x01(\x05R\tlistSeqNo\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12)\n\x0f\x43ommissionLevel\x18\xc7\x17 \x01(\tR\x0f\x63ommissionLevel\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12S\n\x16TriggeringInstructions\x18\xda\x08 \x03(\x0b\x32\x1a.api.TriggeringInstructionR\x16triggeringInstructions\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\x12\x12\n\x04Text\x18: \x01(\tR\x04text\x12\x15\n\x05GrpID\x18\x89\' \x01(\tR\x05grpId\"\xc8\x0b\n\x0f\x45xecutionReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x16\n\x06\x45xecId\x18\x11 \x01(\tR\x06\x65xecId\x12\x1b\n\x08\x45xecType\x18\x96\x01 \x01(\tR\x08\x65xecType\x12\x35\n\x15\x45xecRestatementReason\x18\xfa\x02 \x01(\tR\x15\x65xecRestatementReason\x12\x19\n\x07TradeId\x18\xeb\x07 \x01(\tR\x07tradeId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12\"\n\x0cOrdRejReason\x18g \x01(\tR\x0cordRejReason\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x1d\n\tLeavesQty\x18\x97\x01 \x01(\tR\tleavesQty\x12\x16\n\x06\x43umQty\x18\x0e \x01(\tR\x06\x63umQty\x12\x18\n\x07LastQty\x18  \x01(\tR\x07lastQty\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x16\n\x06LastPx\x18\x1f \x01(\tR\x06lastPx\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x33\n\x14\x43\x61lculatedCcyLastQty\x18\xa0\x08 \x01(\tR\x14\x63\x61lculatedCcyLastQty\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12$\n\rSettlCurrency\x18x \x01(\tR\rsettlCurrency\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\x1a\n\x08NetMoney\x18v \x01(\tR\x08netMoney\x12+\n\x10LastLiquidityInd\x18\xd3\x06 \x01(\tR\x10lastLiquidityInd\x12\x1e\n\nCommission\x18\x0c \x01(\tR\ncommission\x12\x1b\n\x08\x43ommRate\x18\xd1\t \x01(\tR\x08\x63ommRate\x12#\n\x0c\x43ommCurrency\x18\xdf\x03 \x01(\tR\x0c\x63ommCurrency\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1d\n\tMarginAmt\x18\xed\x0c \x01(\tR\tmarginAmt\x12%\n\rMarginAmtType\x18\xec\x0c \x01(\tR\rmarginAmtType\x12#\n\x0cMarginAmtCcy\x18\xee\x0c \x01(\tR\x0cmarginAmtCcy\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\xee\x01\n\x12OrderCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xe9\x02\n\x11OrderCancelReject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12+\n\x10\x43xlRejResponseTo\x18\xb2\x03 \x01(\tR\x10\x63xlRejResponseTo\x12\"\n\x0c\x43xlRejReason\x18\x66 \x01(\tR\x0c\x63xlRejReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\"\xf1\x01\n\x16OrderMassCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x35\n\x15MassCancelRequestType\x18\x92\x04 \x01(\tR\x15massCancelRequestType\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xa4\x03\n\x15OrderMassCancelReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12/\n\x12MassActionReportID\x18\xd9\n \x01(\tR\x12massActionReportID\x12/\n\x12MassCancelResponse\x18\x93\x04 \x01(\tR\x12massCancelResponse\x12\x37\n\x16MassCancelRejectReason\x18\x94\x04 \x01(\tR\x16massCancelRejectReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x31\n\x13TotalAffectedOrders\x18\x95\x04 \x01(\x03R\x13totalAffectedOrders\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"s\n\x12OrderStatusRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"[\n\x06Reject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x02\n\x17OrderMassStatusResponse\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12-\n\x06Orders\x18\xf4\t \x03(\x0b\x32\x14.api.ExecutionReportR\x06orders\x12+\n\x05\x46ills\x18\xf5\t \x03(\x0b\x32\x14.api.ExecutionReportR\x05\x66ills\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x04\n\x19OrderCancelReplaceRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xed\x02\n\x0cNewOrderList\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x19\n\x07\x42idType\x18\x8a\x03 \x01(\tR\x07\x62idType\x12 \n\x0bTotNoOrders\x18\x44 \x01(\x05R\x0btotNoOrders\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x33\n\nListOrdGrp\x18I \x03(\x0b\x32\x13.api.NewOrderSingleR\nlistOrdGrp\x12\x38\n\rNestedListGrp\x18\xed\r \x03(\x0b\x32\x11.api.NewOrderListR\rnestedListGrp\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"V\n\x0fOrderListAction\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x18\n\x07OrderId\x18% \x03(\tR\x07orderId\"\xaa\x03\n\nListStatus\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\'\n\x0eListStatusType\x18\xad\x03 \x01(\tR\x0elistStatusType\x12)\n\x0fListOrderStatus\x18\xaf\x03 \x01(\tR\x0flistOrderStatus\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12+\n\x10ListRejectReason\x18\xea\n \x01(\tR\x10listRejectReason\x12?\n\x0fListRejectOrder\x18\xeb\n \x01(\x0b\x32\x14.api.ExecutionReportR\x0flistRejectOrder\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\'\n\x0eListStatusText\x18\xbc\x03 \x01(\tR\x0elistStatusTextb\x06proto3')
+  serialized_pb=_b('\n\x0border.proto\x12\x03\x61pi\"g\n\x14\x41pplicationHeartbeat\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x15\n\x05GrpID\x18\x89\' \x01(\tR\x05grpId\x12\x1e\n\nHeartBtInt\x18l \x01(\x05R\nheartBtInt\"\xa7\x01\n\x15TriggeringInstruction\x12\x1f\n\nRefClOrdId\x18\x8e\x0e \x01(\tR\nrefClordId\x12%\n\rTriggerAction\x18\xcd\x08 \x01(\tR\rtriggerAction\x12!\n\x0bTriggerType\x18\xcc\x08 \x01(\tR\x0btriggerType\x12#\n\x0cTriggerScope\x18\xdc\x0c \x01(\tR\x0ctriggerScope\"E\n\x06Partie\x12\x1b\n\x08PartieId\x18\xc0\x03 \x01(\tR\x08partieId\x12\x1e\n\nPartieRole\x18- \x01(\tR\npartieRole\"\xe0\x01\n\x04SLTP\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\"\xcc\x06\n\x0eNewOrderSingle\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x1c\n\tListSeqNo\x18\x43 \x01(\x05R\tlistSeqNo\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12)\n\x0f\x43ommissionLevel\x18\xc7\x17 \x01(\tR\x0f\x63ommissionLevel\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12S\n\x16TriggeringInstructions\x18\xda\x08 \x03(\x0b\x32\x1a.api.TriggeringInstructionR\x16triggeringInstructions\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\x12\x12\n\x04Text\x18: \x01(\tR\x04text\x12\x15\n\x05GrpID\x18\x89\' \x01(\tR\x05grpId\"\xf1\x0b\n\x0f\x45xecutionReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\'\n\x0eOrdStatusReqID\x18\x96\x06 \x01(\tR\x0eordStatusReqID\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07OrdType\x18( \x01(\tR\x07ordType\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12 \n\x0bTimeInForce\x18; \x01(\tR\x0btimeInForce\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x16\n\x06\x45xecId\x18\x11 \x01(\tR\x06\x65xecId\x12\x1b\n\x08\x45xecType\x18\x96\x01 \x01(\tR\x08\x65xecType\x12\x35\n\x15\x45xecRestatementReason\x18\xfa\x02 \x01(\tR\x15\x65xecRestatementReason\x12\x19\n\x07TradeId\x18\xeb\x07 \x01(\tR\x07tradeId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12\"\n\x0cOrdRejReason\x18g \x01(\tR\x0cordRejReason\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x1d\n\tLeavesQty\x18\x97\x01 \x01(\tR\tleavesQty\x12\x16\n\x06\x43umQty\x18\x0e \x01(\tR\x06\x63umQty\x12\x18\n\x07LastQty\x18  \x01(\tR\x07lastQty\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12\x16\n\x06LastPx\x18\x1f \x01(\tR\x06lastPx\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x33\n\x14\x43\x61lculatedCcyLastQty\x18\xa0\x08 \x01(\tR\x14\x63\x61lculatedCcyLastQty\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12$\n\rSettlCurrency\x18x \x01(\tR\rsettlCurrency\x12\x1c\n\tSettlType\x18? \x01(\tR\tsettlType\x12\x1a\n\x08NetMoney\x18v \x01(\tR\x08netMoney\x12+\n\x10LastLiquidityInd\x18\xd3\x06 \x01(\tR\x10lastLiquidityInd\x12\x1e\n\nCommission\x18\x0c \x01(\tR\ncommission\x12\x1b\n\x08\x43ommRate\x18\xd1\t \x01(\tR\x08\x63ommRate\x12#\n\x0c\x43ommCurrency\x18\xdf\x03 \x01(\tR\x0c\x63ommCurrency\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1f\n\nPositionId\x18\xba\x14 \x01(\x04R\npositionId\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x1d\n\tMarginAmt\x18\xed\x0c \x01(\tR\tmarginAmt\x12%\n\rMarginAmtType\x18\xec\x0c \x01(\tR\rmarginAmtType\x12#\n\x0cMarginAmtCcy\x18\xee\x0c \x01(\tR\x0cmarginAmtCcy\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\xee\x01\n\x12OrderCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xe9\x02\n\x11OrderCancelReject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x1c\n\tOrdStatus\x18\' \x01(\tR\tordStatus\x12+\n\x10\x43xlRejResponseTo\x18\xb2\x03 \x01(\tR\x10\x63xlRejResponseTo\x12\"\n\x0c\x43xlRejReason\x18\x66 \x01(\tR\x0c\x63xlRejReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\"\xf1\x01\n\x16OrderMassCancelRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x35\n\x15MassCancelRequestType\x18\x92\x04 \x01(\tR\x15massCancelRequestType\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12&\n\x0ePositionEffect\x18M \x01(\tR\x0epositionEffect\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"\xa4\x03\n\x15OrderMassCancelReport\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12/\n\x12MassActionReportID\x18\xd9\n \x01(\tR\x12massActionReportID\x12/\n\x12MassCancelResponse\x18\x93\x04 \x01(\tR\x12massCancelResponse\x12\x37\n\x16MassCancelRejectReason\x18\x94\x04 \x01(\tR\x16massCancelRejectReason\x12\x1f\n\nRejectText\x18\xb0\n \x01(\tR\nrejectText\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x31\n\x13TotalAffectedOrders\x18\x95\x04 \x01(\x03R\x13totalAffectedOrders\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"[\n\x06Reject\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\xa5\x01\n\x12OrderStatusRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\'\n\x0eOrdStatusReqId\x18\x96\x06 \x01(\tR\x0eordStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\"\xe3\x01\n\x16OrderMassStatusRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12-\n\x11MassStatusReqType\x18\xc9\x04 \x01(\tR\x11massStatusReqType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12#\n\x0cTransactTime\x18\xc4\x04 \x03(\x03R\x0ctransactTime\"\xf4\x01\n\x17OrderMassStatusResponse\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12)\n\x0fMassStatusReqId\x18\xc8\x04 \x01(\tR\x0fmassStatusReqId\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x41\n\x10\x45xecutionReports\x18\xf4\t \x03(\x0b\x32\x14.api.ExecutionReportR\x10\x65xecutionReports\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\xb5\x01\n\x19TradeCaptureReportRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\'\n\x0eTradeRequestID\x18\xb8\x04 \x01(\tR\x0etradeRequestID\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12#\n\x0cTransactTime\x18\xc4\x04 \x03(\x03R\x0ctransactTime\"\xf9\x01\n\x1eMassTradeCaptureReportResponse\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\'\n\x0eTradeRequestID\x18\xb8\x04 \x01(\tR\x0etradeRequestID\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x41\n\x10\x45xecutionReports\x18\xf4\t \x03(\x0b\x32\x14.api.ExecutionReportR\x10\x65xecutionReports\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x8d\x04\n\x19OrderCancelReplaceRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x43lOrdId\x18\x0b \x01(\tR\x07\x63lOrdId\x12 \n\x0bOrigClOrdId\x18) \x01(\tR\x0borigClOrdId\x12\x18\n\x07OrderId\x18% \x01(\tR\x07orderId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\x12\n\x04Side\x18\x36 \x01(\tR\x04side\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x45xecInst\x18\x12 \x03(\tR\x08\x65xecInst\x12\x1a\n\x08OrderQty\x18& \x01(\tR\x08orderQty\x12\x14\n\x05Price\x18, \x01(\tR\x05price\x12\x16\n\x06StopPx\x18\x63 \x01(\tR\x06stopPx\x12\x1b\n\x08\x43\x61pPrice\x18\xaf\t \x01(\tR\x08\x63\x61pPrice\x12#\n\x0cPegPriceType\x18\xc6\x08 \x01(\tR\x0cpegPriceType\x12%\n\rPegOffsetType\x18\xc4\x06 \x01(\tR\rpegOffsetType\x12\'\n\x0ePegOffsetValue\x18\xd3\x01 \x01(\tR\x0epegOffsetValue\x12\x1e\n\x04SLTP\x18\x88\' \x03(\x0b\x32\t.api.SLTPR\x04sltp\"\xed\x02\n\x0cNewOrderList\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x19\n\x07\x42idType\x18\x8a\x03 \x01(\tR\x07\x62idType\x12 \n\x0bTotNoOrders\x18\x44 \x01(\x05R\x0btotNoOrders\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x33\n\nListOrdGrp\x18I \x03(\x0b\x32\x13.api.NewOrderSingleR\nlistOrdGrp\x12\x38\n\rNestedListGrp\x18\xed\r \x03(\x0b\x32\x11.api.NewOrderListR\rnestedListGrp\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\"V\n\x0fOrderListAction\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12\x18\n\x07OrderId\x18% \x03(\tR\x07orderId\"\xaa\x03\n\nListStatus\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x16\n\x06ListId\x18\x42 \x01(\tR\x06listId\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\'\n\x0eListStatusType\x18\xad\x03 \x01(\tR\x0elistStatusType\x12)\n\x0fListOrderStatus\x18\xaf\x03 \x01(\tR\x0flistOrderStatus\x12)\n\x0f\x43ontingencyType\x18\xe9\n \x01(\tR\x0f\x63ontingencyType\x12+\n\x10ListRejectReason\x18\xea\n \x01(\tR\x10listRejectReason\x12?\n\x0fListRejectOrder\x18\xeb\n \x01(\x0b\x32\x14.api.ExecutionReportR\x0flistRejectOrder\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\'\n\x0eListStatusText\x18\xbc\x03 \x01(\tR\x0elistStatusTextb\x06proto3')
 )
 
 
@@ -454,322 +454,329 @@ _EXECUTIONREPORT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Account', full_name='api.ExecutionReport.Account', index=1,
+      name='OrdStatusReqID', full_name='api.ExecutionReport.OrdStatusReqID', index=1,
+      number=790, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='ordStatusReqID', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.ExecutionReport.Account', index=2,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='account', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ClOrdId', full_name='api.ExecutionReport.ClOrdId', index=2,
+      name='ClOrdId', full_name='api.ExecutionReport.ClOrdId', index=3,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='clOrdId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='OrigClOrdId', full_name='api.ExecutionReport.OrigClOrdId', index=3,
+      name='OrigClOrdId', full_name='api.ExecutionReport.OrigClOrdId', index=4,
       number=41, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='origClOrdId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='OrderId', full_name='api.ExecutionReport.OrderId', index=4,
+      name='OrderId', full_name='api.ExecutionReport.OrderId', index=5,
       number=37, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='orderId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ListId', full_name='api.ExecutionReport.ListId', index=5,
+      name='ListId', full_name='api.ExecutionReport.ListId', index=6,
       number=66, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='listId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Symbol', full_name='api.ExecutionReport.Symbol', index=6,
+      name='Symbol', full_name='api.ExecutionReport.Symbol', index=7,
       number=55, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='symbol', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='OrdType', full_name='api.ExecutionReport.OrdType', index=7,
+      name='OrdType', full_name='api.ExecutionReport.OrdType', index=8,
       number=40, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='ordType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Price', full_name='api.ExecutionReport.Price', index=8,
+      name='Price', full_name='api.ExecutionReport.Price', index=9,
       number=44, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='price', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='StopPx', full_name='api.ExecutionReport.StopPx', index=9,
+      name='StopPx', full_name='api.ExecutionReport.StopPx', index=10,
       number=99, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='stopPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ExecInst', full_name='api.ExecutionReport.ExecInst', index=10,
+      name='ExecInst', full_name='api.ExecutionReport.ExecInst', index=11,
       number=18, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='execInst', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='TimeInForce', full_name='api.ExecutionReport.TimeInForce', index=11,
+      name='TimeInForce', full_name='api.ExecutionReport.TimeInForce', index=12,
       number=59, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='timeInForce', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='TransactTime', full_name='api.ExecutionReport.TransactTime', index=12,
+      name='TransactTime', full_name='api.ExecutionReport.TransactTime', index=13,
       number=60, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='transactTime', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ExecId', full_name='api.ExecutionReport.ExecId', index=13,
+      name='ExecId', full_name='api.ExecutionReport.ExecId', index=14,
       number=17, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='execId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ExecType', full_name='api.ExecutionReport.ExecType', index=14,
+      name='ExecType', full_name='api.ExecutionReport.ExecType', index=15,
       number=150, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='execType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ExecRestatementReason', full_name='api.ExecutionReport.ExecRestatementReason', index=15,
+      name='ExecRestatementReason', full_name='api.ExecutionReport.ExecRestatementReason', index=16,
       number=378, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='execRestatementReason', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='TradeId', full_name='api.ExecutionReport.TradeId', index=16,
+      name='TradeId', full_name='api.ExecutionReport.TradeId', index=17,
       number=1003, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='tradeId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='OrdStatus', full_name='api.ExecutionReport.OrdStatus', index=17,
+      name='OrdStatus', full_name='api.ExecutionReport.OrdStatus', index=18,
       number=39, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='ordStatus', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='OrdRejReason', full_name='api.ExecutionReport.OrdRejReason', index=18,
+      name='OrdRejReason', full_name='api.ExecutionReport.OrdRejReason', index=19,
       number=103, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='ordRejReason', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Side', full_name='api.ExecutionReport.Side', index=19,
+      name='Side', full_name='api.ExecutionReport.Side', index=20,
       number=54, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='side', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='OrderQty', full_name='api.ExecutionReport.OrderQty', index=20,
+      name='OrderQty', full_name='api.ExecutionReport.OrderQty', index=21,
       number=38, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='orderQty', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='LeavesQty', full_name='api.ExecutionReport.LeavesQty', index=21,
+      name='LeavesQty', full_name='api.ExecutionReport.LeavesQty', index=22,
       number=151, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='leavesQty', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='CumQty', full_name='api.ExecutionReport.CumQty', index=22,
+      name='CumQty', full_name='api.ExecutionReport.CumQty', index=23,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='cumQty', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='LastQty', full_name='api.ExecutionReport.LastQty', index=23,
+      name='LastQty', full_name='api.ExecutionReport.LastQty', index=24,
       number=32, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='lastQty', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='CapPrice', full_name='api.ExecutionReport.CapPrice', index=24,
+      name='CapPrice', full_name='api.ExecutionReport.CapPrice', index=25,
       number=1199, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='capPrice', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='LastPx', full_name='api.ExecutionReport.LastPx', index=25,
+      name='LastPx', full_name='api.ExecutionReport.LastPx', index=26,
       number=31, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='lastPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='AvgPx', full_name='api.ExecutionReport.AvgPx', index=26,
+      name='AvgPx', full_name='api.ExecutionReport.AvgPx', index=27,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='avgPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='CalculatedCcyLastQty', full_name='api.ExecutionReport.CalculatedCcyLastQty', index=27,
+      name='CalculatedCcyLastQty', full_name='api.ExecutionReport.CalculatedCcyLastQty', index=28,
       number=1056, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='calculatedCcyLastQty', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Currency', full_name='api.ExecutionReport.Currency', index=28,
+      name='Currency', full_name='api.ExecutionReport.Currency', index=29,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='currency', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='SettlCurrency', full_name='api.ExecutionReport.SettlCurrency', index=29,
+      name='SettlCurrency', full_name='api.ExecutionReport.SettlCurrency', index=30,
       number=120, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='settlCurrency', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='SettlType', full_name='api.ExecutionReport.SettlType', index=30,
+      name='SettlType', full_name='api.ExecutionReport.SettlType', index=31,
       number=63, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='settlType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='NetMoney', full_name='api.ExecutionReport.NetMoney', index=31,
+      name='NetMoney', full_name='api.ExecutionReport.NetMoney', index=32,
       number=118, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='netMoney', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='LastLiquidityInd', full_name='api.ExecutionReport.LastLiquidityInd', index=32,
+      name='LastLiquidityInd', full_name='api.ExecutionReport.LastLiquidityInd', index=33,
       number=851, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='lastLiquidityInd', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Commission', full_name='api.ExecutionReport.Commission', index=33,
+      name='Commission', full_name='api.ExecutionReport.Commission', index=34,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='commission', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='CommRate', full_name='api.ExecutionReport.CommRate', index=34,
+      name='CommRate', full_name='api.ExecutionReport.CommRate', index=35,
       number=1233, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='commRate', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='CommCurrency', full_name='api.ExecutionReport.CommCurrency', index=35,
+      name='CommCurrency', full_name='api.ExecutionReport.CommCurrency', index=36,
       number=479, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='commCurrency', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='RejectText', full_name='api.ExecutionReport.RejectText', index=36,
+      name='RejectText', full_name='api.ExecutionReport.RejectText', index=37,
       number=1328, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='rejectText', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PegPriceType', full_name='api.ExecutionReport.PegPriceType', index=37,
+      name='PegPriceType', full_name='api.ExecutionReport.PegPriceType', index=38,
       number=1094, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='pegPriceType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PegOffsetType', full_name='api.ExecutionReport.PegOffsetType', index=38,
+      name='PegOffsetType', full_name='api.ExecutionReport.PegOffsetType', index=39,
       number=836, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='pegOffsetType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PegOffsetValue', full_name='api.ExecutionReport.PegOffsetValue', index=39,
+      name='PegOffsetValue', full_name='api.ExecutionReport.PegOffsetValue', index=40,
       number=211, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='pegOffsetValue', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PositionId', full_name='api.ExecutionReport.PositionId', index=40,
+      name='PositionId', full_name='api.ExecutionReport.PositionId', index=41,
       number=2618, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='positionId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='PositionEffect', full_name='api.ExecutionReport.PositionEffect', index=41,
+      name='PositionEffect', full_name='api.ExecutionReport.PositionEffect', index=42,
       number=77, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='positionEffect', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MarginAmt', full_name='api.ExecutionReport.MarginAmt', index=42,
+      name='MarginAmt', full_name='api.ExecutionReport.MarginAmt', index=43,
       number=1645, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='marginAmt', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MarginAmtType', full_name='api.ExecutionReport.MarginAmtType', index=43,
+      name='MarginAmtType', full_name='api.ExecutionReport.MarginAmtType', index=44,
       number=1644, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='marginAmtType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MarginAmtCcy', full_name='api.ExecutionReport.MarginAmtCcy', index=44,
+      name='MarginAmtCcy', full_name='api.ExecutionReport.MarginAmtCcy', index=45,
       number=1646, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='marginAmtCcy', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='SLTP', full_name='api.ExecutionReport.SLTP', index=45,
+      name='SLTP', full_name='api.ExecutionReport.SLTP', index=46,
       number=5000, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='sltp', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Text', full_name='api.ExecutionReport.Text', index=46,
+      name='Text', full_name='api.ExecutionReport.Text', index=47,
       number=58, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -788,7 +795,7 @@ _EXECUTIONREPORT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1441,
-  serialized_end=2921,
+  serialized_end=2962,
 )
 
 
@@ -867,8 +874,8 @@ _ORDERCANCELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2924,
-  serialized_end=3162,
+  serialized_start=2965,
+  serialized_end=3203,
 )
 
 
@@ -968,8 +975,8 @@ _ORDERCANCELREJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3165,
-  serialized_end=3526,
+  serialized_start=3206,
+  serialized_end=3567,
 )
 
 
@@ -1041,8 +1048,8 @@ _ORDERMASSCANCELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3529,
-  serialized_end=3770,
+  serialized_start=3570,
+  serialized_end=3811,
 )
 
 
@@ -1142,53 +1149,8 @@ _ORDERMASSCANCELREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3773,
-  serialized_end=4193,
-)
-
-
-_ORDERSTATUSREQUEST = _descriptor.Descriptor(
-  name='OrderStatusRequest',
-  full_name='api.OrderStatusRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='MsgType', full_name='api.OrderStatusRequest.MsgType', index=0,
-      number=35, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='MassStatusReqId', full_name='api.OrderStatusRequest.MassStatusReqId', index=1,
-      number=584, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='massStatusReqId', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='Account', full_name='api.OrderStatusRequest.Account', index=2,
-      number=1, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='account', file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=4195,
-  serialized_end=4310,
+  serialized_start=3814,
+  serialized_end=4234,
 )
 
 
@@ -1232,8 +1194,133 @@ _REJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4312,
-  serialized_end=4403,
+  serialized_start=4236,
+  serialized_end=4327,
+)
+
+
+_ORDERSTATUSREQUEST = _descriptor.Descriptor(
+  name='OrderStatusRequest',
+  full_name='api.OrderStatusRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MsgType', full_name='api.OrderStatusRequest.MsgType', index=0,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='OrdStatusReqId', full_name='api.OrderStatusRequest.OrdStatusReqId', index=1,
+      number=790, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='ordStatusReqId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.OrderStatusRequest.Account', index=2,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ClOrdId', full_name='api.OrderStatusRequest.ClOrdId', index=3,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='clOrdId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='OrderId', full_name='api.OrderStatusRequest.OrderId', index=4,
+      number=37, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='orderId', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4330,
+  serialized_end=4495,
+)
+
+
+_ORDERMASSSTATUSREQUEST = _descriptor.Descriptor(
+  name='OrderMassStatusRequest',
+  full_name='api.OrderMassStatusRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MsgType', full_name='api.OrderMassStatusRequest.MsgType', index=0,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MassStatusReqId', full_name='api.OrderMassStatusRequest.MassStatusReqId', index=1,
+      number=584, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='massStatusReqId', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MassStatusReqType', full_name='api.OrderMassStatusRequest.MassStatusReqType', index=2,
+      number=585, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='massStatusReqType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.OrderMassStatusRequest.Account', index=3,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Symbol', full_name='api.OrderMassStatusRequest.Symbol', index=4,
+      number=55, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TransactTime', full_name='api.OrderMassStatusRequest.TransactTime', index=5,
+      number=580, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='transactTime', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4498,
+  serialized_end=4725,
 )
 
 
@@ -1266,28 +1353,21 @@ _ORDERMASSSTATUSRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='account', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Orders', full_name='api.OrderMassStatusResponse.Orders', index=3,
+      name='ExecutionReports', full_name='api.OrderMassStatusResponse.ExecutionReports', index=3,
       number=1268, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='orders', file=DESCRIPTOR),
+      serialized_options=None, json_name='executionReports', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Fills', full_name='api.OrderMassStatusResponse.Fills', index=4,
-      number=1269, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='fills', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='RejectReason', full_name='api.OrderMassStatusResponse.RejectReason', index=5,
+      name='RejectReason', full_name='api.OrderMassStatusResponse.RejectReason', index=4,
       number=380, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='rejectReason', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Text', full_name='api.OrderMassStatusResponse.Text', index=6,
+      name='Text', full_name='api.OrderMassStatusResponse.Text', index=5,
       number=58, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1305,8 +1385,133 @@ _ORDERMASSSTATUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4406,
-  serialized_end=4675,
+  serialized_start=4728,
+  serialized_end=4972,
+)
+
+
+_TRADECAPTUREREPORTREQUEST = _descriptor.Descriptor(
+  name='TradeCaptureReportRequest',
+  full_name='api.TradeCaptureReportRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MsgType', full_name='api.TradeCaptureReportRequest.MsgType', index=0,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TradeRequestID', full_name='api.TradeCaptureReportRequest.TradeRequestID', index=1,
+      number=568, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tradeRequestID', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.TradeCaptureReportRequest.Account', index=2,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Symbol', full_name='api.TradeCaptureReportRequest.Symbol', index=3,
+      number=55, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TransactTime', full_name='api.TradeCaptureReportRequest.TransactTime', index=4,
+      number=580, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='transactTime', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4975,
+  serialized_end=5156,
+)
+
+
+_MASSTRADECAPTUREREPORTRESPONSE = _descriptor.Descriptor(
+  name='MassTradeCaptureReportResponse',
+  full_name='api.MassTradeCaptureReportResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MsgType', full_name='api.MassTradeCaptureReportResponse.MsgType', index=0,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TradeRequestID', full_name='api.MassTradeCaptureReportResponse.TradeRequestID', index=1,
+      number=568, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tradeRequestID', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Account', full_name='api.MassTradeCaptureReportResponse.Account', index=2,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='account', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ExecutionReports', full_name='api.MassTradeCaptureReportResponse.ExecutionReports', index=3,
+      number=1268, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='executionReports', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RejectReason', full_name='api.MassTradeCaptureReportResponse.RejectReason', index=4,
+      number=380, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='rejectReason', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Text', full_name='api.MassTradeCaptureReportResponse.Text', index=5,
+      number=58, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='text', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5159,
+  serialized_end=5408,
 )
 
 
@@ -1448,8 +1653,8 @@ _ORDERCANCELREPLACEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4678,
-  serialized_end=5203,
+  serialized_start=5411,
+  serialized_end=5936,
 )
 
 
@@ -1542,8 +1747,8 @@ _NEWORDERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5206,
-  serialized_end=5571,
+  serialized_start=5939,
+  serialized_end=6304,
 )
 
 
@@ -1580,8 +1785,8 @@ _ORDERLISTACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5573,
-  serialized_end=5659,
+  serialized_start=6306,
+  serialized_end=6392,
 )
 
 
@@ -1681,15 +1886,15 @@ _LISTSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5662,
-  serialized_end=6088,
+  serialized_start=6395,
+  serialized_end=6821,
 )
 
 _NEWORDERSINGLE.fields_by_name['TriggeringInstructions'].message_type = _TRIGGERINGINSTRUCTION
 _NEWORDERSINGLE.fields_by_name['SLTP'].message_type = _SLTP
 _EXECUTIONREPORT.fields_by_name['SLTP'].message_type = _SLTP
-_ORDERMASSSTATUSRESPONSE.fields_by_name['Orders'].message_type = _EXECUTIONREPORT
-_ORDERMASSSTATUSRESPONSE.fields_by_name['Fills'].message_type = _EXECUTIONREPORT
+_ORDERMASSSTATUSRESPONSE.fields_by_name['ExecutionReports'].message_type = _EXECUTIONREPORT
+_MASSTRADECAPTUREREPORTRESPONSE.fields_by_name['ExecutionReports'].message_type = _EXECUTIONREPORT
 _ORDERCANCELREPLACEREQUEST.fields_by_name['SLTP'].message_type = _SLTP
 _NEWORDERLIST.fields_by_name['ListOrdGrp'].message_type = _NEWORDERSINGLE
 _NEWORDERLIST.fields_by_name['NestedListGrp'].message_type = _NEWORDERLIST
@@ -1704,9 +1909,12 @@ DESCRIPTOR.message_types_by_name['OrderCancelRequest'] = _ORDERCANCELREQUEST
 DESCRIPTOR.message_types_by_name['OrderCancelReject'] = _ORDERCANCELREJECT
 DESCRIPTOR.message_types_by_name['OrderMassCancelRequest'] = _ORDERMASSCANCELREQUEST
 DESCRIPTOR.message_types_by_name['OrderMassCancelReport'] = _ORDERMASSCANCELREPORT
-DESCRIPTOR.message_types_by_name['OrderStatusRequest'] = _ORDERSTATUSREQUEST
 DESCRIPTOR.message_types_by_name['Reject'] = _REJECT
+DESCRIPTOR.message_types_by_name['OrderStatusRequest'] = _ORDERSTATUSREQUEST
+DESCRIPTOR.message_types_by_name['OrderMassStatusRequest'] = _ORDERMASSSTATUSREQUEST
 DESCRIPTOR.message_types_by_name['OrderMassStatusResponse'] = _ORDERMASSSTATUSRESPONSE
+DESCRIPTOR.message_types_by_name['TradeCaptureReportRequest'] = _TRADECAPTUREREPORTREQUEST
+DESCRIPTOR.message_types_by_name['MassTradeCaptureReportResponse'] = _MASSTRADECAPTUREREPORTRESPONSE
 DESCRIPTOR.message_types_by_name['OrderCancelReplaceRequest'] = _ORDERCANCELREPLACEREQUEST
 DESCRIPTOR.message_types_by_name['NewOrderList'] = _NEWORDERLIST
 DESCRIPTOR.message_types_by_name['OrderListAction'] = _ORDERLISTACTION
@@ -1783,13 +1991,6 @@ OrderMassCancelReport = _reflection.GeneratedProtocolMessageType('OrderMassCance
   ))
 _sym_db.RegisterMessage(OrderMassCancelReport)
 
-OrderStatusRequest = _reflection.GeneratedProtocolMessageType('OrderStatusRequest', (_message.Message,), dict(
-  DESCRIPTOR = _ORDERSTATUSREQUEST,
-  __module__ = 'order_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrderStatusRequest)
-  ))
-_sym_db.RegisterMessage(OrderStatusRequest)
-
 Reject = _reflection.GeneratedProtocolMessageType('Reject', (_message.Message,), dict(
   DESCRIPTOR = _REJECT,
   __module__ = 'order_pb2'
@@ -1797,12 +1998,40 @@ Reject = _reflection.GeneratedProtocolMessageType('Reject', (_message.Message,),
   ))
 _sym_db.RegisterMessage(Reject)
 
+OrderStatusRequest = _reflection.GeneratedProtocolMessageType('OrderStatusRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ORDERSTATUSREQUEST,
+  __module__ = 'order_pb2'
+  # @@protoc_insertion_point(class_scope:api.OrderStatusRequest)
+  ))
+_sym_db.RegisterMessage(OrderStatusRequest)
+
+OrderMassStatusRequest = _reflection.GeneratedProtocolMessageType('OrderMassStatusRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ORDERMASSSTATUSREQUEST,
+  __module__ = 'order_pb2'
+  # @@protoc_insertion_point(class_scope:api.OrderMassStatusRequest)
+  ))
+_sym_db.RegisterMessage(OrderMassStatusRequest)
+
 OrderMassStatusResponse = _reflection.GeneratedProtocolMessageType('OrderMassStatusResponse', (_message.Message,), dict(
   DESCRIPTOR = _ORDERMASSSTATUSRESPONSE,
   __module__ = 'order_pb2'
   # @@protoc_insertion_point(class_scope:api.OrderMassStatusResponse)
   ))
 _sym_db.RegisterMessage(OrderMassStatusResponse)
+
+TradeCaptureReportRequest = _reflection.GeneratedProtocolMessageType('TradeCaptureReportRequest', (_message.Message,), dict(
+  DESCRIPTOR = _TRADECAPTUREREPORTREQUEST,
+  __module__ = 'order_pb2'
+  # @@protoc_insertion_point(class_scope:api.TradeCaptureReportRequest)
+  ))
+_sym_db.RegisterMessage(TradeCaptureReportRequest)
+
+MassTradeCaptureReportResponse = _reflection.GeneratedProtocolMessageType('MassTradeCaptureReportResponse', (_message.Message,), dict(
+  DESCRIPTOR = _MASSTRADECAPTUREREPORTRESPONSE,
+  __module__ = 'order_pb2'
+  # @@protoc_insertion_point(class_scope:api.MassTradeCaptureReportResponse)
+  ))
+_sym_db.RegisterMessage(MassTradeCaptureReportResponse)
 
 OrderCancelReplaceRequest = _reflection.GeneratedProtocolMessageType('OrderCancelReplaceRequest', (_message.Message,), dict(
   DESCRIPTOR = _ORDERCANCELREPLACEREQUEST,

@@ -3,24 +3,29 @@ import sys
 import inspect
 from datetime import datetime, timedelta
 
-from xena.rest import XenaMDSyncClient
+from xena.rest_sync import XenaMDSyncClient
+
+
+def get_client():
+    XenaMDSyncClient.URL = 'http://localhost/api'
+    return XenaMDSyncClient()
 
 
 def example_of_candles():
-    rest = XenaMDSyncClient()
+    rest = get_client()
     ts_from = int((datetime.today() - timedelta(days=1)).timestamp() * 1000000000) # from in nanosecond's
     res = rest.candles("BTC/USDT", timeframe='1m', ts_from=ts_from)
     print(res)
 
 
 def example_of_dom():
-    rest = XenaMDSyncClient()
+    rest = get_client()
     res = rest.dom("BTC/USDT", market_depth=10, aggregation=5)
     print(res)
 
 
 def example_of_trades():
-    rest = XenaMDSyncClient()
+    rest = get_client()
     ts_from = ts_from=int((datetime.today() - timedelta(days=10)).timestamp()) * 1000000000 # nanoseconds
     ts_to =  int(datetime.now().timestamp())*1000000000 # nanoseconds
     res = rest.trades("XBTUSD", ts_from=ts_from, ts_to=ts_to)
@@ -28,13 +33,13 @@ def example_of_trades():
 
 
 def example_of_instruments():
-    rest = XenaMDSyncClient()
+    rest = get_client()
     res = rest.instruments()
     print(res)
 
 
 def example_of_server_time():
-    rest = XenaMDSyncClient()
+    rest = get_client()
     res = rest.server_time()
     print(res)
 
