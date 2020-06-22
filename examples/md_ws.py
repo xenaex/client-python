@@ -10,7 +10,7 @@ loop = None
 
 
 def get_client():
-    XenaMDWebsocketClient.URL = 'ws://localhost/api/ws/market-data'
+    XenaMDWebsocketClient.URL = 'wss://trading.int.xena.io/api/ws/market-data'
     return XenaMDWebsocketClient(loop)
 
 
@@ -32,14 +32,17 @@ async def example_of_dom():
 
     async def on_connection_close(ws, e):
         await connect(ws)
-        await ws.dom("BTC/USDT", handle, market_depth=10, aggregation=5)
+        await ws.dom("XBTUSD", handle, market_depth=10, aggregation=5)
 
     ws = get_client()
     ws.on_connection_close(on_connection_close)
     await connect(ws)
 
     while True:
-        await asyncio.sleep(20, loop=loop)
+        print("sleeping !!!!!!!!!!!!!!!!!!!!!!!!!!")
+        await asyncio.sleep(30, loop=loop)
+        print("closing !!!!!!!!!!!!!!!!!!!!!!!!!!")
+        await ws.close()
 
 
 async def example_of_candles():

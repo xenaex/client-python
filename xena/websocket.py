@@ -27,6 +27,7 @@ class WebsocketClient:
         self._url = url
         self._login_msg_fnc = None
         self._on_connection_close = []
+        self._closed = False
 
         async def on_connection_close(client, exception):
             self._log.debug('connection closed: %s', exception)
@@ -39,7 +40,7 @@ class WebsocketClient:
         data = serialization.to_fix_json(heartbeat)
 
         try:
-            while True:
+            while not self._closed:
                 await self._socket.send(data)
                 await asyncio.sleep(interval)
         except Exception as e:
@@ -55,6 +56,7 @@ class WebsocketClient:
 
     async def _connect(self):
         if self._socket is None:
+            self._closed = False
             self._socket = await websockets.connect(self._url)
 
             if self._login_msg_fnc is not None:
@@ -76,8 +78,11 @@ class WebsocketClient:
         try:
             if self._socket is not None:
                 self._socket = None
-                for fnc in self._on_connection_close:
-                    await fnc(self, e)
+
+                # calling on_connection_close only if it's was not closed by hands
+                if not self._closed:
+                    for fnc in self._on_connection_close:
+                        await fnc(self, e)
         except Exception as ex:
             self._log.exception("on self._close")
 
@@ -96,10 +101,17 @@ class WebsocketClient:
         :param msg: message
         :type msg: bytes
         """
+        if self._closed:
+            return
 
         if self._socket is None:
             await self._connect()
         await self._socket.send(msg)
+
+    async def close(self):
+        if self._socket is not None:
+            self._closed = True
+            await self._socket.close()
 
 
 class XenaMDWebsocketClient(WebsocketClient):
