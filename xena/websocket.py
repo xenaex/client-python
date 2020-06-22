@@ -28,6 +28,8 @@ class WebsocketClient:
         self._login_msg_fnc = None
         self._on_connection_close = []
         self._closed = False
+        self._future_heartbeat = None
+        self._future_read = None
 
         async def on_connection_close(client, exception):
             self._log.debug('connection closed: %s', exception)
@@ -70,8 +72,8 @@ class WebsocketClient:
             if logon.RejectText != "":
                 raise exceptions.LoginException(logon.RejectText)
 
-            asyncio.ensure_future(self._heartbeat(logon.HeartBtInt), loop=self._loop)
-            asyncio.ensure_future(self._read(), loop=self._loop)
+            self._future_heartbeat = asyncio.ensure_future(self._heartbeat(logon.HeartBtInt), loop=self._loop)
+            self._future_read = asyncio.ensure_future(self._read(), loop=self._loop)
             return logon
 
     async def _close(self, e):
@@ -109,8 +111,18 @@ class WebsocketClient:
         await self._socket.send(msg)
 
     async def close(self):
+        if self._closed:
+            return
+
+        self._closed = True
+
+        if self._future_heartbeat is not None:
+            self._future_heartbeat.cancel()
+        
+        if self._future_read is not None:
+            self._future_read.cancel()
+
         if self._socket is not None:
-            self._closed = True
             await self._socket.close()
 
 
