@@ -63,8 +63,9 @@ class XenaMDSyncClient(XenaSyncClient):
             "to": ts_to,
         })
 
-    def dom(self, symbol, aggregation=0, market_depth=0):
+    def dom(self, symbol, throttling=500, aggregation=0, market_depth=0):
         return self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh, params={
+            "throttling": throttling,
             "aggr": aggregation,
             "depth": market_depth,
         })
