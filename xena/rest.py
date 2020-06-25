@@ -80,11 +80,13 @@ class XenaMDClient(XenaClient):
             "to": ts_to,
         })
     
-    async def dom(self, symbol, aggregation=0, market_depth=0):
+    async def dom(self, symbol, throttling=500, aggregation=0, market_depth=0):
         """Get L2 snapshot for :symbol 
 
         :param symbol: required
         :type symbol: str
+        :param throttling: with throttling equals zero, aggregation does not work, available values 0, 500
+        :type aggreagation: int
         :param aggregation: dom prices are rounded to TickSize*aggregation and than aggregated, available values are 0,5,10,25,50,100,250
         :type aggreagation: int
         :param market_depth: number of dom levels to return, available values are 0,10,20
@@ -94,6 +96,7 @@ class XenaMDClient(XenaClient):
         """
 
         return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh, params={
+            "throttling": throttling,
             "aggr": aggregation,
             "depth": market_depth, 
         })

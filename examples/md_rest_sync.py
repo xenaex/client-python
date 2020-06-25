@@ -7,20 +7,20 @@ from xena.rest_sync import XenaMDSyncClient
 
 
 def get_client():
-    XenaMDSyncClient.URL = 'http://localhost/api'
+    XenaMDSyncClient.URL = 'https://api.xena.exchange'
     return XenaMDSyncClient()
 
 
 def example_of_candles():
     rest = get_client()
     ts_from = int((datetime.today() - timedelta(days=1)).timestamp() * 1000000000) # from in nanosecond's
-    res = rest.candles("BTC/USDT", timeframe='1m', ts_from=ts_from)
+    res = rest.candles("XBTUSD", timeframe='1m', ts_from=ts_from)
     print(res)
 
 
 def example_of_dom():
     rest = get_client()
-    res = rest.dom("BTC/USDT", market_depth=10, aggregation=5)
+    res = rest.dom("XBTUSD", throttling=500, market_depth=10, aggregation=5)
     print(res)
 
 

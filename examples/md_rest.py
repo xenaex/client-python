@@ -10,20 +10,20 @@ loop = None
 
 
 def get_client():
-    XenaMDClient.URL = 'http://localhost/api'
+    XenaMDClient.URL = 'https://api.xena.exchange'
     return XenaMDClient(loop)
 
 
 async def example_of_candles():
     rest = get_client()
     ts_from = int((datetime.today() - timedelta(days=1)).timestamp() * 1000000000) # from in nanosecond's
-    res = await rest.candles("BTC/USDT", timeframe='1m', ts_from=ts_from)
+    res = await rest.candles("XBTUSD", timeframe='1m', ts_from=ts_from)
     print(res)
 
 
 async def example_of_dom():
     rest = XenaMDClient(loop)
-    res = await rest.dom("BTC/USDT", market_depth=10, aggregation=5)
+    res = await rest.dom("XBTUSD", throttling=500, market_depth=10, aggregation=5)
     print(res)
 
 
