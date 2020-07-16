@@ -7,7 +7,6 @@ from xena.rest_sync import XenaMDSyncClient
 
 
 def get_client():
-    XenaMDSyncClient.URL = 'https://api.xena.exchange'
     return XenaMDSyncClient()
 
 

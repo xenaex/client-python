@@ -15,7 +15,7 @@ def id(prefix):
 
 
 def get_client():
-    XenaTradingSyncClient.URL = 'http://localhost/api/trading'
+    #  XenaTradingSyncClient.URL = 'http://localhost/api/trading'
     api_key = 'EmfLDuT0hitGG7LjzIh-Xc4APzzanGd_Zq5ivAjczuI='
     api_secret = '307702010104205911735f6ce66390cc90976f90333ae416d8c07cf94be24f6f373c7f8fe74180a00a06082a8648ce3d030107a14403420004107fd20d2ab5c6299618f6bb611b2dc42d3c985fa0f77754955f9945e9e843212c79d684f7cbe56fa245029282ace128aba13fa709d0b23226087867dc436ff9'
     rest = XenaTradingSyncClient(api_key, api_secret)

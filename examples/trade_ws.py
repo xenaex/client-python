@@ -62,11 +62,11 @@ async def example_of_market_order():
         print(msg)
 
     ws.listen_type(constants.MsgType_ExecutionReportMsgType, handle)
-    await ws.market_order(8263200, id("market-order"), "BTC/USDT", constants.Side_Buy, "0.01")
+    await ws.market_order(1012833458, id("market-order"), "XBTUSD", constants.Side_Buy, "1")
 
     # or using helpers method
-    cmd = helpers.market_order(8263200, id("market-order"), "BTC/USDT", constants.Side_Buy, "0.01")
-    await ws.send_cmd(cmd)
+    #  cmd = helpers.market_order(8263200, id("market-order"), "BTC/USDT", constants.Side_Buy, "0.01")
+    #  await ws.send_cmd(cmd)
 
     # looop
     while True:
