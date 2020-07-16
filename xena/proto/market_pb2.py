@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cmarket.proto\x12\x03\x61pi\"\xc3\x03\n\x07MDEntry\x12\x0e\n\x06Symbol\x18\x37 \x01(\t\x12\x17\n\x0eMDUpdateAction\x18\x97\x02 \x01(\t\x12\x14\n\x0bMDEntryType\x18\x8d\x02 \x01(\t\x12\x12\n\tMDEntryPx\x18\x8e\x02 \x01(\t\x12\x14\n\x0bMDEntrySize\x18\x8f\x02 \x01(\t\x12\x17\n\x0eNumberOfOrders\x18\xda\x02 \x01(\r\x12\x14\n\x0cTransactTime\x18< \x01(\x03\x12\x10\n\x07TradeId\x18\xeb\x07 \x01(\t\x12\x16\n\rAggressorSide\x18\xdd\x0b \x01(\t\x12\x10\n\x07\x46irstPx\x18\x81\x08 \x01(\t\x12\x0e\n\x06LastPx\x18\x1f \x01(\t\x12\x0f\n\x06HighPx\x18\xcc\x02 \x01(\t\x12\x0e\n\x05LowPx\x18\xcd\x02 \x01(\t\x12\x12\n\tBuyVolume\x18\xca\x02 \x01(\t\x12\x13\n\nSellVolume\x18\xcb\x02 \x01(\t\x12\x0c\n\x03\x42id\x18\xde\x0b \x01(\t\x12\x0c\n\x03\x41sk\x18\xdf\x0b \x01(\t\x12\x14\n\nLowRangePx\x18\x91\x96\x02 \x01(\t\x12\x15\n\x0bHighRangePx\x18\x92\x96\x02 \x01(\t\x12\x14\n\nLowLimitPx\x18\x93\x96\x02 \x01(\t\x12\x15\n\x0bHighLimitPx\x18\x94\x96\x02 \x01(\t\x12\x14\n\nClearingPx\x18\x95\x96\x02 \x01(\t\"\xca\x02\n\x11MarketDataRefresh\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x13\n\nMDStreamId\x18\xdc\x0b \x01(\t\x12\x17\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03\x12\x13\n\nMDBookType\x18\xfd\x07 \x01(\t\x12\x0e\n\x06Symbol\x18\x37 \x01(\t\x12\x14\n\nLowRangePx\x18\x91\x96\x02 \x01(\t\x12\x15\n\x0bHighRangePx\x18\x92\x96\x02 \x01(\t\x12\x14\n\nLowLimitPx\x18\x93\x96\x02 \x01(\t\x12\x15\n\x0bHighLimitPx\x18\x94\x96\x02 \x01(\t\x12\x14\n\nClearingPx\x18\x95\x96\x02 \x01(\t\x12\x10\n\x07\x42\x65stBid\x18\xde\x0b \x01(\t\x12\x10\n\x07\x42\x65stAsk\x18\xdf\x0b \x01(\t\x12\x1e\n\x07MDEntry\x18\x8c\x02 \x03(\x0b\x32\x0c.api.MDEntry\x12\x1d\n\x06Ratios\x18\xe0\x0b \x03(\x0b\x32\x0c.api.MDEntry\"\xdb\x01\n\x11MarketDataRequest\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x13\n\nMDStreamId\x18\xdc\x0b \x01(\t\x12 \n\x17SubscriptionRequestType\x18\x87\x02 \x01(\t\x12\x15\n\x0cThrottleType\x18\xcc\x0c \x01(\t\x12\x1d\n\x14ThrottleTimeInterval\x18\xce\x0c \x01(\x03\x12\x19\n\x10ThrottleTimeUnit\x18\xcf\x0c \x01(\t\x12\x17\n\x0e\x41ggregatedBook\x18\x8a\x02 \x01(\x03\x12\x14\n\x0bMarketDepth\x18\x88\x02 \x01(\x03\"T\n\x17MarketDataRequestReject\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x13\n\nMDStreamId\x18\xdc\x0b \x01(\t\x12\x13\n\nRejectText\x18\xb0\n \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x0cmarket.proto\x12\x03\x61pi\"\xb5\x05\n\x07MDEntry\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12\'\n\x0eMDUpdateAction\x18\x97\x02 \x01(\tR\x0emdUpdateAction\x12!\n\x0bMDEntryType\x18\x8d\x02 \x01(\tR\x0bmdEntryType\x12\x1d\n\tMDEntryPx\x18\x8e\x02 \x01(\tR\tmdEntryPx\x12!\n\x0bMDEntrySize\x18\x8f\x02 \x01(\tR\x0bmdEntrySize\x12\'\n\x0eNumberOfOrders\x18\xda\x02 \x01(\rR\x0enumberOfOrders\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\x12\x19\n\x07TradeId\x18\xeb\x07 \x01(\tR\x07tradeId\x12%\n\rAggressorSide\x18\xdd\x0b \x01(\tR\raggressorSide\x12\x19\n\x07\x46irstPx\x18\x81\x08 \x01(\tR\x07\x66irstPx\x12\x16\n\x06LastPx\x18\x1f \x01(\tR\x06lastPx\x12\x17\n\x06HighPx\x18\xcc\x02 \x01(\tR\x06highPx\x12\x15\n\x05LowPx\x18\xcd\x02 \x01(\tR\x05lowPx\x12\x1d\n\tBuyVolume\x18\xca\x02 \x01(\tR\tbuyVolume\x12\x1f\n\nSellVolume\x18\xcb\x02 \x01(\tR\nsellVolume\x12\x11\n\x03\x42id\x18\xde\x0b \x01(\tR\x03\x62id\x12\x11\n\x03\x41sk\x18\xdf\x0b \x01(\tR\x03\x61sk\x12 \n\nLowRangePx\x18\x91\x96\x02 \x01(\tR\nlowRangePx\x12\"\n\x0bHighRangePx\x18\x92\x96\x02 \x01(\tR\x0bhighRangePx\x12 \n\nLowLimitPx\x18\x93\x96\x02 \x01(\tR\nlowLimitPx\x12\"\n\x0bHighLimitPx\x18\x94\x96\x02 \x01(\tR\x0bhighLimitPx\x12 \n\nClearingPx\x18\x95\x96\x02 \x01(\tR\nclearingPx\"\xe4\x03\n\x11MarketDataRefresh\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x1f\n\nMDStreamId\x18\xdc\x0b \x01(\tR\nmdStreamId\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12\x1f\n\nMDBookType\x18\xfd\x07 \x01(\tR\nmdBookType\x12\x16\n\x06Symbol\x18\x37 \x01(\tR\x06symbol\x12 \n\nLowRangePx\x18\x91\x96\x02 \x01(\tR\nlowRangePx\x12\"\n\x0bHighRangePx\x18\x92\x96\x02 \x01(\tR\x0bhighRangePx\x12 \n\nLowLimitPx\x18\x93\x96\x02 \x01(\tR\nlowLimitPx\x12\"\n\x0bHighLimitPx\x18\x94\x96\x02 \x01(\tR\x0bhighLimitPx\x12 \n\nClearingPx\x18\x95\x96\x02 \x01(\tR\nclearingPx\x12\x19\n\x07\x42\x65stBid\x18\xde\x0b \x01(\tR\x07\x62\x65stBid\x12\x19\n\x07\x42\x65stAsk\x18\xdf\x0b \x01(\tR\x07\x62\x65stAsk\x12\'\n\x07MDEntry\x18\x8c\x02 \x03(\x0b\x32\x0c.api.MDEntryR\x07mdEntry\x12%\n\x06Ratios\x18\xe0\x0b \x03(\x0b\x32\x0c.api.MDEntryR\x06ratios\"\xdb\x01\n\x11MarketDataRequest\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x13\n\nMDStreamId\x18\xdc\x0b \x01(\t\x12 \n\x17SubscriptionRequestType\x18\x87\x02 \x01(\t\x12\x15\n\x0cThrottleType\x18\xcc\x0c \x01(\t\x12\x1d\n\x14ThrottleTimeInterval\x18\xce\x0c \x01(\x03\x12\x19\n\x10ThrottleTimeUnit\x18\xcf\x0c \x01(\t\x12\x17\n\x0e\x41ggregatedBook\x18\x8a\x02 \x01(\x03\x12\x14\n\x0bMarketDepth\x18\x88\x02 \x01(\x03\"T\n\x17MarketDataRequestReject\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x13\n\nMDStreamId\x18\xdc\x0b \x01(\t\x12\x13\n\nRejectText\x18\xb0\n \x01(\t\"/\n\x04\x42\x61rs\x12\'\n\x07MDEntry\x18\x8c\x02 \x03(\x0b\x32\x0c.api.MDEntryR\x07mdEntryb\x06proto3')
 )
 
 
@@ -38,154 +38,154 @@ _MDENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MDUpdateAction', full_name='api.MDEntry.MDUpdateAction', index=1,
       number=279, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='mdUpdateAction', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MDEntryType', full_name='api.MDEntry.MDEntryType', index=2,
       number=269, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='mdEntryType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MDEntryPx', full_name='api.MDEntry.MDEntryPx', index=3,
       number=270, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='mdEntryPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MDEntrySize', full_name='api.MDEntry.MDEntrySize', index=4,
       number=271, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='mdEntrySize', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='NumberOfOrders', full_name='api.MDEntry.NumberOfOrders', index=5,
       number=346, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='numberOfOrders', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='TransactTime', full_name='api.MDEntry.TransactTime', index=6,
       number=60, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='transactTime', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='TradeId', full_name='api.MDEntry.TradeId', index=7,
       number=1003, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='tradeId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='AggressorSide', full_name='api.MDEntry.AggressorSide', index=8,
       number=1501, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='aggressorSide', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='FirstPx', full_name='api.MDEntry.FirstPx', index=9,
       number=1025, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='firstPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LastPx', full_name='api.MDEntry.LastPx', index=10,
       number=31, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='lastPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='HighPx', full_name='api.MDEntry.HighPx', index=11,
       number=332, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='highPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LowPx', full_name='api.MDEntry.LowPx', index=12,
       number=333, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='lowPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='BuyVolume', full_name='api.MDEntry.BuyVolume', index=13,
       number=330, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='buyVolume', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='SellVolume', full_name='api.MDEntry.SellVolume', index=14,
       number=331, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='sellVolume', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Bid', full_name='api.MDEntry.Bid', index=15,
       number=1502, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='bid', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Ask', full_name='api.MDEntry.Ask', index=16,
       number=1503, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='ask', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LowRangePx', full_name='api.MDEntry.LowRangePx', index=17,
       number=35601, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='lowRangePx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='HighRangePx', full_name='api.MDEntry.HighRangePx', index=18,
       number=35602, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='highRangePx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LowLimitPx', full_name='api.MDEntry.LowLimitPx', index=19,
       number=35603, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='lowLimitPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='HighLimitPx', full_name='api.MDEntry.HighLimitPx', index=20,
       number=35604, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='highLimitPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ClearingPx', full_name='api.MDEntry.ClearingPx', index=21,
       number=35605, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='clearingPx', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -199,7 +199,7 @@ _MDENTRY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=473,
+  serialized_end=715,
 )
 
 
@@ -216,98 +216,98 @@ _MARKETDATAREFRESH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MDStreamId', full_name='api.MarketDataRefresh.MDStreamId', index=1,
       number=1500, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='mdStreamId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LastUpdateTime', full_name='api.MarketDataRefresh.LastUpdateTime', index=2,
       number=779, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='lastUpdateTime', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MDBookType', full_name='api.MarketDataRefresh.MDBookType', index=3,
       number=1021, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='mdBookType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Symbol', full_name='api.MarketDataRefresh.Symbol', index=4,
       number=55, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='symbol', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LowRangePx', full_name='api.MarketDataRefresh.LowRangePx', index=5,
       number=35601, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='lowRangePx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='HighRangePx', full_name='api.MarketDataRefresh.HighRangePx', index=6,
       number=35602, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='highRangePx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LowLimitPx', full_name='api.MarketDataRefresh.LowLimitPx', index=7,
       number=35603, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='lowLimitPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='HighLimitPx', full_name='api.MarketDataRefresh.HighLimitPx', index=8,
       number=35604, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='highLimitPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ClearingPx', full_name='api.MarketDataRefresh.ClearingPx', index=9,
       number=35605, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='clearingPx', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='BestBid', full_name='api.MarketDataRefresh.BestBid', index=10,
       number=1502, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='bestBid', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='BestAsk', full_name='api.MarketDataRefresh.BestAsk', index=11,
       number=1503, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='bestAsk', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MDEntry', full_name='api.MarketDataRefresh.MDEntry', index=12,
       number=268, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='mdEntry', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Ratios', full_name='api.MarketDataRefresh.Ratios', index=13,
       number=1504, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='ratios', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -320,8 +320,8 @@ _MARKETDATAREFRESH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=476,
-  serialized_end=806,
+  serialized_start=718,
+  serialized_end=1202,
 )
 
 
@@ -400,8 +400,8 @@ _MARKETDATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=809,
-  serialized_end=1028,
+  serialized_start=1205,
+  serialized_end=1424,
 )
 
 
@@ -445,16 +445,49 @@ _MARKETDATAREQUESTREJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1030,
-  serialized_end=1114,
+  serialized_start=1426,
+  serialized_end=1510,
+)
+
+
+_BARS = _descriptor.Descriptor(
+  name='Bars',
+  full_name='api.Bars',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MDEntry', full_name='api.Bars.MDEntry', index=0,
+      number=268, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='mdEntry', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1512,
+  serialized_end=1559,
 )
 
 _MARKETDATAREFRESH.fields_by_name['MDEntry'].message_type = _MDENTRY
 _MARKETDATAREFRESH.fields_by_name['Ratios'].message_type = _MDENTRY
+_BARS.fields_by_name['MDEntry'].message_type = _MDENTRY
 DESCRIPTOR.message_types_by_name['MDEntry'] = _MDENTRY
 DESCRIPTOR.message_types_by_name['MarketDataRefresh'] = _MARKETDATAREFRESH
 DESCRIPTOR.message_types_by_name['MarketDataRequest'] = _MARKETDATAREQUEST
 DESCRIPTOR.message_types_by_name['MarketDataRequestReject'] = _MARKETDATAREQUESTREJECT
+DESCRIPTOR.message_types_by_name['Bars'] = _BARS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 MDEntry = _reflection.GeneratedProtocolMessageType('MDEntry', (_message.Message,), dict(
@@ -484,6 +517,13 @@ MarketDataRequestReject = _reflection.GeneratedProtocolMessageType('MarketDataRe
   # @@protoc_insertion_point(class_scope:api.MarketDataRequestReject)
   ))
 _sym_db.RegisterMessage(MarketDataRequestReject)
+
+Bars = _reflection.GeneratedProtocolMessageType('Bars', (_message.Message,), dict(
+  DESCRIPTOR = _BARS,
+  __module__ = 'market_pb2'
+  # @@protoc_insertion_point(class_scope:api.Bars)
+  ))
+_sym_db.RegisterMessage(Bars)
 
 
 # @@protoc_insertion_point(module_scope)

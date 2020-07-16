@@ -75,7 +75,7 @@ class XenaMDClient(XenaClient):
         :returns: xena.proto.market_pb2.MarketDataRefresh
         """
 
-        return await self._get('/market-data/candles/'+symbol+'/'+timeframe, msg=market_pb2.MarketDataRefresh, params={
+        return await self._get('/market-data/v2/candles/'+symbol+'/'+timeframe, msg=market_pb2.MarketDataRefresh, params={
             "from": ts_from,
             "to": ts_to,
         })
@@ -95,7 +95,7 @@ class XenaMDClient(XenaClient):
         :returns: xena.proto.market_pb2.MarketDataRefresh
         """
 
-        return await self._get('/market-data/dom/'+symbol, msg=market_pb2.MarketDataRefresh, params={
+        return await self._get('/market-data/v2/dom/'+symbol, msg=market_pb2.MarketDataRefresh, params={
             "throttling": throttling,
             "aggr": aggregation,
             "depth": market_depth, 
@@ -118,7 +118,7 @@ class XenaMDClient(XenaClient):
         :returns: xena.proto.market_pb2.MarketDataRefresh
         """
 
-        return await self._get('/market-data/trades/'+symbol, msg=market_pb2.MarketDataRefresh, params={
+        return await self._get('/market-data/v2/trades/'+symbol, msg=market_pb2.MarketDataRefresh, params={
             "from": ts_from,
             "to": ts_to,
             "page": page,
@@ -131,7 +131,7 @@ class XenaMDClient(XenaClient):
         :returns: datetime.datetime
         """ 
 
-        resp = await self._get('/market-data/server-time', msg=common_pb2.Heartbeat)
+        resp = await self._get('/market-data/v2/server-time', msg=common_pb2.Heartbeat)
         return datetime.fromtimestamp(resp.TransactTime/1000000000)
     
     async def instruments(self):
@@ -145,7 +145,7 @@ class XenaMDClient(XenaClient):
 
 class XenaTradingClient(XenaClient):
 
-    URL = 'https://api.xena.exchange/trading'
+    URL = 'https://api.xena.exchange'
     #  URL = 'http://localhost/api/trading'
 
     def __init__(self, api_key, api_secret, loop):
@@ -171,7 +171,7 @@ class XenaTradingClient(XenaClient):
         return headers
 
     async def new_order(self, cmd):
-        return await self._post('/order/new', data=serialization.to_json(cmd))
+        return await self._post('/trading/order/new', data=serialization.to_json(cmd))
 
     async def market_order(self, account, client_order_id, symbol, side, qty, **kwargs):
         """Create market order and send request"""
@@ -199,7 +199,7 @@ class XenaTradingClient(XenaClient):
         if not isinstance(cmd, order_pb2.OrderCancelRequest):
             raise ValueError("Command has to be OrderCancelRequest")
 
-        return await self._post('/order/cancel', data=serialization.to_json(cmd))
+        return await self._post('/trading/order/cancel', data=serialization.to_json(cmd))
 
     async def cancel_by_client_id(self, account, cancel_id, client_order_id, symbol, side):
         """Create cancel request by OrderCancelRequest.OrigClOrdId and send request"""
@@ -239,7 +239,7 @@ class XenaTradingClient(XenaClient):
         cmd.Side = side
         cmd.PositionEffect = position_effect
         cmd.TransactTime = int(time.time() * 1000000000)
-        return await self._post('/order/mass-cancel', data=serialization.to_json(cmd))
+        return await self._post('/trading/order/mass-cancel', data=serialization.to_json(cmd))
 
     async def replace(self, cmd):
         """Wrapper for post with convenient methond name for sending replace commnads"""
@@ -247,7 +247,7 @@ class XenaTradingClient(XenaClient):
         if not isinstance(cmd, order_pb2.OrderCancelReplaceRequest):
             raise ValueError("Command has to be OrderCancelRequest")
 
-        return await self._post('/order/replace', data=serialization.to_json(cmd))
+        return await self._post('/trading/order/replace', data=serialization.to_json(cmd))
 
     async def collapse_positions(self, account, symbol):
         """Send request to collapse positions"""
@@ -270,7 +270,7 @@ class XenaTradingClient(XenaClient):
         :returns: list of xena.proto.positions_pb2.PositionReport
         """
 
-        return await self._get('/accounts/' + str(account) + '/positions')
+        return await self._get('/trading/accounts/' + str(account) + '/positions')
     
     async def positions_for_symbol(self, account, symbol):
         """Request list of open positions for :account and :symbol
@@ -335,7 +335,7 @@ class XenaTradingClient(XenaClient):
         :returns: list of last xena.proto.order_pb2.ExecutionReport for each active order
         """
 
-        return await self._get('/accounts/' + str(account) + '/positions-history', params={
+        return await self._get('/trading/accounts/' + str(account) + '/positions-history', params={
             "id": id,
             "parentid": parentid,
             "symbol": symbol,
@@ -361,7 +361,7 @@ class XenaTradingClient(XenaClient):
         if client_order_id == "" and order_id == "":
             raise ValueError("client_order_id or order_id is required")
 
-        return await self._get('/accounts/' + str(account) + '/order', params={
+        return await self._get('/trading/accounts/' + str(account) + '/order', params={
             "client_order_id": client_order_id,
             "order_id": order_id,
         })
@@ -382,7 +382,7 @@ class XenaTradingClient(XenaClient):
         :returns: list of last xena.proto.order_pb2.ExecutionReport for each active order
         """
 
-        return await self._get('/accounts/' + str(account) + '/active-orders', params={
+        return await self._get('/trading/accounts/' + str(account) + '/active-orders', params={
             "symbol": symbol,
         })
  
@@ -402,7 +402,7 @@ class XenaTradingClient(XenaClient):
         :returns: list of last xena.proto.order_pb2.ExecutionReport for each order
         """
 
-        return await self._get('/accounts/' + str(account) + '/last-order-statuses', params={
+        return await self._get('/trading/accounts/' + str(account) + '/last-order-statuses', params={
             "symbol": symbol,
             "from": ts_from,
             "to": ts_to,
@@ -430,7 +430,7 @@ class XenaTradingClient(XenaClient):
         :returns: list of last xena.proto.order_pb2.ExecutionReport for each order
         """
 
-        return await self._get('/accounts/' + str(account) + '/order-history', params={
+        return await self._get('/trading/accounts/' + str(account) + '/order-history', params={
             "symbol": symbol,
             "from": ts_from,
             "to": ts_to,
@@ -460,7 +460,7 @@ class XenaTradingClient(XenaClient):
         :returns: list of xena.proto.order_pb2.ExecutionReport with ExecType == ExecType_Trade
         """
 
-        return await self._get('/accounts/' + str(account) + '/trade-history', params={
+        return await self._get('/trading/accounts/' + str(account) + '/trade-history', params={
             "trade_id": trade_id,
             "client_order_id": client_order_id,
             "symbol": symbol,
@@ -478,7 +478,7 @@ class XenaTradingClient(XenaClient):
         :returns: xena.proto.balance_pb2.BalanceSnapshotRefresh
         """
 
-        return await self._get('/accounts/' + str(account) + '/balance')
+        return await self._get('/trading/accounts/' + str(account) + '/balance')
     
     async def margin_requirements(self, account):
         """Request margin requirements for :account
@@ -488,14 +488,14 @@ class XenaTradingClient(XenaClient):
         :returns: xena.proto.margin_pb2.MarginRequirementReport
         """
 
-        return await self._get('/accounts/' + str(account) + '/margin-requirements')
+        return await self._get('/trading/accounts/' + str(account) + '/margin-requirements')
     
     async def accounts(self):
         """Request list of acconts id
         :returns: list of int
         """
 
-        response = await self._get('/accounts')
+        response = await self._get('/trading/accounts')
         result = []
         for item in response['accounts']:
             result.append(item['id'])
@@ -510,4 +510,4 @@ class XenaTradingClient(XenaClient):
         cmd.GrpID = group_id
         cmd.HeartBtInt = intervalInSec
         
-        await self._post('/order/heartbeat', data=serialization.to_json(cmd))
+        await self._post('/trading/order/heartbeat', data=serialization.to_json(cmd))

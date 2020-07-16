@@ -10,9 +10,7 @@ loop = None
 
 
 def get_client():
-    XenaMDClient.URL = 'https://api.xena.exchange'
     return XenaMDClient(loop)
-
 
 async def example_of_candles():
     rest = get_client()

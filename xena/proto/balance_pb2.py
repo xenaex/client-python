@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\rbalance.proto\x12\x03\x61pi\"\x8a\x01\n\x1a\x41\x63\x63ountStatusReportRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\"\xab\x01\n\x08Position\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x1f\n\nPositionId\x18\xd2\x0c \x01(\x04R\npositionId\x12+\n\x10PositionOpenTime\x18\x8d\x0e \x01(\x03R\x10positionOpenTime\x12\x1f\n\nRealizedPL\x18\x8e\x0e \x01(\tR\nrealizedPL\"\x9a\x02\n\x07\x42\x61lance\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12\x1d\n\tAvailable\x18\x89\x0e \x01(\tR\tavailable\x12\x17\n\x06OnHold\x18\x8a\x0e \x01(\tR\x06onHold\x12\x19\n\x07Settled\x18\x8b\x0e \x01(\tR\x07settled\x12\x17\n\x06\x45quity\x18\xff\r \x01(\tR\x06\x65quity\x12\x16\n\x05\x42onus\x18\xd9\x98\x03 \x01(\tR\x05\x62onus\x12,\n\tPositions\x18\x8c\x0e \x03(\x0b\x32\r.api.PositionR\tpositions\"\x96\x02\n\x19\x42\x61lanceIncrementalRefresh\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12)\n\x08\x42\x61lances\x18\x88\x0e \x03(\x0b\x32\x0c.api.BalanceR\x08\x62\x61lances\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x93\x02\n\x16\x42\x61lanceSnapshotRefresh\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12)\n\x08\x42\x61lances\x18\x88\x0e \x03(\x0b\x32\x0c.api.BalanceR\x08\x62\x61lances\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04textb\x06proto3')
+  serialized_pb=_b('\n\rbalance.proto\x12\x03\x61pi\"\x8a\x01\n\x1a\x41\x63\x63ountStatusReportRequest\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\"\xab\x01\n\x08Position\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12\x14\n\x05\x41vgPx\x18\x06 \x01(\tR\x05\x61vgPx\x12\x1f\n\nPositionId\x18\xd2\x0c \x01(\x04R\npositionId\x12+\n\x10PositionOpenTime\x18\x8d\x0e \x01(\x03R\x10positionOpenTime\x12\x1f\n\nRealizedPL\x18\x8e\x0e \x01(\tR\nrealizedPL\"\x9a\x02\n\x07\x42\x61lance\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x1a\n\x08\x43urrency\x18\x0f \x01(\tR\x08\x63urrency\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12\x1d\n\tAvailable\x18\x89\x0e \x01(\tR\tavailable\x12\x17\n\x06OnHold\x18\x8a\x0e \x01(\tR\x06onHold\x12\x19\n\x07Settled\x18\x8b\x0e \x01(\tR\x07settled\x12\x17\n\x06\x45quity\x18\xff\r \x01(\tR\x06\x65quity\x12\x16\n\x05\x42onus\x18\xd9\x98\x03 \x01(\tR\x05\x62onus\x12,\n\tPositions\x18\x8c\x0e \x03(\x0b\x32\r.api.PositionR\tpositions\"\x96\x02\n\x19\x42\x61lanceIncrementalRefresh\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12)\n\x08\x42\x61lances\x18\x88\x0e \x03(\x0b\x32\x0c.api.BalanceR\x08\x62\x61lances\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x93\x02\n\x16\x42\x61lanceSnapshotRefresh\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x18\n\x07\x41\x63\x63ount\x18\x01 \x01(\x04R\x07\x61\x63\x63ount\x12\x38\n\x16\x41\x63\x63ountStatusRequestId\x18\x91\xcc\x02 \x01(\tR\x16\x61\x63\x63ountStatusRequestId\x12\'\n\x0eLastUpdateTime\x18\x8b\x06 \x01(\x03R\x0elastUpdateTime\x12)\n\x08\x42\x61lances\x18\x88\x0e \x03(\x0b\x32\x0c.api.BalanceR\x08\x62\x61lances\x12#\n\x0cRejectReason\x18\xfc\x02 \x01(\tR\x0crejectReason\x12\x12\n\x04Text\x18: \x01(\tR\x04text\"\x89\x02\n\x12\x42\x61lanceHistoryItem\x12\x1c\n\tAccountId\x18\x01 \x01(\x04R\taccountID\x12\x0e\n\x02Ts\x18\x02 \x01(\x03R\x02ts\x12\x16\n\x06\x41mount\x18\x03 \x01(\tR\x06\x61mount\x12\x1a\n\x08\x43urrency\x18\x04 \x01(\tR\x08\x63urrency\x12\x12\n\x04Kind\x18\x05 \x01(\tR\x04kind\x12&\n\x0e\x42lockchainTxId\x18\x06 \x01(\tR\x0e\x62lockchainTxID\x12\x1e\n\nCommission\x18\x07 \x01(\tR\ncommission\x12\x0e\n\x02Id\x18\x08 \x01(\x04R\x02id\x12%\n\rTransactionId\x18\t \x01(\tR\x0etransaction_idb\x06proto3')
 )
 
 
@@ -361,6 +361,93 @@ _BALANCESNAPSHOTREFRESH = _descriptor.Descriptor(
   serialized_end=1179,
 )
 
+
+_BALANCEHISTORYITEM = _descriptor.Descriptor(
+  name='BalanceHistoryItem',
+  full_name='api.BalanceHistoryItem',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='AccountId', full_name='api.BalanceHistoryItem.AccountId', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='accountID', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Ts', full_name='api.BalanceHistoryItem.Ts', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='ts', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Amount', full_name='api.BalanceHistoryItem.Amount', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='amount', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Currency', full_name='api.BalanceHistoryItem.Currency', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='currency', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Kind', full_name='api.BalanceHistoryItem.Kind', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='kind', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='BlockchainTxId', full_name='api.BalanceHistoryItem.BlockchainTxId', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='blockchainTxID', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Commission', full_name='api.BalanceHistoryItem.Commission', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='commission', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id', full_name='api.BalanceHistoryItem.Id', index=7,
+      number=8, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TransactionId', full_name='api.BalanceHistoryItem.TransactionId', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='transaction_id', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1182,
+  serialized_end=1447,
+)
+
 _BALANCE.fields_by_name['Positions'].message_type = _POSITION
 _BALANCEINCREMENTALREFRESH.fields_by_name['Balances'].message_type = _BALANCE
 _BALANCESNAPSHOTREFRESH.fields_by_name['Balances'].message_type = _BALANCE
@@ -369,6 +456,7 @@ DESCRIPTOR.message_types_by_name['Position'] = _POSITION
 DESCRIPTOR.message_types_by_name['Balance'] = _BALANCE
 DESCRIPTOR.message_types_by_name['BalanceIncrementalRefresh'] = _BALANCEINCREMENTALREFRESH
 DESCRIPTOR.message_types_by_name['BalanceSnapshotRefresh'] = _BALANCESNAPSHOTREFRESH
+DESCRIPTOR.message_types_by_name['BalanceHistoryItem'] = _BALANCEHISTORYITEM
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 AccountStatusReportRequest = _reflection.GeneratedProtocolMessageType('AccountStatusReportRequest', (_message.Message,), dict(
@@ -405,6 +493,13 @@ BalanceSnapshotRefresh = _reflection.GeneratedProtocolMessageType('BalanceSnapsh
   # @@protoc_insertion_point(class_scope:api.BalanceSnapshotRefresh)
   ))
 _sym_db.RegisterMessage(BalanceSnapshotRefresh)
+
+BalanceHistoryItem = _reflection.GeneratedProtocolMessageType('BalanceHistoryItem', (_message.Message,), dict(
+  DESCRIPTOR = _BALANCEHISTORYITEM,
+  __module__ = 'balance_pb2'
+  # @@protoc_insertion_point(class_scope:api.BalanceHistoryItem)
+  ))
+_sym_db.RegisterMessage(BalanceHistoryItem)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0c\x63ommon.proto\x12\x03\x61pi\" \n\rMsgTypeHeader\x12\x0f\n\x07MsgType\x18# \x01(\t\"E\n\tHeartbeat\x12\x0f\n\x07MsgType\x18# \x01(\t\x12\x11\n\tTestReqId\x18p \x01(\t\x12\x14\n\x0cTransactTime\x18< \x01(\x03\"\xfd\n\n\nInstrument\x12\x0e\n\x02ID\x18\x01 \x01(\tR\x02id\x12\x12\n\x04Type\x18\x02 \x01(\tR\x04type\x12\x16\n\x06Symbol\x18\x03 \x01(\tR\x06symbol\x12&\n\x10\x42\x61seCurrencyName\x18\x04 \x01(\tR\x0c\x62\x61seCurrency\x12(\n\x11QuoteCurrencyName\x18\x05 \x01(\tR\rquoteCurrency\x12(\n\x11SettlCurrencyName\x18\x06 \x01(\tR\rsettlCurrency\x12\x1a\n\x08TickSize\x18\x07 \x01(\x05R\x08tickSize\x12%\n\x0bMinOrderQty\x18\x08 \x01(\tR\x10minOrderQuantity\x12\"\n\x0cOrderQtyStep\x18\t \x01(\tR\x0corderQtyStep\x12\x34\n\x15LimitOrderMaxDistance\x18\n \x01(\tR\x15limitOrderMaxDistance\x12&\n\x0ePriceInputMask\x18\x0b \x01(\tR\x0epriceInputMask\x12\x18\n\x07Indexes\x18\x0c \x03(\tR\x07indexes\x12\x18\n\x07\x45nabled\x18\r \x01(\x08R\x07\x65nabled\x12\x36\n\x16LiquidationMaxDistance\x18\x0e \x01(\tR\x16liquidationMaxDistance\x12$\n\rContractValue\x18\x0f \x01(\tR\rcontractValue\x12*\n\x10\x43ontractCurrency\x18\x10 \x01(\tR\x10\x63ontractCurrency\x12\x18\n\x07LotSize\x18\x11 \x01(\tR\x07lotSize\x12\x1c\n\tTickValue\x18\x12 \x01(\tR\ttickValue\x12 \n\x0bMaxOrderQty\x18\x13 \x01(\tR\x0bmaxOrderQty\x12\"\n\x0cMaxPosVolume\x18\x14 \x01(\tR\x0cmaxPosVolume\x12\x12\n\x04Mark\x18\x15 \x01(\tR\x04mark\x12\x1e\n\nFloatingPL\x18\x16 \x01(\tR\nfloatingPL\x12.\n\x12\x41\x64\x64UvmToFreeMargin\x18\x17 \x01(\tR\x12\x61\x64\x64UvmToFreeMargin\x12 \n\x0bMinLeverage\x18\x18 \x01(\tR\x0bminLeverage\x12 \n\x0bMaxLeverage\x18\x19 \x01(\tR\x0bmaxLeverage\x12#\n\x06Margin\x18\x1a \x01(\x0b\x32\x0b.api.MarginR\x06margin\x12\x34\n\x08\x43learing\x18\x1b \x01(\x0b\x32\x18.api.DerivativeOperationR\x08\x63learing\x12\x34\n\x08Interest\x18\x1c \x01(\x0b\x32\x18.api.DerivativeOperationR\x08interest\x12\x32\n\x07Premium\x18\x1d \x01(\x0b\x32\x18.api.DerivativeOperationR\x07premium\x12@\n\x0eRiskAdjustment\x18\x1e \x01(\x0b\x32\x18.api.DerivativeOperationR\x0eriskAdjustment\x12&\n\x0ePricePrecision\x18\x1f \x01(\x05R\x0epricePrecision\x12/\n\nPriceRange\x18  \x01(\x0b\x32\x0f.api.PriceRangeR\npriceRange\x12\x32\n\x0bPriceLimits\x18! \x01(\x0b\x32\x10.api.PriceLimitsR\x0bpriceLimits\x12\x18\n\x07Inverse\x18\" \x01(\x08R\x07inverse\x12*\n\x10TradingStartDate\x18# \x01(\tR\x10tradingStartDate\x12\x1e\n\nExpiryDate\x18$ \x01(\tR\nexpiryDate\x12\x14\n\x05\x42\x61sis\x18% \x01(\x05R\x05\x62\x61sis\"\xcd\x01\n\x06Margin\x12\x18\n\x07Netting\x18\x01 \x01(\tR\x07netting\x12%\n\x05Rates\x18\x02 \x03(\x0b\x32\x0f.api.MarginRateR\x05rates\x12J\n\x0fRateMultipliers\x18\x03 \x03(\x0b\x32 .api.Margin.RateMultipliersEntryR\x0frateMultipliers\x1a\x36\n\x14RateMultipliersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"v\n\nMarginRate\x12\x1c\n\tMaxVolume\x18\x01 \x01(\tR\tmaxVolume\x12 \n\x0bInitialRate\x18\x02 \x01(\tR\x0binitialRate\x12(\n\x0fMaintenanceRate\x18\x03 \x01(\tR\x0fmaintenanceRate\"j\n\x13\x44\x65rivativeOperation\x12!\n\x07\x45nabled\x18\x01 \x01(\x08R\x10maxVolenabledume\x12\x14\n\x05Index\x18\x02 \x01(\tR\x05index\x12\x1a\n\x08Schedule\x18\x03 \x01(\x03R\x08schedule\"\xc4\x01\n\nPriceRange\x12\x18\n\x07\x45nabled\x18\x01 \x01(\x08R\x07\x65nabled\x12\x1a\n\x08\x44istance\x18\x02 \x01(\tR\x08\x64istance\x12&\n\x0eMovingBoundary\x18\x03 \x01(\tR\x0emovingBoundary\x12\x1e\n\nMovingTime\x18\x04 \x01(\x03R\nmovingTime\x12\x1a\n\x08LowIndex\x18\x05 \x01(\tR\x08lowIndex\x12\x1c\n\tHighIndex\x18\x06 \x01(\tR\thighIndex\"}\n\x0bPriceLimits\x12\x18\n\x07\x45nabled\x18\x01 \x01(\x08R\x07\x65nabled\x12\x1a\n\x08\x44istance\x18\x02 \x01(\tR\x08\x64istance\x12\x1a\n\x08LowIndex\x18\x03 \x01(\tR\x08lowIndex\x12\x1c\n\tHighIndex\x18\x04 \x01(\tR\thighIndexb\x06proto3')
+  serialized_pb=_b('\n\x0c\x63ommon.proto\x12\x03\x61pi\" \n\rMsgTypeHeader\x12\x0f\n\x07MsgType\x18# \x01(\t\"g\n\tHeartbeat\x12\x18\n\x07MsgType\x18# \x01(\tR\x07msgType\x12\x1c\n\tTestReqId\x18p \x01(\tR\ttestReqId\x12\"\n\x0cTransactTime\x18< \x01(\x03R\x0ctransactTime\"\xfd\n\n\nInstrument\x12\x0e\n\x02ID\x18\x01 \x01(\tR\x02id\x12\x12\n\x04Type\x18\x02 \x01(\tR\x04type\x12\x16\n\x06Symbol\x18\x03 \x01(\tR\x06symbol\x12&\n\x10\x42\x61seCurrencyName\x18\x04 \x01(\tR\x0c\x62\x61seCurrency\x12(\n\x11QuoteCurrencyName\x18\x05 \x01(\tR\rquoteCurrency\x12(\n\x11SettlCurrencyName\x18\x06 \x01(\tR\rsettlCurrency\x12\x1a\n\x08TickSize\x18\x07 \x01(\x05R\x08tickSize\x12%\n\x0bMinOrderQty\x18\x08 \x01(\tR\x10minOrderQuantity\x12\"\n\x0cOrderQtyStep\x18\t \x01(\tR\x0corderQtyStep\x12\x34\n\x15LimitOrderMaxDistance\x18\n \x01(\tR\x15limitOrderMaxDistance\x12&\n\x0ePriceInputMask\x18\x0b \x01(\tR\x0epriceInputMask\x12\x18\n\x07Indexes\x18\x0c \x03(\tR\x07indexes\x12\x18\n\x07\x45nabled\x18\r \x01(\x08R\x07\x65nabled\x12\x36\n\x16LiquidationMaxDistance\x18\x0e \x01(\tR\x16liquidationMaxDistance\x12$\n\rContractValue\x18\x0f \x01(\tR\rcontractValue\x12*\n\x10\x43ontractCurrency\x18\x10 \x01(\tR\x10\x63ontractCurrency\x12\x18\n\x07LotSize\x18\x11 \x01(\tR\x07lotSize\x12\x1c\n\tTickValue\x18\x12 \x01(\tR\ttickValue\x12 \n\x0bMaxOrderQty\x18\x13 \x01(\tR\x0bmaxOrderQty\x12\"\n\x0cMaxPosVolume\x18\x14 \x01(\tR\x0cmaxPosVolume\x12\x12\n\x04Mark\x18\x15 \x01(\tR\x04mark\x12\x1e\n\nFloatingPL\x18\x16 \x01(\tR\nfloatingPL\x12.\n\x12\x41\x64\x64UvmToFreeMargin\x18\x17 \x01(\tR\x12\x61\x64\x64UvmToFreeMargin\x12 \n\x0bMinLeverage\x18\x18 \x01(\tR\x0bminLeverage\x12 \n\x0bMaxLeverage\x18\x19 \x01(\tR\x0bmaxLeverage\x12#\n\x06Margin\x18\x1a \x01(\x0b\x32\x0b.api.MarginR\x06margin\x12\x34\n\x08\x43learing\x18\x1b \x01(\x0b\x32\x18.api.DerivativeOperationR\x08\x63learing\x12\x34\n\x08Interest\x18\x1c \x01(\x0b\x32\x18.api.DerivativeOperationR\x08interest\x12\x32\n\x07Premium\x18\x1d \x01(\x0b\x32\x18.api.DerivativeOperationR\x07premium\x12@\n\x0eRiskAdjustment\x18\x1e \x01(\x0b\x32\x18.api.DerivativeOperationR\x0eriskAdjustment\x12&\n\x0ePricePrecision\x18\x1f \x01(\x05R\x0epricePrecision\x12/\n\nPriceRange\x18  \x01(\x0b\x32\x0f.api.PriceRangeR\npriceRange\x12\x32\n\x0bPriceLimits\x18! \x01(\x0b\x32\x10.api.PriceLimitsR\x0bpriceLimits\x12\x18\n\x07Inverse\x18\" \x01(\x08R\x07inverse\x12*\n\x10TradingStartDate\x18# \x01(\tR\x10tradingStartDate\x12\x1e\n\nExpiryDate\x18$ \x01(\tR\nexpiryDate\x12\x14\n\x05\x42\x61sis\x18% \x01(\x05R\x05\x62\x61sis\"\xcd\x01\n\x06Margin\x12\x18\n\x07Netting\x18\x01 \x01(\tR\x07netting\x12%\n\x05Rates\x18\x02 \x03(\x0b\x32\x0f.api.MarginRateR\x05rates\x12J\n\x0fRateMultipliers\x18\x03 \x03(\x0b\x32 .api.Margin.RateMultipliersEntryR\x0frateMultipliers\x1a\x36\n\x14RateMultipliersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"v\n\nMarginRate\x12\x1c\n\tMaxVolume\x18\x01 \x01(\tR\tmaxVolume\x12 \n\x0bInitialRate\x18\x02 \x01(\tR\x0binitialRate\x12(\n\x0fMaintenanceRate\x18\x03 \x01(\tR\x0fmaintenanceRate\"j\n\x13\x44\x65rivativeOperation\x12!\n\x07\x45nabled\x18\x01 \x01(\x08R\x10maxVolenabledume\x12\x14\n\x05Index\x18\x02 \x01(\tR\x05index\x12\x1a\n\x08Schedule\x18\x03 \x01(\x03R\x08schedule\"\xc4\x01\n\nPriceRange\x12\x18\n\x07\x45nabled\x18\x01 \x01(\x08R\x07\x65nabled\x12\x1a\n\x08\x44istance\x18\x02 \x01(\tR\x08\x64istance\x12&\n\x0eMovingBoundary\x18\x03 \x01(\tR\x0emovingBoundary\x12\x1e\n\nMovingTime\x18\x04 \x01(\x03R\nmovingTime\x12\x1a\n\x08LowIndex\x18\x05 \x01(\tR\x08lowIndex\x12\x1c\n\tHighIndex\x18\x06 \x01(\tR\thighIndex\"}\n\x0bPriceLimits\x12\x18\n\x07\x45nabled\x18\x01 \x01(\x08R\x07\x65nabled\x12\x1a\n\x08\x44istance\x18\x02 \x01(\tR\x08\x64istance\x12\x1a\n\x08LowIndex\x18\x03 \x01(\tR\x08lowIndex\x12\x1c\n\tHighIndex\x18\x04 \x01(\tR\thighIndexb\x06proto3')
 )
 
 
@@ -69,21 +69,21 @@ _HEARTBEAT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='msgType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='TestReqId', full_name='api.Heartbeat.TestReqId', index=1,
       number=112, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='testReqId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='TransactTime', full_name='api.Heartbeat.TransactTime', index=2,
       number=60, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, json_name='transactTime', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -97,7 +97,7 @@ _HEARTBEAT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=55,
-  serialized_end=124,
+  serialized_end=158,
 )
 
 
@@ -379,8 +379,8 @@ _INSTRUMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=127,
-  serialized_end=1532,
+  serialized_start=161,
+  serialized_end=1566,
 )
 
 
@@ -417,8 +417,8 @@ _MARGIN_RATEMULTIPLIERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1686,
-  serialized_end=1740,
+  serialized_start=1720,
+  serialized_end=1774,
 )
 
 _MARGIN = _descriptor.Descriptor(
@@ -461,8 +461,8 @@ _MARGIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1535,
-  serialized_end=1740,
+  serialized_start=1569,
+  serialized_end=1774,
 )
 
 
@@ -506,8 +506,8 @@ _MARGINRATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1742,
-  serialized_end=1860,
+  serialized_start=1776,
+  serialized_end=1894,
 )
 
 
@@ -551,8 +551,8 @@ _DERIVATIVEOPERATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1862,
-  serialized_end=1968,
+  serialized_start=1896,
+  serialized_end=2002,
 )
 
 
@@ -617,8 +617,8 @@ _PRICERANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1971,
-  serialized_end=2167,
+  serialized_start=2005,
+  serialized_end=2201,
 )
 
 
@@ -669,8 +669,8 @@ _PRICELIMITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2169,
-  serialized_end=2294,
+  serialized_start=2203,
+  serialized_end=2328,
 )
 
 _INSTRUMENT.fields_by_name['Margin'].message_type = _MARGIN
